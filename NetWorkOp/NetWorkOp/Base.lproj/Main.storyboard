@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="NetWorkOp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n7g-0h-oxA">
+                                <rect key="frame" x="272" y="285" width="57" height="30"/>
+                                <state key="normal" title="Request">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="RequestNetWork:" destination="vXZ-lx-hvc" eventType="touchDown" id="IQ9-HI-Lmh"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="n7g-0h-oxA" secondAttribute="centerY" constant="275" id="D0c-T5-T7r"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="n7g-0h-oxA" secondAttribute="trailing" constant="255" id="M84-ca-6y5"/>
+                            <constraint firstItem="n7g-0h-oxA" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="256" id="Q5T-cw-TvN"/>
+                            <constraint firstItem="n7g-0h-oxA" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="W6M-F4-mg9"/>
+                            <constraint firstItem="n7g-0h-oxA" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="-10" id="WVc-eQ-XMM"/>
+                            <constraint firstAttribute="centerX" secondItem="n7g-0h-oxA" secondAttribute="centerX" constant="-0.5" id="ZoL-PI-s6P"/>
+                            <constraint firstItem="n7g-0h-oxA" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="t1h-1M-REC"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="D0c-T5-T7r"/>
+                                <exclude reference="M84-ca-6y5"/>
+                                <exclude reference="Q5T-cw-TvN"/>
+                                <exclude reference="WVc-eQ-XMM"/>
+                                <exclude reference="ZoL-PI-s6P"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>

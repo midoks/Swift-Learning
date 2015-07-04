@@ -1,0 +1,462 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8246CBF11AFA60B700DAB7C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8246CBF01AFA60B700DAB7C2 /* AppDelegate.swift */; };
+		8246CBF31AFA60B700DAB7C2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8246CBF21AFA60B700DAB7C2 /* ViewController.swift */; };
+		8246CBF61AFA60B700DAB7C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8246CBF41AFA60B700DAB7C2 /* Main.storyboard */; };
+		8246CBF81AFA60B700DAB7C2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8246CBF71AFA60B700DAB7C2 /* Images.xcassets */; };
+		8246CBFB1AFA60B700DAB7C2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8246CBF91AFA60B700DAB7C2 /* LaunchScreen.xib */; };
+		8246CC071AFA60B700DAB7C2 /* whistleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8246CC061AFA60B700DAB7C2 /* whistleTests.swift */; };
+		8246CC121AFA61E500DAB7C2 /* MusicAlertPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8246CC101AFA61E500DAB7C2 /* MusicAlertPageView.swift */; };
+		8246CC131AFA61E500DAB7C2 /* MusicListTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8246CC111AFA61E500DAB7C2 /* MusicListTableView.swift */; };
+		82B417C51AFA62B700EA4193 /* sc_0.wav in Resources */ = {isa = PBXBuildFile; fileRef = 82B417C01AFA62B700EA4193 /* sc_0.wav */; };
+		82B417C61AFA62B700EA4193 /* sc_1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 82B417C11AFA62B700EA4193 /* sc_1.wav */; };
+		82B417C71AFA62B700EA4193 /* sc_2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 82B417C21AFA62B700EA4193 /* sc_2.wav */; };
+		82B417C81AFA62B700EA4193 /* sc_3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 82B417C31AFA62B700EA4193 /* sc_3.wav */; };
+		82B417C91AFA62B700EA4193 /* shao1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 82B417C41AFA62B700EA4193 /* shao1.mp3 */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8246CC011AFA60B700DAB7C2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8246CBE31AFA60B700DAB7C2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8246CBEA1AFA60B700DAB7C2;
+			remoteInfo = whistle;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8246CBEB1AFA60B700DAB7C2 /* whistle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = whistle.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8246CBEF1AFA60B700DAB7C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8246CBF01AFA60B700DAB7C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8246CBF21AFA60B700DAB7C2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8246CBF51AFA60B700DAB7C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8246CBF71AFA60B700DAB7C2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		8246CBFA1AFA60B700DAB7C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		8246CC001AFA60B700DAB7C2 /* whistleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = whistleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8246CC051AFA60B700DAB7C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8246CC061AFA60B700DAB7C2 /* whistleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = whistleTests.swift; sourceTree = "<group>"; };
+		8246CC101AFA61E500DAB7C2 /* MusicAlertPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicAlertPageView.swift; sourceTree = "<group>"; };
+		8246CC111AFA61E500DAB7C2 /* MusicListTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicListTableView.swift; sourceTree = "<group>"; };
+		82B417C01AFA62B700EA4193 /* sc_0.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sc_0.wav; sourceTree = "<group>"; };
+		82B417C11AFA62B700EA4193 /* sc_1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sc_1.wav; sourceTree = "<group>"; };
+		82B417C21AFA62B700EA4193 /* sc_2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sc_2.wav; sourceTree = "<group>"; };
+		82B417C31AFA62B700EA4193 /* sc_3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sc_3.wav; sourceTree = "<group>"; };
+		82B417C41AFA62B700EA4193 /* shao1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = shao1.mp3; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8246CBE81AFA60B700DAB7C2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8246CBFD1AFA60B700DAB7C2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8246CBE21AFA60B700DAB7C2 = {
+			isa = PBXGroup;
+			children = (
+				8246CBED1AFA60B700DAB7C2 /* whistle */,
+				8246CC031AFA60B700DAB7C2 /* whistleTests */,
+				8246CBEC1AFA60B700DAB7C2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8246CBEC1AFA60B700DAB7C2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8246CBEB1AFA60B700DAB7C2 /* whistle.app */,
+				8246CC001AFA60B700DAB7C2 /* whistleTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8246CBED1AFA60B700DAB7C2 /* whistle */ = {
+			isa = PBXGroup;
+			children = (
+				82B417BF1AFA62B700EA4193 /* Resource */,
+				8246CC101AFA61E500DAB7C2 /* MusicAlertPageView.swift */,
+				8246CC111AFA61E500DAB7C2 /* MusicListTableView.swift */,
+				8246CBF01AFA60B700DAB7C2 /* AppDelegate.swift */,
+				8246CBF21AFA60B700DAB7C2 /* ViewController.swift */,
+				8246CBF41AFA60B700DAB7C2 /* Main.storyboard */,
+				8246CBF71AFA60B700DAB7C2 /* Images.xcassets */,
+				8246CBF91AFA60B700DAB7C2 /* LaunchScreen.xib */,
+				8246CBEE1AFA60B700DAB7C2 /* Supporting Files */,
+			);
+			path = whistle;
+			sourceTree = "<group>";
+		};
+		8246CBEE1AFA60B700DAB7C2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8246CBEF1AFA60B700DAB7C2 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8246CC031AFA60B700DAB7C2 /* whistleTests */ = {
+			isa = PBXGroup;
+			children = (
+				8246CC061AFA60B700DAB7C2 /* whistleTests.swift */,
+				8246CC041AFA60B700DAB7C2 /* Supporting Files */,
+			);
+			path = whistleTests;
+			sourceTree = "<group>";
+		};
+		8246CC041AFA60B700DAB7C2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8246CC051AFA60B700DAB7C2 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		82B417BF1AFA62B700EA4193 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				82B417C01AFA62B700EA4193 /* sc_0.wav */,
+				82B417C11AFA62B700EA4193 /* sc_1.wav */,
+				82B417C21AFA62B700EA4193 /* sc_2.wav */,
+				82B417C31AFA62B700EA4193 /* sc_3.wav */,
+				82B417C41AFA62B700EA4193 /* shao1.mp3 */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8246CBEA1AFA60B700DAB7C2 /* whistle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8246CC0A1AFA60B700DAB7C2 /* Build configuration list for PBXNativeTarget "whistle" */;
+			buildPhases = (
+				8246CBE71AFA60B700DAB7C2 /* Sources */,
+				8246CBE81AFA60B700DAB7C2 /* Frameworks */,
+				8246CBE91AFA60B700DAB7C2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = whistle;
+			productName = whistle;
+			productReference = 8246CBEB1AFA60B700DAB7C2 /* whistle.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8246CBFF1AFA60B700DAB7C2 /* whistleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8246CC0D1AFA60B700DAB7C2 /* Build configuration list for PBXNativeTarget "whistleTests" */;
+			buildPhases = (
+				8246CBFC1AFA60B700DAB7C2 /* Sources */,
+				8246CBFD1AFA60B700DAB7C2 /* Frameworks */,
+				8246CBFE1AFA60B700DAB7C2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8246CC021AFA60B700DAB7C2 /* PBXTargetDependency */,
+			);
+			name = whistleTests;
+			productName = whistleTests;
+			productReference = 8246CC001AFA60B700DAB7C2 /* whistleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8246CBE31AFA60B700DAB7C2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = midoks;
+				TargetAttributes = {
+					8246CBEA1AFA60B700DAB7C2 = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
+					8246CBFF1AFA60B700DAB7C2 = {
+						CreatedOnToolsVersion = 6.3.1;
+						TestTargetID = 8246CBEA1AFA60B700DAB7C2;
+					};
+				};
+			};
+			buildConfigurationList = 8246CBE61AFA60B700DAB7C2 /* Build configuration list for PBXProject "whistle" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8246CBE21AFA60B700DAB7C2;
+			productRefGroup = 8246CBEC1AFA60B700DAB7C2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8246CBEA1AFA60B700DAB7C2 /* whistle */,
+				8246CBFF1AFA60B700DAB7C2 /* whistleTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8246CBE91AFA60B700DAB7C2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				82B417C61AFA62B700EA4193 /* sc_1.wav in Resources */,
+				8246CBF61AFA60B700DAB7C2 /* Main.storyboard in Resources */,
+				82B417C81AFA62B700EA4193 /* sc_3.wav in Resources */,
+				82B417C91AFA62B700EA4193 /* shao1.mp3 in Resources */,
+				82B417C51AFA62B700EA4193 /* sc_0.wav in Resources */,
+				82B417C71AFA62B700EA4193 /* sc_2.wav in Resources */,
+				8246CBFB1AFA60B700DAB7C2 /* LaunchScreen.xib in Resources */,
+				8246CBF81AFA60B700DAB7C2 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8246CBFE1AFA60B700DAB7C2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8246CBE71AFA60B700DAB7C2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8246CBF31AFA60B700DAB7C2 /* ViewController.swift in Sources */,
+				8246CBF11AFA60B700DAB7C2 /* AppDelegate.swift in Sources */,
+				8246CC121AFA61E500DAB7C2 /* MusicAlertPageView.swift in Sources */,
+				8246CC131AFA61E500DAB7C2 /* MusicListTableView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8246CBFC1AFA60B700DAB7C2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8246CC071AFA60B700DAB7C2 /* whistleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8246CC021AFA60B700DAB7C2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8246CBEA1AFA60B700DAB7C2 /* whistle */;
+			targetProxy = 8246CC011AFA60B700DAB7C2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8246CBF41AFA60B700DAB7C2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8246CBF51AFA60B700DAB7C2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8246CBF91AFA60B700DAB7C2 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8246CBFA1AFA60B700DAB7C2 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8246CC081AFA60B700DAB7C2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8246CC091AFA60B700DAB7C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8246CC0B1AFA60B700DAB7C2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = whistle/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		8246CC0C1AFA60B700DAB7C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = whistle/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		8246CC0E1AFA60B700DAB7C2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = whistleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/whistle.app/whistle";
+			};
+			name = Debug;
+		};
+		8246CC0F1AFA60B700DAB7C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = whistleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/whistle.app/whistle";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8246CBE61AFA60B700DAB7C2 /* Build configuration list for PBXProject "whistle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8246CC081AFA60B700DAB7C2 /* Debug */,
+				8246CC091AFA60B700DAB7C2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8246CC0A1AFA60B700DAB7C2 /* Build configuration list for PBXNativeTarget "whistle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8246CC0B1AFA60B700DAB7C2 /* Debug */,
+				8246CC0C1AFA60B700DAB7C2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8246CC0D1AFA60B700DAB7C2 /* Build configuration list for PBXNativeTarget "whistleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8246CC0E1AFA60B700DAB7C2 /* Debug */,
+				8246CC0F1AFA60B700DAB7C2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8246CBE31AFA60B700DAB7C2 /* Project object */;
+}
