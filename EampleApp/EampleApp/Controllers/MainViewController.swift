@@ -25,6 +25,10 @@ class MainViewController: UIViewController, UISearchBarDelegate {
         self.navigationItem.leftBarButtonItem = leftButton
         
         print("\(NSHomeDirectory())")
+        
+        mThreadTool.mOperation { () -> () in
+            print("async")
+        }
     }
     
 

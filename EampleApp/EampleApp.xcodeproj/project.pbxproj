@@ -13,6 +13,7 @@
 		821C04711B70FD2500A27FD7 /* info_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 821C046F1B70FD2500A27FD7 /* info_icon.png */; };
 		821C04721B70FD2500A27FD7 /* info_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 821C04701B70FD2500A27FD7 /* info_icon@2x.png */; };
 		82482B411B73A97000E7609C /* UserAboutMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82482B401B73A97000E7609C /* UserAboutMeViewController.swift */; };
+		829E066A1B76EFCE002EB866 /* mThreadTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829E06691B76EFCE002EB866 /* mThreadTool.swift */; };
 		82B6D7DA1B67B53F00F8DF64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B6D7D91B67B53F00F8DF64 /* AppDelegate.swift */; };
 		82B6D7E11B67B53F00F8DF64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82B6D7E01B67B53F00F8DF64 /* Assets.xcassets */; };
 		82B6D7E41B67B53F00F8DF64 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82B6D7E21B67B53F00F8DF64 /* LaunchScreen.storyboard */; };
@@ -57,6 +58,7 @@
 		821C046F1B70FD2500A27FD7 /* info_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info_icon.png; sourceTree = "<group>"; };
 		821C04701B70FD2500A27FD7 /* info_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "info_icon@2x.png"; sourceTree = "<group>"; };
 		82482B401B73A97000E7609C /* UserAboutMeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAboutMeViewController.swift; sourceTree = "<group>"; };
+		829E06691B76EFCE002EB866 /* mThreadTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mThreadTool.swift; sourceTree = "<group>"; };
 		82B6D7D61B67B53F00F8DF64 /* EampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82B6D7D91B67B53F00F8DF64 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		82B6D7E01B67B53F00F8DF64 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 				82B6D81A1B67B5C000F8DF64 /* mSystemPrompt.swift */,
 				82B6D81B1B67B5C000F8DF64 /* mUserTools.swift */,
 				821C046D1B705E9D00A27FD7 /* mJSON.swift */,
+				829E06691B76EFCE002EB866 /* mThreadTool.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -385,6 +388,7 @@
 				82B6D8201B67B5C000F8DF64 /* RankViewController.swift in Sources */,
 				82B6D8211B67B5C000F8DF64 /* RootViewController.swift in Sources */,
 				82E16BD91B67C47F00807A39 /* SearchViewController.swift in Sources */,
+				829E066A1B76EFCE002EB866 /* mThreadTool.swift in Sources */,
 				82B6D81E1B67B5C000F8DF64 /* ChangesViewController.swift in Sources */,
 				82B6D81D1B67B5C000F8DF64 /* BaseViewController.swift in Sources */,
 				82E16BDF1B690DB300807A39 /* UserRegisterViewController.swift in Sources */,
