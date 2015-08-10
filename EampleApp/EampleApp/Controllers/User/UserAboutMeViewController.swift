@@ -11,19 +11,98 @@ import UIKit
 class UserAboutMeViewController: UIViewController, UIWebViewDelegate {
     
     var web: UIWebView?
+    var mProgressView: UIProgressView?
+    var loadUrlEnd: Bool = false
+    var loadTimer: NSTimer?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.title = "关于我"
         
+        self.loadTimer = NSTimer.scheduledTimerWithTimeInterval(0.01667, target: self, selector: Selector("loadProgressViewCallback"), userInfo: nil, repeats: true)
+        
+        //请求页面
+        loadRequestUrl()
+        //加载进度条
+        loadProgressView()
         
         //print(self.view.frame.height)
-        //print(self.tabBarController?.tabBar.frame.height)
+        //print(self.tabBarController?.tabBar.frame.height)               //tabbar高度
+        //print(self.navigationController?.navigationBar.frame.height)    //导航高度
+        //print(UIApplication.sharedApplication().statusBarFrame.height)  //状态高度
+       
+        
+    }
+    
+    //加载进度条
+    func loadProgressView(){
+        self.mProgressView = UIProgressView(progressViewStyle: UIProgressViewStyle.Bar)
+        self.mProgressView!.frame = CGRectMake(0, 64, self.view.frame.width, 4)
+        self.mProgressView!.progress = 0
+        self.mProgressView!.hidden = false
+        self.view.addSubview(self.mProgressView!)
+    }
+    
+    //开启进度条定时检查
+    func beginLoadProgressViewTimer(){
+        
+        if(mProgressView!.progress == 1){
+            self.loadTimer!.invalidate()
+            self.loadTimer = NSTimer.scheduledTimerWithTimeInterval(0.01667, target: self, selector: Selector("loadProgressViewCallback"), userInfo: nil, repeats: true)
+        }
+        
+        
+        self.mProgressView!.progress = 0
+        self.mProgressView!.hidden = false
+        self.loadUrlEnd = false
+        self.loadTimer!.fire()
+        
+    }
+    
+    //进度条结束
+    func endLoadProgressViewTimer(){
+        self.loadUrlEnd = true
+    }
+    
+    
+    //进度条回调
+    func loadProgressViewCallback() {
+        let date = NSDate()
+        //let dateFormatter = NSDateFormatter()
+        //dateFormatter.dateFormat = "yyyy-MM-dd"
+        
+        let timeFormatter = NSDateFormatter()
+        timeFormatter.dateFormat = "HH:mm:ss.S"
+        
+        print("定时器运行中...\n, \(timeFormatter.stringFromDate(date))")
+        print(self.loadTimer)
+        
+        
+        if self.loadUrlEnd {
+            //print("timer end")
+            if self.mProgressView!.progress >= 1 {
+                self.mProgressView!.progress = 1
+                self.mProgressView!.hidden = true
+                self.loadTimer!.invalidate()
+                   
+            } else {
+                self.mProgressView!.progress += 0.1
+            }
+        
+        } else {
+            //print("time starting")
+            self.mProgressView!.progress += 0.05
+            if self.mProgressView!.progress >= 0.95 {
+                self.mProgressView!.progress = 0.95
+            }
+        }
+    }
+    
+
+    //加载url请求
+    func loadRequestUrl(){
         let webInitHeight = self.view.frame.height + (self.tabBarController?.tabBar.frame.height)!
-        
-        
-        
         web = UIWebView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: webInitHeight))
         web?.delegate = self
         
@@ -32,12 +111,20 @@ class UserAboutMeViewController: UIViewController, UIWebViewDelegate {
         self.view.addSubview(web!)
         
         web?.loadRequest(req)
-        
     }
     
+    //本页面显示时
+    override func viewWillAppear(animated: Bool) {
+    }
+    
+    //离开本页面
     override func viewWillDisappear(animated: Bool) {
         //self.tabBarController?.hidesBottomBarWhenPushed = false
         self.tabBarController?.tabBar.hidden = false
+        
+        //关闭定时器
+        self.loadTimer!.invalidate()
+
     }
     
     //隐藏tabbar
@@ -54,39 +141,30 @@ class UserAboutMeViewController: UIViewController, UIWebViewDelegate {
     
     func webViewDidFinishLoad(webView: UIWebView) {
         print("web load ok")
+        
+        //进度条
+        endLoadProgressViewTimer()
     }
     
     func webViewDidStartLoad(webView: UIWebView) {
         print("web load start")
         
+        //进度条
         
-        print(webView.scrollView.contentSize.height)
-        
-//        let webHeight       = webView.scrollView.contentSize.height - 600
-//        var nFrame          = web!.frame
-//        nFrame.size.height  = webHeight
-//        web?.frame          = nFrame
-//        
-//        print(web?.frame)
-        
-        
-        //hiddenTabBar()
+        beginLoadProgressViewTimer()
     }
     
     func webView(webView: UIWebView, didFailLoadWithError error: NSError?) {
         print("web load error")
-        
-//        let alert = UIAlertController(title: "", message: "加载失败!", preferredStyle: UIAlertControllerStyle.Alert)
-//        let reFreshAction = UIAlertAction(title: "刷新", style: UIAlertActionStyle.Cancel, handler: { (UIAlertAction) -> Void in
-//            web?.reload()
-//            
-//        })
-//        alert.addAction(reFreshAction)
-        //self.presentViewController(alert, animated: true, completion: nil)
+
+        //进度条
+        endLoadProgressViewTimer()
     }
     
     func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
+        print("url req start")
         
+        beginLoadProgressViewTimer()
         return true
     }
     

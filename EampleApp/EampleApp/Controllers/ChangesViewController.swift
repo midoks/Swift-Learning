@@ -117,7 +117,6 @@ class ChangesViewController: UIViewController, UITableViewDelegate, UITableViewD
             let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "sign")
         
             let date = NSDate()
-        
             let dateFormatter = NSDateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd"
         
