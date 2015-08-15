@@ -12,7 +12,9 @@
 		821C046E1B705E9D00A27FD7 /* mJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821C046D1B705E9D00A27FD7 /* mJSON.swift */; };
 		821C04711B70FD2500A27FD7 /* info_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 821C046F1B70FD2500A27FD7 /* info_icon.png */; };
 		821C04721B70FD2500A27FD7 /* info_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 821C04701B70FD2500A27FD7 /* info_icon@2x.png */; };
+		821F15A51B7E54C70062DE99 /* PictureSwitching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821F15A41B7E54C70062DE99 /* PictureSwitching.swift */; };
 		82482B411B73A97000E7609C /* UserAboutMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82482B401B73A97000E7609C /* UserAboutMeViewController.swift */; };
+		82772B061B7A350400B8C8AD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82772B051B7A350400B8C8AD /* MainViewController.swift */; };
 		829E066A1B76EFCE002EB866 /* mThreadTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829E06691B76EFCE002EB866 /* mThreadTool.swift */; };
 		82B6D7DA1B67B53F00F8DF64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B6D7D91B67B53F00F8DF64 /* AppDelegate.swift */; };
 		82B6D7E11B67B53F00F8DF64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82B6D7E01B67B53F00F8DF64 /* Assets.xcassets */; };
@@ -21,7 +23,6 @@
 		82B6D7FA1B67B53F00F8DF64 /* EampleAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B6D7F91B67B53F00F8DF64 /* EampleAppUITests.swift */; };
 		82B6D81D1B67B5C000F8DF64 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B6D8081B67B5C000F8DF64 /* BaseViewController.swift */; };
 		82B6D81E1B67B5C000F8DF64 /* ChangesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B6D8091B67B5C000F8DF64 /* ChangesViewController.swift */; };
-		82B6D81F1B67B5C000F8DF64 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B6D80A1B67B5C000F8DF64 /* MainViewController.swift */; };
 		82B6D8201B67B5C000F8DF64 /* RankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B6D80B1B67B5C000F8DF64 /* RankViewController.swift */; };
 		82B6D8211B67B5C000F8DF64 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B6D80C1B67B5C000F8DF64 /* RootViewController.swift */; };
 		82B6D8251B67B5C000F8DF64 /* NetWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B6D8121B67B5C000F8DF64 /* NetWork.swift */; };
@@ -57,7 +58,9 @@
 		821C046D1B705E9D00A27FD7 /* mJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mJSON.swift; sourceTree = "<group>"; };
 		821C046F1B70FD2500A27FD7 /* info_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info_icon.png; sourceTree = "<group>"; };
 		821C04701B70FD2500A27FD7 /* info_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "info_icon@2x.png"; sourceTree = "<group>"; };
+		821F15A41B7E54C70062DE99 /* PictureSwitching.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureSwitching.swift; sourceTree = "<group>"; };
 		82482B401B73A97000E7609C /* UserAboutMeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAboutMeViewController.swift; sourceTree = "<group>"; };
+		82772B051B7A350400B8C8AD /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		829E06691B76EFCE002EB866 /* mThreadTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mThreadTool.swift; sourceTree = "<group>"; };
 		82B6D7D61B67B53F00F8DF64 /* EampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82B6D7D91B67B53F00F8DF64 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -72,7 +75,6 @@
 		82B6D7FB1B67B53F00F8DF64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		82B6D8081B67B5C000F8DF64 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		82B6D8091B67B5C000F8DF64 /* ChangesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangesViewController.swift; sourceTree = "<group>"; };
-		82B6D80A1B67B5C000F8DF64 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		82B6D80B1B67B5C000F8DF64 /* RankViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankViewController.swift; sourceTree = "<group>"; };
 		82B6D80C1B67B5C000F8DF64 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RootViewController.swift; path = Controllers/RootViewController.swift; sourceTree = "<group>"; };
 		82B6D8121B67B5C000F8DF64 /* NetWork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetWork.swift; sourceTree = "<group>"; };
@@ -110,6 +112,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		821F15A31B7E549E0062DE99 /* PictureSwitching */ = {
+			isa = PBXGroup;
+			children = (
+				821F15A41B7E54C70062DE99 /* PictureSwitching.swift */,
+			);
+			path = PictureSwitching;
+			sourceTree = "<group>";
+		};
+		82772B041B7A350400B8C8AD /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				82772B051B7A350400B8C8AD /* MainViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		82B6D7CD1B67B53E00F8DF64 = {
 			isa = PBXGroup;
 			children = (
@@ -169,10 +187,10 @@
 		82B6D8071B67B5C000F8DF64 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				82772B041B7A350400B8C8AD /* Main */,
 				82E16BDA1B690DB300807A39 /* User */,
 				82B6D8081B67B5C000F8DF64 /* BaseViewController.swift */,
 				82B6D8091B67B5C000F8DF64 /* ChangesViewController.swift */,
-				82B6D80A1B67B5C000F8DF64 /* MainViewController.swift */,
 				82B6D80B1B67B5C000F8DF64 /* RankViewController.swift */,
 				82E16BD81B67C47F00807A39 /* SearchViewController.swift */,
 			);
@@ -182,6 +200,7 @@
 		82B6D8101B67B5C000F8DF64 /* Framework */ = {
 			isa = PBXGroup;
 			children = (
+				821F15A31B7E549E0062DE99 /* PictureSwitching */,
 				82B6D8111B67B5C000F8DF64 /* NetWorkOperation */,
 			);
 			path = Framework;
@@ -384,6 +403,7 @@
 				82E16BE01B690DB300807A39 /* UserViewController.swift in Sources */,
 				82482B411B73A97000E7609C /* UserAboutMeViewController.swift in Sources */,
 				82B6D7DA1B67B53F00F8DF64 /* AppDelegate.swift in Sources */,
+				82772B061B7A350400B8C8AD /* MainViewController.swift in Sources */,
 				82E16BDE1B690DB300807A39 /* UserLoginViewController.swift in Sources */,
 				82B6D8201B67B5C000F8DF64 /* RankViewController.swift in Sources */,
 				82B6D8211B67B5C000F8DF64 /* RootViewController.swift in Sources */,
@@ -391,9 +411,9 @@
 				829E066A1B76EFCE002EB866 /* mThreadTool.swift in Sources */,
 				82B6D81E1B67B5C000F8DF64 /* ChangesViewController.swift in Sources */,
 				82B6D81D1B67B5C000F8DF64 /* BaseViewController.swift in Sources */,
+				821F15A51B7E54C70062DE99 /* PictureSwitching.swift in Sources */,
 				82E16BDF1B690DB300807A39 /* UserRegisterViewController.swift in Sources */,
 				821C046E1B705E9D00A27FD7 /* mJSON.swift in Sources */,
-				82B6D81F1B67B5C000F8DF64 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -21,6 +21,7 @@ class UserAboutMeViewController: UIViewController, UIWebViewDelegate {
         self.title = "关于我"
         
         self.loadTimer = NSTimer.scheduledTimerWithTimeInterval(0.01667, target: self, selector: Selector("loadProgressViewCallback"), userInfo: nil, repeats: true)
+    
         
         //请求页面
         loadRequestUrl()
@@ -31,14 +32,39 @@ class UserAboutMeViewController: UIViewController, UIWebViewDelegate {
         //print(self.tabBarController?.tabBar.frame.height)               //tabbar高度
         //print(self.navigationController?.navigationBar.frame.height)    //导航高度
         //print(UIApplication.sharedApplication().statusBarFrame.height)  //状态高度
-       
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("NSNotificationCenterUser"), name: UIDeviceOrientationDidChangeNotification, object: nil)
         
     }
+    
+    func NSNotificationCenterUser(){
+        let orientation = UIDevice.currentDevice().orientation
+        print("通知时间")
+        print(orientation)
+    }
+    
+    override func willRotateToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
+        print("旋转了")
+        
+        print(self.view.frame)
+        
+        if(toInterfaceOrientation.isLandscape){//横屏
+            self.mProgressView!.frame = CGRect(x: 0, y: 32, width: self.view.frame.width, height: 1)
+        }else{//竖屏
+            self.mProgressView!.frame = CGRect(x: 0, y: 64, width: self.view.frame.width, height: 1)
+        }
+        
+        let webInitHeight = self.view.frame.height + (self.tabBarController?.tabBar.frame.height)!
+        web = UIWebView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: webInitHeight))
+    
+    }
+    
     
     //加载进度条
     func loadProgressView(){
         self.mProgressView = UIProgressView(progressViewStyle: UIProgressViewStyle.Bar)
         self.mProgressView!.frame = CGRectMake(0, 64, self.view.frame.width, 4)
+        //self.mProgressView!.frame = CGRect(x: 0, y: 32, width: self.view.frame.width, height: 1)
         self.mProgressView!.progress = 0
         self.mProgressView!.hidden = false
         self.view.addSubview(self.mProgressView!)
@@ -110,7 +136,7 @@ class UserAboutMeViewController: UIViewController, UIWebViewDelegate {
         let req = NSURLRequest(URL: NSURL(scheme: "http", host: "midoks.github.io", path: "/")!)
         self.view.addSubview(web!)
         
-        web?.loadRequest(req)
+        web!.loadRequest(req)
     }
     
     //本页面显示时
