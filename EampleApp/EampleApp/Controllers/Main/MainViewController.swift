@@ -8,8 +8,11 @@
 
 import UIKit
 
-class MainViewController: UIViewController, PictureSwitchingDelegate, UISearchBarDelegate {
-
+class MainViewController: UIViewController, PictureSwitchingDelegate, UIScrollViewDelegate, UISearchBarDelegate {
+    
+    var main: UIScrollView?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -24,19 +27,41 @@ class MainViewController: UIViewController, PictureSwitchingDelegate, UISearchBa
         
         let leftButton = UIBarButtonItem(customView: search)
         self.navigationItem.leftBarButtonItem = leftButton
-
         
         
+        //打印项目目录
         print("\(NSHomeDirectory())")
         
-//        mThreadTool.mOperation { () -> () in
-//            print("async")
-//        }
+        //        mThreadTool.mOperation { () -> () in
+        //            print("async")
+        //        }
+        
+        initMain()
         
         //图片切换
-        self.automaticallyAdjustsScrollViewInsets = false
         initImageSwitching()
     }
+    
+    func initMain(){
+        
+        //print(self.view.frame.height)
+        //print(self.tabBarController?.tabBar.frame.height)               //tabbar高度
+        //print(self.navigationController?.navigationBar.frame.height)    //导航高度
+        //print(UIApplication.sharedApplication().statusBarFrame.height)  //状态高度
+        //print(480-49-44-20)
+        
+        
+        main = UIScrollView(frame: CGRectMake(0, 0, self.view.frame.width, self.view.frame.height))
+        main!.contentSize = CGSizeMake(self.view.frame.width, 387)
+        main!.backgroundColor = UIColor.whiteColor()
+        main!.showsVerticalScrollIndicator = true
+        main!.showsHorizontalScrollIndicator = false
+        main!.scrollEnabled = true
+        main!.delegate = self
+
+        self.view.addSubview(main!)
+    }
+    
     
     //MARK: - 图片切换初始化 -
     func initImageSwitching(){
@@ -44,12 +69,12 @@ class MainViewController: UIViewController, PictureSwitchingDelegate, UISearchBa
             UIImage(named: "img_switching_first.jpg"),
             UIImage(named: "img_switching_second.jpg"),
             UIImage(named: "img_switching_third.jpg")]
-        let imageSwitching = PictureSwitching(frame: CGRectMake(0, 64, self.view.frame.size.width, 200), imageArray:imageArray)
+        let imageSwitching = PictureSwitching(frame: CGRectMake(0, 0, self.view.frame.size.width, 200), imageArray:imageArray)
         imageSwitching.backgroundColor = UIColor.orangeColor()
         imageSwitching.delegate = self
         
-        self.view.addSubview(imageSwitching)
-        
+        //self.automaticallyAdjustsScrollViewInsets = false
+        self.main!.addSubview(imageSwitching)
     }
     
     //MARK: - 图片切换代理事件 -
@@ -62,7 +87,7 @@ class MainViewController: UIViewController, PictureSwitchingDelegate, UISearchBa
         print("tap")
         print(tapIndex)
     }
-
+    
     
     //MARK: - 当点击搜索时 -
     func searchBarShouldBeginEditing(searchBar: UISearchBar) -> Bool {
@@ -74,13 +99,4 @@ class MainViewController: UIViewController, PictureSwitchingDelegate, UISearchBa
         return true
     }
     
-    
-    
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
 }

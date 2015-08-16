@@ -104,12 +104,20 @@ class PictureSwitching: UIView, UIScrollViewDelegate {
         self.timeStart()
     }
     
+    //定时开始
     func timeStart(){
-        self.timer = NSTimer.scheduledTimerWithTimeInterval(2, target: self, selector: "timerAction", userInfo: nil, repeats: true)
+        if(self.timer == nil){
+            self.timer = NSTimer.scheduledTimerWithTimeInterval(2, target: self,
+                    selector: "timerAction", userInfo: nil, repeats: true)
+        }
     }
     
+    //取消定时
     func timeStop(){
-        self.timer!.invalidate()
+        if(self.timer != nil){
+            self.timer!.invalidate()
+            self.timer = nil
+        }
     }
     
     //定时事件触发方法
