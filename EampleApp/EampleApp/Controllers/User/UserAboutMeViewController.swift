@@ -190,7 +190,7 @@ class UserAboutMeViewController: UIViewController, UIWebViewDelegate {
     func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
         print("url req start")
         
-        beginLoadProgressViewTimer()
+        //beginLoadProgressViewTimer()
         return true
     }
     

@@ -8,14 +8,15 @@
 
 import UIKit
 
-class MainViewController: UIViewController, UISearchBarDelegate {
+class MainViewController: UIViewController, PictureSwitchingDelegate, UISearchBarDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         //self.title = "电影"
         
-        self.view.backgroundColor = UIColor(red: 239/255, green: 239/255, blue: 244/255, alpha: 1)
+        //self.view.backgroundColor = UIColor(red: 239/255, green: 239/255, blue: 244/255, alpha: 1)
+        self.view.backgroundColor = UIColor.whiteColor()
         
         let search = UISearchBar(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width * 0.3, height: 40))
         search.placeholder = "搜索"
@@ -23,17 +24,47 @@ class MainViewController: UIViewController, UISearchBarDelegate {
         
         let leftButton = UIBarButtonItem(customView: search)
         self.navigationItem.leftBarButtonItem = leftButton
+
+        
         
         print("\(NSHomeDirectory())")
         
-        mThreadTool.mOperation { () -> () in
-            print("async")
-        }
+//        mThreadTool.mOperation { () -> () in
+//            print("async")
+//        }
+        
+        //图片切换
+        self.automaticallyAdjustsScrollViewInsets = false
+        initImageSwitching()
     }
     
+    //MARK: - 图片切换初始化 -
+    func initImageSwitching(){
+        let imageArray: [UIImage!] = [
+            UIImage(named: "img_switching_first.jpg"),
+            UIImage(named: "img_switching_second.jpg"),
+            UIImage(named: "img_switching_third.jpg")]
+        let imageSwitching = PictureSwitching(frame: CGRectMake(0, 64, self.view.frame.size.width, 200), imageArray:imageArray)
+        imageSwitching.backgroundColor = UIColor.orangeColor()
+        imageSwitching.delegate = self
+        
+        self.view.addSubview(imageSwitching)
+        
+    }
+    
+    //MARK: - 图片切换代理事件 -
+    func PictureSwitchingEndScrolling(currentIndex: Int) {
+        print("EndScrolling")
+        print(currentIndex)
+    }
+    
+    func PictureSwitchingTap(tapIndex: Int) {
+        print("tap")
+        print(tapIndex)
+    }
 
     
-    //当点击搜索时
+    //MARK: - 当点击搜索时 -
     func searchBarShouldBeginEditing(searchBar: UISearchBar) -> Bool {
         let u = SearchViewController()
         let uNav = UINavigationController(rootViewController: u)
