@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import LocalAuthentication
+
 
 class UserViewController: UIViewController , UITableViewDataSource, UITableViewDelegate{
     
@@ -28,7 +30,7 @@ class UserViewController: UIViewController , UITableViewDataSource, UITableViewD
         _tableView!.delegate    = self
         
         self.view.addSubview(_tableView!)
-
+        
         _isLogin = false
         _isLogin = mUserTools.isLogin()
     }
@@ -43,21 +45,21 @@ class UserViewController: UIViewController , UITableViewDataSource, UITableViewD
         }
         
     }
-
     
-//    override func viewWillLayoutSubviews() {
-//        super.viewWillLayoutSubviews()
-//        
-//        var nFrame = self.view.frame
-//        nFrame.size.width   = self.view.frame.height
-//        nFrame.size.height  = self.view.frame.width
-//        
-//        _tableView  = UITableView(frame: nFrame, style: UITableViewStyle.Grouped)
-//        _tableView!.reloadData()
-//        
-//        print(self.view.frame)
-//        print(nFrame)
-//    }
+    
+    //    override func viewWillLayoutSubviews() {
+    //        super.viewWillLayoutSubviews()
+    //
+    //        var nFrame = self.view.frame
+    //        nFrame.size.width   = self.view.frame.height
+    //        nFrame.size.height  = self.view.frame.width
+    //
+    //        _tableView  = UITableView(frame: nFrame, style: UITableViewStyle.Grouped)
+    //        _tableView!.reloadData()
+    //
+    //        print(self.view.frame)
+    //        print(nFrame)
+    //    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -68,14 +70,14 @@ class UserViewController: UIViewController , UITableViewDataSource, UITableViewD
     //tabview多少组
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         if _isLogin == true {
-            return 3
+            return 4
         }
         return 1
     }
     
     //每组多少行
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
+        
         if _isLogin == true {
             
             if(0 == section){
@@ -83,6 +85,8 @@ class UserViewController: UIViewController , UITableViewDataSource, UITableViewD
             }else if(1 == section){
                 return 4
             }else if(2 == section){
+                return 2
+            }else if(3 == section){
                 return 1
             }
         }
@@ -128,7 +132,17 @@ class UserViewController: UIViewController , UITableViewDataSource, UITableViewD
                     cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
                 }
                 
-            }else if(indexPath.section == 2){
+            }else if (indexPath.section == 2){
+                
+                if(0 == indexPath.row){
+                    cell.textLabel?.textAlignment = NSTextAlignment.Center
+                    cell.textLabel?.text = "TouchID验证"
+                }else if(1 == indexPath.row){
+                    cell.textLabel?.textAlignment = NSTextAlignment.Center
+                    cell.textLabel?.text = "九宫格验证"
+                }
+                
+            }else if(indexPath.section == 3){
                 if(0 == indexPath.row){
                     cell.textLabel?.textAlignment = NSTextAlignment.Center
                     cell.textLabel?.textColor = UIColor.redColor()
@@ -169,10 +183,39 @@ class UserViewController: UIViewController , UITableViewDataSource, UITableViewD
                     Toast("自己开发撒!!!", time:1.5)
                 }
                 
-            }else if( 2 == indexPath.section){
-            
+            }else if(2 == indexPath.section){
+                
+                if(0 == indexPath.row){//TouchID验证功能
+                    //Toast("TouchID验证功能")
+                    let laContext = LAContext()
+                    //失败次数
+                    laContext.maxBiometryFailures = 3
+                    
+                    
+                    
+                    laContext.evaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, localizedReason: "通过Home键验证已有手机指纹", reply: { (success, error) -> Void in
+                        
+                        if(success){
+                            let alert = UIAlertView(title: "验证", message: "成功", delegate: nil, cancelButtonTitle: "Cancel")
+                            alert.show()
+                        }else{
+                            let alert = UIAlertView(title: "验证", message: "失败", delegate: nil, cancelButtonTitle: "Cancel")
+                            alert.show()
+                        }
+                    })
+                    
+                }else if(1 == indexPath.row){
+                    let u = UserSudokuViewController()
+                    let uNav = UINavigationController(rootViewController: u)
+                    self.presentViewController(uNav, animated: true, completion: nil)
+                    
+                }
+                
+                
+            }else if( 3 == indexPath.section){
+                
                 if( 0 == indexPath.row ){
-        
+                    
                     let alert = UIAlertController(title: "", message: "你真的要退出账号？", preferredStyle: UIAlertControllerStyle.Alert)
                     let cancelAction = UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel, handler: nil)
                     let yesAction = UIAlertAction(title: "是的", style: UIAlertActionStyle.Default, handler: { (UIAlertAction) -> Void in

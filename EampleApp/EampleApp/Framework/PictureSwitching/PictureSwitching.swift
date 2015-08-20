@@ -54,7 +54,7 @@ class PictureSwitching: UIView, UIScrollViewDelegate {
     
     //MARK: - Private -
     private func setUp(){
-        print(imageArray.count)
+        //print(imageArray.count)
         
         //循环
         if(self.imageArray.count > 0){

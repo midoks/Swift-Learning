@@ -14,6 +14,8 @@
 		821C04721B70FD2500A27FD7 /* info_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 821C04701B70FD2500A27FD7 /* info_icon@2x.png */; };
 		821F15A51B7E54C70062DE99 /* PictureSwitching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821F15A41B7E54C70062DE99 /* PictureSwitching.swift */; };
 		82482B411B73A97000E7609C /* UserAboutMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82482B401B73A97000E7609C /* UserAboutMeViewController.swift */; };
+		825C7F3A1B8369FD0071FFAF /* img_menu_qrcode@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 825C7F381B8369FD0071FFAF /* img_menu_qrcode@2x.png */; };
+		825C7F3B1B8369FD0071FFAF /* img_menu_water.png in Resources */ = {isa = PBXBuildFile; fileRef = 825C7F391B8369FD0071FFAF /* img_menu_water.png */; };
 		82772B061B7A350400B8C8AD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82772B051B7A350400B8C8AD /* MainViewController.swift */; };
 		829E066A1B76EFCE002EB866 /* mThreadTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829E06691B76EFCE002EB866 /* mThreadTool.swift */; };
 		82B6D7DA1B67B53F00F8DF64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B6D7D91B67B53F00F8DF64 /* AppDelegate.swift */; };
@@ -29,6 +31,9 @@
 		82B6D8261B67B5C000F8DF64 /* Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B6D8131B67B5C000F8DF64 /* Upload.swift */; };
 		82B6D8281B67B5C000F8DF64 /* mSystemPrompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B6D81A1B67B5C000F8DF64 /* mSystemPrompt.swift */; };
 		82B6D8291B67B5C000F8DF64 /* mUserTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B6D81B1B67B5C000F8DF64 /* mUserTools.swift */; };
+		82C3AC771B85FC97002B1527 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82C3AC761B85FC97002B1527 /* LocalAuthentication.framework */; };
+		82C3AC791B860643002B1527 /* UserSudokuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C3AC781B860643002B1527 /* UserSudokuViewController.swift */; };
+		82C3AC7C1B86080B002B1527 /* SudokuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C3AC7B1B86080B002B1527 /* SudokuView.swift */; };
 		82E16BD91B67C47F00807A39 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E16BD81B67C47F00807A39 /* SearchViewController.swift */; };
 		82E16BDE1B690DB300807A39 /* UserLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E16BDB1B690DB300807A39 /* UserLoginViewController.swift */; };
 		82E16BDF1B690DB300807A39 /* UserRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E16BDC1B690DB300807A39 /* UserRegisterViewController.swift */; };
@@ -63,6 +68,8 @@
 		821C04701B70FD2500A27FD7 /* info_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "info_icon@2x.png"; sourceTree = "<group>"; };
 		821F15A41B7E54C70062DE99 /* PictureSwitching.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureSwitching.swift; sourceTree = "<group>"; };
 		82482B401B73A97000E7609C /* UserAboutMeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAboutMeViewController.swift; sourceTree = "<group>"; };
+		825C7F381B8369FD0071FFAF /* img_menu_qrcode@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_menu_qrcode@2x.png"; sourceTree = "<group>"; };
+		825C7F391B8369FD0071FFAF /* img_menu_water.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_menu_water.png; sourceTree = "<group>"; };
 		82772B051B7A350400B8C8AD /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		829E06691B76EFCE002EB866 /* mThreadTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mThreadTool.swift; sourceTree = "<group>"; };
 		82B6D7D61B67B53F00F8DF64 /* EampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,6 +91,9 @@
 		82B6D8131B67B5C000F8DF64 /* Upload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Upload.swift; sourceTree = "<group>"; };
 		82B6D81A1B67B5C000F8DF64 /* mSystemPrompt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mSystemPrompt.swift; sourceTree = "<group>"; };
 		82B6D81B1B67B5C000F8DF64 /* mUserTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mUserTools.swift; sourceTree = "<group>"; };
+		82C3AC761B85FC97002B1527 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
+		82C3AC781B860643002B1527 /* UserSudokuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSudokuViewController.swift; sourceTree = "<group>"; };
+		82C3AC7B1B86080B002B1527 /* SudokuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SudokuView.swift; sourceTree = "<group>"; };
 		82E16BD81B67C47F00807A39 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		82E16BDB1B690DB300807A39 /* UserLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLoginViewController.swift; sourceTree = "<group>"; };
 		82E16BDC1B690DB300807A39 /* UserRegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRegisterViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82C3AC771B85FC97002B1527 /* LocalAuthentication.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,6 +148,7 @@
 		82B6D7CD1B67B53E00F8DF64 = {
 			isa = PBXGroup;
 			children = (
+				82C3AC761B85FC97002B1527 /* LocalAuthentication.framework */,
 				82B6D7D81B67B53F00F8DF64 /* EampleApp */,
 				82B6D7ED1B67B53F00F8DF64 /* EampleAppTests */,
 				82B6D7F81B67B53F00F8DF64 /* EampleAppUITests */,
@@ -206,6 +218,7 @@
 		82B6D8101B67B5C000F8DF64 /* Framework */ = {
 			isa = PBXGroup;
 			children = (
+				82C3AC7A1B8607FA002B1527 /* NineCellLockView */,
 				821F15A31B7E549E0062DE99 /* PictureSwitching */,
 				82B6D8111B67B5C000F8DF64 /* NetWorkOperation */,
 			);
@@ -231,6 +244,8 @@
 		82B6D8181B67B5C000F8DF64 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				825C7F381B8369FD0071FFAF /* img_menu_qrcode@2x.png */,
+				825C7F391B8369FD0071FFAF /* img_menu_water.png */,
 				82EC60491B7EE627008E8BB8 /* img_switching_first.jpg */,
 				82EC604A1B7EE627008E8BB8 /* img_switching_second.jpg */,
 				82EC604B1B7EE627008E8BB8 /* img_switching_third.jpg */,
@@ -260,6 +275,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		82C3AC7A1B8607FA002B1527 /* NineCellLockView */ = {
+			isa = PBXGroup;
+			children = (
+				82C3AC7B1B86080B002B1527 /* SudokuView.swift */,
+			);
+			path = NineCellLockView;
+			sourceTree = "<group>";
+		};
 		82E16BDA1B690DB300807A39 /* User */ = {
 			isa = PBXGroup;
 			children = (
@@ -267,6 +290,7 @@
 				82E16BDC1B690DB300807A39 /* UserRegisterViewController.swift */,
 				82E16BDD1B690DB300807A39 /* UserViewController.swift */,
 				82482B401B73A97000E7609C /* UserAboutMeViewController.swift */,
+				82C3AC781B860643002B1527 /* UserSudokuViewController.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -381,9 +405,11 @@
 				821C046C1B6C18AD00A27FD7 /* tabbar_me@3x.png in Resources */,
 				821C04711B70FD2500A27FD7 /* info_icon.png in Resources */,
 				821C04721B70FD2500A27FD7 /* info_icon@2x.png in Resources */,
+				825C7F3B1B8369FD0071FFAF /* img_menu_water.png in Resources */,
 				82EC604D1B7EE627008E8BB8 /* img_switching_second.jpg in Resources */,
 				82EC604C1B7EE627008E8BB8 /* img_switching_first.jpg in Resources */,
 				82EC604E1B7EE627008E8BB8 /* img_switching_third.jpg in Resources */,
+				825C7F3A1B8369FD0071FFAF /* img_menu_qrcode@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,12 +441,14 @@
 				82E16BE01B690DB300807A39 /* UserViewController.swift in Sources */,
 				82482B411B73A97000E7609C /* UserAboutMeViewController.swift in Sources */,
 				82B6D7DA1B67B53F00F8DF64 /* AppDelegate.swift in Sources */,
+				82C3AC7C1B86080B002B1527 /* SudokuView.swift in Sources */,
 				82772B061B7A350400B8C8AD /* MainViewController.swift in Sources */,
 				82E16BDE1B690DB300807A39 /* UserLoginViewController.swift in Sources */,
 				82B6D8201B67B5C000F8DF64 /* RankViewController.swift in Sources */,
 				82B6D8211B67B5C000F8DF64 /* RootViewController.swift in Sources */,
 				82E16BD91B67C47F00807A39 /* SearchViewController.swift in Sources */,
 				829E066A1B76EFCE002EB866 /* mThreadTool.swift in Sources */,
+				82C3AC791B860643002B1527 /* UserSudokuViewController.swift in Sources */,
 				82B6D81E1B67B5C000F8DF64 /* ChangesViewController.swift in Sources */,
 				82B6D81D1B67B5C000F8DF64 /* BaseViewController.swift in Sources */,
 				821F15A51B7E54C70062DE99 /* PictureSwitching.swift in Sources */,
