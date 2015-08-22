@@ -9,29 +9,51 @@ import UIKit
 
 
 //九宫格视图
-class UserSudokuViewController: UIViewController {
+class UserSudokuViewController: UIViewController, SudokuViewDelegate {
+    
+    var tmpBarColor:UIColor?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //self.view.backgroundColor = UIColor(red: 239/255, green: 239/255, blue: 244/255, alpha: 1)
         self.title = "九宫格验证"
-        self.view.backgroundColor = UIColor.clearColor()
-    
-        //UIBarButtonItem.appearance().tintColor = UIColor.clearColor()
+        self.view.backgroundColor = UIColor(red: 35/255.0, green: 39/255.0, blue: 54/255.0, alpha: 1)
         
-        UINavigationBar.appearance().tintColor = UIColor.redColor()
+        tmpBarColor = UINavigationBar.appearance().barTintColor
+        UINavigationBar.appearance().barTintColor = UIColor(red: 35/255.0, green: 39/255.0, blue: 54/255.0, alpha: 1)
         
-        //self.navigationController?.navigationBarHidden = true
+        
         let leftButton = UIBarButtonItem(title: "取消", style: UIBarButtonItemStyle.Plain, target: self, action: Selector("close:"))
         self.navigationItem.leftBarButtonItem   = leftButton
         
-        print("九宫格视图")
+        let sudoku = SudokuView(frame: CGRectMake(0, 0, self.view.frame.width, self.view.frame.height))
+        sudoku.delegate = self
         
-        
-        self.view = SudokuView(frame: CGRectZero)
+        //设置正确的密码
+        //如果正在设置密码,就不需要填写了
+        sudoku.setPwd("012345678")
+        self.view.addSubview(sudoku)
+    }
     
+    
+    func SudokuViewFail(pwd: NSString, status: NSString) {
+        NSLog("pwd:%@, status:%@", pwd, status)
+    }
+    
+    func SudokuViewOk(pwd: NSString, status: NSString) {
+        NSLog("pwd:%@, status:%@", pwd, status)
+        
+        if("end" == status){
+            let alertV = UIAlertView(title: "您的结果", message: pwd as String, delegate: nil, cancelButtonTitle: "我知道了")
+            alertV.show()
+        }
+    }
+    
+    
+    //离开本页面
+    override func viewWillDisappear(animated: Bool) {
+        UINavigationBar.appearance().barTintColor = tmpBarColor
     }
     
     //关闭
@@ -41,5 +63,5 @@ class UserSudokuViewController: UIViewController {
         }
     }
     
-
+    
 }
