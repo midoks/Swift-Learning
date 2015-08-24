@@ -47,7 +47,7 @@ UIScrollViewDelegate, UISearchBarDelegate, UITableViewDelegate, UITableViewDataS
         //分类列表
         initCategoryList()
         //横向列表
-        //initTableView()
+        initTableView()
     }
     
     //MARK: - 初始化滚动视图 -
@@ -165,16 +165,16 @@ UIScrollViewDelegate, UISearchBarDelegate, UITableViewDelegate, UITableViewDataS
     //MARK: - TableView Init -
     func initTableView(){
         
-        //let pos = self.mainSubviewCurrentHeight!
-        self.mainSubviewCurrentHeight = self.mainSubviewCurrentHeight! + 100
+        let pos = self.mainSubviewCurrentHeight!
+        self.mainSubviewCurrentHeight = self.mainSubviewCurrentHeight! + 320 + 5
         self.setMainHeight(self.mainSubviewCurrentHeight!)
         
-        let transform = CGAffineTransformMakeRotation(-1.5707963)
+        //let transform = CGAffineTransformMakeRotation(-1.5707963)
         
-        let initTv = UITableView(frame: CGRect(x: 0, y: 200, width: 100, height: 320),
+        let initTv = UITableView(frame: CGRect(x: 0, y: pos + 5, width: self.view.frame.width, height: 320),
             style: UITableViewStyle.Plain)
         
-        initTv.transform = transform
+        //initTv.transform = transform
         initTv.showsVerticalScrollIndicator = false
         initTv.pagingEnabled = true
         
@@ -195,19 +195,19 @@ UIScrollViewDelegate, UISearchBarDelegate, UITableViewDelegate, UITableViewDataS
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 100
+        return 44
     }
     
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let transform = CGAffineTransformMakeRotation(1.5707963)
+        //let transform = CGAffineTransformMakeRotation(1.5707963)
         let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "sign")
         
         
         //cell.textLabel!.textAlignment = NSTextAlignment.Center
         cell.textLabel!.text = "测试"
         
-        cell.transform = transform
+        //cell.transform = transform
         
         return cell
     }

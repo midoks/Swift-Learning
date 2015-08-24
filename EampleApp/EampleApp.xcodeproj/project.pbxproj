@@ -42,6 +42,8 @@
 		82EC604C1B7EE627008E8BB8 /* img_switching_first.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82EC60491B7EE627008E8BB8 /* img_switching_first.jpg */; };
 		82EC604D1B7EE627008E8BB8 /* img_switching_second.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82EC604A1B7EE627008E8BB8 /* img_switching_second.jpg */; };
 		82EC604E1B7EE627008E8BB8 /* img_switching_third.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82EC604B1B7EE627008E8BB8 /* img_switching_third.jpg */; };
+		82F5970D1B8B426D00FA0730 /* DetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F5970C1B8B426D00FA0730 /* DetailedViewController.swift */; };
+		82F5970F1B8B47B400FA0730 /* UserQrcodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F5970E1B8B47B400FA0730 /* UserQrcodeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +105,8 @@
 		82EC60491B7EE627008E8BB8 /* img_switching_first.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = img_switching_first.jpg; sourceTree = "<group>"; };
 		82EC604A1B7EE627008E8BB8 /* img_switching_second.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = img_switching_second.jpg; sourceTree = "<group>"; };
 		82EC604B1B7EE627008E8BB8 /* img_switching_third.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = img_switching_third.jpg; sourceTree = "<group>"; };
+		82F5970C1B8B426D00FA0730 /* DetailedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedViewController.swift; sourceTree = "<group>"; };
+		82F5970E1B8B47B400FA0730 /* UserQrcodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserQrcodeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				82772B051B7A350400B8C8AD /* MainViewController.swift */,
+				82F5970C1B8B426D00FA0730 /* DetailedViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -310,6 +315,7 @@
 				82E16BDD1B690DB300807A39 /* UserViewController.swift */,
 				82482B401B73A97000E7609C /* UserAboutMeViewController.swift */,
 				82C3AC781B860643002B1527 /* UserSudokuViewController.swift */,
+				82F5970E1B8B47B400FA0730 /* UserQrcodeViewController.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -467,9 +473,11 @@
 				82B6D8201B67B5C000F8DF64 /* RankViewController.swift in Sources */,
 				82B6D8211B67B5C000F8DF64 /* RootViewController.swift in Sources */,
 				82E16BD91B67C47F00807A39 /* SearchViewController.swift in Sources */,
+				82F5970D1B8B426D00FA0730 /* DetailedViewController.swift in Sources */,
 				829E066A1B76EFCE002EB866 /* mThreadTool.swift in Sources */,
 				82C3AC791B860643002B1527 /* UserSudokuViewController.swift in Sources */,
 				82B6D81E1B67B5C000F8DF64 /* ChangesViewController.swift in Sources */,
+				82F5970F1B8B47B400FA0730 /* UserQrcodeViewController.swift in Sources */,
 				82B6D81D1B67B5C000F8DF64 /* BaseViewController.swift in Sources */,
 				821F15A51B7E54C70062DE99 /* PictureSwitching.swift in Sources */,
 				82E16BDF1B690DB300807A39 /* UserRegisterViewController.swift in Sources */,

@@ -85,7 +85,7 @@ class UserViewController: UIViewController , UITableViewDataSource, UITableViewD
             }else if(1 == section){
                 return 4
             }else if(2 == section){
-                return 2
+                return 3
             }else if(3 == section){
                 return 1
             }
@@ -140,6 +140,9 @@ class UserViewController: UIViewController , UITableViewDataSource, UITableViewD
                 }else if(1 == indexPath.row){
                     cell.textLabel?.textAlignment = NSTextAlignment.Center
                     cell.textLabel?.text = "九宫格验证"
+                }else if(2 == indexPath.row){
+                    cell.textLabel?.textAlignment = NSTextAlignment.Center
+                    cell.textLabel?.text = "二维码识别"
                 }
                 
             }else if(indexPath.section == 3){
@@ -209,6 +212,10 @@ class UserViewController: UIViewController , UITableViewDataSource, UITableViewD
                     let uNav = UINavigationController(rootViewController: u)
                     self.presentViewController(uNav, animated: true, completion: nil)
                     
+                }else if(2 == indexPath.row){
+                    let u = UserQrcodeViewController()
+                    let uNav = UINavigationController(rootViewController: u)
+                    self.presentViewController(uNav, animated: true, completion: nil)
                 }
                 
                 
