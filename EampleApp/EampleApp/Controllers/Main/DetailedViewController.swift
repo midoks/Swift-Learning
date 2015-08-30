@@ -11,7 +11,10 @@ class DetailedViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        NSLog("详细界面")
+        
+        self.view.backgroundColor = UIColor(red: 239/255, green: 239/255, blue: 244/255, alpha: 1)
+        self.title = "详情页面"
+        //NSLog("详细界面")
     }
 
 }

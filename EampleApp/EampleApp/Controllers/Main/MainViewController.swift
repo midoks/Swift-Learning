@@ -195,26 +195,37 @@ UIScrollViewDelegate, UISearchBarDelegate, UITableViewDelegate, UITableViewDataS
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 44
+        return 60
     }
     
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        //let transform = CGAffineTransformMakeRotation(1.5707963)
-        let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "sign")
+        let cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "sign")
+        
+        cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+    
+        let viewContent = MainTableShowView(frame: CGRect(x: 0, y: 0, width: cell.frame.width, height: 60))
+        let image = UIImage(imageLiteral: "img_menu_water")!
+        
+        let date = NSDate()
+        let timeFormatter = NSDateFormatter()
+        timeFormatter.dateFormat = "HH:mm:ss.S"
+        
+        let s = timeFormatter.stringFromDate(date)
         
         
-        //cell.textLabel!.textAlignment = NSTextAlignment.Center
-        cell.textLabel!.text = "测试"
-        
-        //cell.transform = transform
-        
+        viewContent.addContent(image,title: "标题",detail: "详情",time: s)
+        cell.addSubview(viewContent)
         return cell
     }
     
     //点击事件
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        //跳到详情页
+        let detailed = DetailedViewController()
+        self.navigationController?.pushViewController(detailed, animated: true)
     }
     
     
