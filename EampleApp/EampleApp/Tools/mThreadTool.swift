@@ -16,6 +16,12 @@ class mThreadTool: NSObject {
             callback()
         }
     }
+
+    static func mdispatch(time: UInt64 ,callback: ()->() ){
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (Int64)(time * NSEC_PER_SEC)), dispatch_get_main_queue()) { () -> Void in
+            callback()
+        }
+    }
     
     //NSOperationQueue
     static func mOperation(callback: ()->() ){

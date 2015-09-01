@@ -126,8 +126,8 @@ UIScrollViewDelegate, UISearchBarDelegate, UITableViewDelegate, UITableViewDataS
         self.mainSubviewCurrentHeight = self.mainSubviewCurrentHeight! + 240 + 5
         self.setMainHeight(self.mainSubviewCurrentHeight!)
         
-        print(pos)
-        print(self.mainSubviewCurrentHeight)
+        //print(pos)
+        //print(self.mainSubviewCurrentHeight)
         
         let menu = MDCrossRangeIcon(frame: CGRectMake(0, pos + 5, self.view.frame.width, 240))
         menu.delegate = self
@@ -164,17 +164,14 @@ UIScrollViewDelegate, UISearchBarDelegate, UITableViewDelegate, UITableViewDataS
     
     //MARK: - TableView Init -
     func initTableView(){
-        
         let pos = self.mainSubviewCurrentHeight!
-        self.mainSubviewCurrentHeight = self.mainSubviewCurrentHeight! + 320 + 5
+        self.mainSubviewCurrentHeight = self.mainSubviewCurrentHeight! + 320 + 10
         self.setMainHeight(self.mainSubviewCurrentHeight!)
         
-        //let transform = CGAffineTransformMakeRotation(-1.5707963)
         
         let initTv = UITableView(frame: CGRect(x: 0, y: pos + 5, width: self.view.frame.width, height: 320),
             style: UITableViewStyle.Plain)
-        
-        //initTv.transform = transform
+
         initTv.showsVerticalScrollIndicator = false
         initTv.pagingEnabled = true
         
