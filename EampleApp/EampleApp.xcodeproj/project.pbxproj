@@ -14,6 +14,8 @@
 		821C04721B70FD2500A27FD7 /* info_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 821C04701B70FD2500A27FD7 /* info_icon@2x.png */; };
 		821F15A51B7E54C70062DE99 /* PictureSwitching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821F15A41B7E54C70062DE99 /* PictureSwitching.swift */; };
 		82482B411B73A97000E7609C /* UserAboutMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82482B401B73A97000E7609C /* UserAboutMeViewController.swift */; };
+		825C58421B95E53E00F731CD /* RankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825C58411B95E53E00F731CD /* RankViewController.swift */; };
+		825C58451B97F16D00F731CD /* MDTopTapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825C58441B97F16C00F731CD /* MDTopTapView.swift */; };
 		825C7F3A1B8369FD0071FFAF /* img_menu_qrcode@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 825C7F381B8369FD0071FFAF /* img_menu_qrcode@2x.png */; };
 		825C7F3B1B8369FD0071FFAF /* img_menu_water.png in Resources */ = {isa = PBXBuildFile; fileRef = 825C7F391B8369FD0071FFAF /* img_menu_water.png */; };
 		82772B061B7A350400B8C8AD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82772B051B7A350400B8C8AD /* MainViewController.swift */; };
@@ -25,7 +27,6 @@
 		82B6D7FA1B67B53F00F8DF64 /* EampleAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B6D7F91B67B53F00F8DF64 /* EampleAppUITests.swift */; };
 		82B6D81D1B67B5C000F8DF64 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B6D8081B67B5C000F8DF64 /* BaseViewController.swift */; };
 		82B6D81E1B67B5C000F8DF64 /* ChangesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B6D8091B67B5C000F8DF64 /* ChangesViewController.swift */; };
-		82B6D8201B67B5C000F8DF64 /* RankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B6D80B1B67B5C000F8DF64 /* RankViewController.swift */; };
 		82B6D8211B67B5C000F8DF64 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B6D80C1B67B5C000F8DF64 /* RootViewController.swift */; };
 		82B6D8251B67B5C000F8DF64 /* NetWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B6D8121B67B5C000F8DF64 /* NetWork.swift */; };
 		82B6D8261B67B5C000F8DF64 /* Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B6D8131B67B5C000F8DF64 /* Upload.swift */; };
@@ -72,6 +73,8 @@
 		821C04701B70FD2500A27FD7 /* info_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "info_icon@2x.png"; sourceTree = "<group>"; };
 		821F15A41B7E54C70062DE99 /* PictureSwitching.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureSwitching.swift; sourceTree = "<group>"; };
 		82482B401B73A97000E7609C /* UserAboutMeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAboutMeViewController.swift; sourceTree = "<group>"; };
+		825C58411B95E53E00F731CD /* RankViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankViewController.swift; sourceTree = "<group>"; };
+		825C58441B97F16C00F731CD /* MDTopTapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDTopTapView.swift; sourceTree = "<group>"; };
 		825C7F381B8369FD0071FFAF /* img_menu_qrcode@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_menu_qrcode@2x.png"; sourceTree = "<group>"; };
 		825C7F391B8369FD0071FFAF /* img_menu_water.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_menu_water.png; sourceTree = "<group>"; };
 		82772B051B7A350400B8C8AD /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -89,7 +92,6 @@
 		82B6D7FB1B67B53F00F8DF64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		82B6D8081B67B5C000F8DF64 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		82B6D8091B67B5C000F8DF64 /* ChangesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangesViewController.swift; sourceTree = "<group>"; };
-		82B6D80B1B67B5C000F8DF64 /* RankViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankViewController.swift; sourceTree = "<group>"; };
 		82B6D80C1B67B5C000F8DF64 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RootViewController.swift; path = Controllers/RootViewController.swift; sourceTree = "<group>"; };
 		82B6D8121B67B5C000F8DF64 /* NetWork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetWork.swift; sourceTree = "<group>"; };
 		82B6D8131B67B5C000F8DF64 /* Upload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Upload.swift; sourceTree = "<group>"; };
@@ -143,6 +145,22 @@
 				821F15A41B7E54C70062DE99 /* PictureSwitching.swift */,
 			);
 			path = PictureSwitching;
+			sourceTree = "<group>";
+		};
+		825C58401B95E53E00F731CD /* Rank */ = {
+			isa = PBXGroup;
+			children = (
+				825C58411B95E53E00F731CD /* RankViewController.swift */,
+			);
+			path = Rank;
+			sourceTree = "<group>";
+		};
+		825C58431B97F15400F731CD /* MDTopTapView */ = {
+			isa = PBXGroup;
+			children = (
+				825C58441B97F16C00F731CD /* MDTopTapView.swift */,
+			);
+			path = MDTopTapView;
 			sourceTree = "<group>";
 		};
 		82772B041B7A350400B8C8AD /* Main */ = {
@@ -214,11 +232,11 @@
 		82B6D8071B67B5C000F8DF64 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				825C58401B95E53E00F731CD /* Rank */,
 				82B6D8081B67B5C000F8DF64 /* BaseViewController.swift */,
 				82E16BDA1B690DB300807A39 /* User */,
 				82772B041B7A350400B8C8AD /* Main */,
 				82B6D8091B67B5C000F8DF64 /* ChangesViewController.swift */,
-				82B6D80B1B67B5C000F8DF64 /* RankViewController.swift */,
 				82E16BD81B67C47F00807A39 /* SearchViewController.swift */,
 			);
 			path = Controllers;
@@ -227,6 +245,7 @@
 		82B6D8101B67B5C000F8DF64 /* Framework */ = {
 			isa = PBXGroup;
 			children = (
+				825C58431B97F15400F731CD /* MDTopTapView */,
 				82BBCFB11B89A713003DC144 /* MDCrossRangeIcon */,
 				82BBCFAF1B89A322003DC144 /* MDChart */,
 				82C3AC7A1B8607FA002B1527 /* NineCellLockView */,
@@ -463,6 +482,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				82B6D8261B67B5C000F8DF64 /* Upload.swift in Sources */,
+				825C58451B97F16D00F731CD /* MDTopTapView.swift in Sources */,
 				82BBCFB31B89A73D003DC144 /* MDCrossRangeIcon.swift in Sources */,
 				82B6D8291B67B5C000F8DF64 /* mUserTools.swift in Sources */,
 				82B6D8251B67B5C000F8DF64 /* NetWork.swift in Sources */,
@@ -473,10 +493,10 @@
 				82C3AC7C1B86080B002B1527 /* SudokuView.swift in Sources */,
 				82772B061B7A350400B8C8AD /* MainViewController.swift in Sources */,
 				82E16BDE1B690DB300807A39 /* UserLoginViewController.swift in Sources */,
-				82B6D8201B67B5C000F8DF64 /* RankViewController.swift in Sources */,
 				82B6D8211B67B5C000F8DF64 /* RootViewController.swift in Sources */,
 				82E16BD91B67C47F00807A39 /* SearchViewController.swift in Sources */,
 				82F5970D1B8B426D00FA0730 /* DetailedViewController.swift in Sources */,
+				825C58421B95E53E00F731CD /* RankViewController.swift in Sources */,
 				829E066A1B76EFCE002EB866 /* mThreadTool.swift in Sources */,
 				82C3AC791B860643002B1527 /* UserSudokuViewController.swift in Sources */,
 				82B6D81E1B67B5C000F8DF64 /* ChangesViewController.swift in Sources */,
