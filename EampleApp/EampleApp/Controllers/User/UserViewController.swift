@@ -192,18 +192,14 @@ class UserViewController: UIViewController , UITableViewDataSource, UITableViewD
                     //Toast("TouchID验证功能")
                     let laContext = LAContext()
                     //失败次数
-                    laContext.maxBiometryFailures = 3
-                    
-                    
+                    //laContext.maxBiometryFailures = 3
                     
                     laContext.evaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, localizedReason: "通过Home键验证已有手机指纹", reply: { (success, error) -> Void in
                         
                         if(success){
-                            let alert = UIAlertView(title: "验证", message: "成功", delegate: nil, cancelButtonTitle: "Cancel")
-                            alert.show()
+                            self.noticeText("验证", text: "成功", time: 2.0)
                         }else{
-                            let alert = UIAlertView(title: "验证", message: "失败", delegate: nil, cancelButtonTitle: "Cancel")
-                            alert.show()
+                            self.noticeText("验证", text: "失败", time: 2.0)
                         }
                     })
                     

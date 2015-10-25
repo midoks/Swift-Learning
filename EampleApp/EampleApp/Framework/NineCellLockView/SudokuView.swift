@@ -69,9 +69,9 @@ class SudokuView: UIView {
         let context = UIGraphicsGetCurrentContext()
         self.DrawLines()
         //9个圆圈
-        self.drawNineCircle(context)
+        self.drawNineCircle(context!)
         //画错误时的颜色
-        self.DrawTriangleWhenPswIsError(context)
+        self.DrawTriangleWhenPswIsError(context!)
     }
     
     func drawCicle(centerPoint:CGPoint,index:Int,context:CGContext){
@@ -120,7 +120,8 @@ class SudokuView: UIView {
         if(self.selectPointIndexCollection.count > 0) {
             let bp = UIBezierPath()
             bp.lineWidth  = 5
-            bp.lineCapStyle = kCGLineCapRound
+            bp.lineCapStyle = CGLineCap.Round
+            
             if(pswIsRight) {
                 UIColor(red: 96/255.0, green: 169/255.0, blue: 252/255.0, alpha: 1).setStroke()
             } else {

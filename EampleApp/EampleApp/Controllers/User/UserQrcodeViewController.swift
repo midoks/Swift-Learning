@@ -42,6 +42,18 @@ class UserQrcodeViewController: UIViewController , AVCaptureMetadataOutputObject
 //    
 //        captureSession = AVCaptureSession()
 //        captureSession?.addInput(input as AVCaptureInput)
+        
+        setupCamera()
+    }
+    
+    
+    //安装相机
+    func setupCamera(){
+    
+        
+        
+        
+        
     }
     
     //关闭

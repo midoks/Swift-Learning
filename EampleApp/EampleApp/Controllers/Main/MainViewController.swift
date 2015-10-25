@@ -133,9 +133,9 @@ UIScrollViewDelegate, UISearchBarDelegate, UITableViewDelegate, UITableViewDataS
         menu.delegate = self
         
         
-        let t = UIImage(imageLiteral: "img_menu_qrcode")
+        let t = UIImage(named: "img_menu_qrcode")
         
-        menu.addImage(UIImage(named: "img_menu_water.png")!, title: "第一个标题")
+        menu.addImage(UIImage(named: "img_menu_water")!, title: "第一个标题")
         menu.addImage(UIImage(named: "img_menu_water.png")!, title: "第二个标题")
         menu.addImage(UIImage(named: "img_menu_water.png")!, title: "第三个标题")
         menu.addImage(UIImage(named: "img_menu_water.png")!, title: "测试")
@@ -158,8 +158,8 @@ UIScrollViewDelegate, UISearchBarDelegate, UITableViewDelegate, UITableViewDataS
     func MDCrossRangeIconTouch(index: Int) {
         //print(index)
         let s = String(index)
-        let alertV = UIAlertView(title: "您的结果", message: s, delegate: nil, cancelButtonTitle: "我知道了")
-        alertV.show()
+        
+        noticeText("你的结果", text: s, time: 2.0)
     }
     
     //MARK: - TableView Init -
@@ -202,7 +202,7 @@ UIScrollViewDelegate, UISearchBarDelegate, UITableViewDelegate, UITableViewDataS
         cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
     
         let viewContent = MainTableShowView(frame: CGRect(x: 0, y: 0, width: cell.frame.width, height: 60))
-        let image = UIImage(imageLiteral: "img_menu_water")!
+        let image = UIImage( named: "img_menu_water.png")!
         
         let date = NSDate()
         let timeFormatter = NSDateFormatter()
@@ -211,7 +211,9 @@ UIScrollViewDelegate, UISearchBarDelegate, UITableViewDelegate, UITableViewDataS
         let s = timeFormatter.stringFromDate(date)
         
         
-        viewContent.addContent(image,title: "标题",detail: "详情",time: s)
+        NSLog("%@", image)
+        
+        viewContent.addContent(image, title: "标题",detail: "详情",time: s)
         cell.addSubview(viewContent)
         return cell
     }

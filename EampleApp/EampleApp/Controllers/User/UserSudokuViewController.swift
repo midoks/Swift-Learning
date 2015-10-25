@@ -45,8 +45,7 @@ class UserSudokuViewController: UIViewController, SudokuViewDelegate {
         NSLog("pwd:%@, status:%@", pwd, status)
         
         if("end" == status){
-            let alertV = UIAlertView(title: "您的结果", message: pwd as String, delegate: nil, cancelButtonTitle: "我知道了")
-            alertV.show()
+            noticeText("您的结果", text: pwd as String, time: 2.0)
         }
     }
     

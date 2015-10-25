@@ -62,9 +62,27 @@ extension UIViewController {
     func clearAllNotice() {
         mSystemPrompt.clear()
     }
+    
+    //文本提示
+    func noticeText(title:NSString, text:NSString, time:Double){
+        let alert = UIAlertController(title: title as String, message: text as String, preferredStyle: UIAlertControllerStyle.Alert)
+        self.presentViewController(alert, animated: true) { () -> Void in
+            
+        }
+        (NSTimer.scheduledTimerWithTimeInterval(time, target: self, selector: "timerFireMethod:", userInfo: nil, repeats: false)).fire()
+    }
+    
+    func timerFireMethod(timer:NSTimer){
+        self.dismissViewControllerAnimated(true) { () -> Void in
+            
+        }
+    }
 
 }
 
 class BaseViewController: UIViewController {
+    
 
 }
+
+

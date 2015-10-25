@@ -92,7 +92,7 @@ class Upload{
             for file in self.files {
                 
                 data.appendData(strToData("--\(self.boundary)\r\n"))
-                data.appendData(strToData("Content-Disposition: form-data; name=\"\(file.name)\"; filename=\"\(file.url.description.lastPathComponent)\"\r\n\r\n"))
+                data.appendData(strToData("Content-Disposition: form-data; name=\"\(file.name)\"; filename=\"\(file.url.lastPathComponent)\"\r\n\r\n"))
                 
                 if let a = NSData(contentsOfURL: file.url) {
                     data.appendData(a)

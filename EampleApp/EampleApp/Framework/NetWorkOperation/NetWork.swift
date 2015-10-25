@@ -61,7 +61,7 @@ class NetWork {
         let task = session.dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
             callback(data: data, response: response, error: error);
         })
-        task!.resume()
+        task.resume()
     }
     
     //组装请求串
@@ -104,7 +104,7 @@ class NetWork {
                 components += queryComponents("\(key)", value)
             }
         } else {
-            components.extend([(escape(key), escape("\(value)"))])
+            components.appendContentsOf([(escape(key), escape("\(value)"))])
         }
         
         return components

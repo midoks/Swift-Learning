@@ -133,9 +133,9 @@ class UserAboutMeViewController: UIViewController, UIWebViewDelegate {
         web?.delegate = self
         
         //let url = "http://midoks.github.io/"
-        let req = NSURLRequest(URL: NSURL(scheme: "http", host: "midoks.github.io", path: "/")!)
-        self.view.addSubview(web!)
+        let req = NSURLRequest(URL: (NSURLComponents(string: "https://midoks.github.io/")?.URL)!)
         
+        self.view.addSubview(web!)
         web!.loadRequest(req)
     }
     
