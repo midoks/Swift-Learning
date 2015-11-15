@@ -112,6 +112,13 @@ class NetWork {
     
     static func escape(string: String) -> String {
         let legalURLCharactersToBeEscaped: CFStringRef = ":&=;+!@#$()',*"
+        
+        //return NSString.stringByAddingPercentEncodingWithAllowedCharacters(string) as String
+        
+        //var p =  [NSString .stringByAddingPercentEscapesUsingEncoding(string)];
+        //NSLog("%@", p);
+        
+        //return [NSString stringByAddingPercentEncodingWithAllowedCharacters:legalURLCharactersToBeEscaped ] as String;
         return CFURLCreateStringByAddingPercentEscapes(nil, string, nil, legalURLCharactersToBeEscaped, CFStringBuiltInEncodings.UTF8.rawValue) as String
     }
 }

@@ -211,7 +211,7 @@ UIScrollViewDelegate, UISearchBarDelegate, UITableViewDelegate, UITableViewDataS
         let s = timeFormatter.stringFromDate(date)
         
         
-        NSLog("%@", image)
+        //NSLog("%@", image)
         
         viewContent.addContent(image, title: "标题",detail: "详情",time: s)
         cell.addSubview(viewContent)

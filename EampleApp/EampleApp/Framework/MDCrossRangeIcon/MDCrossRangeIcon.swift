@@ -5,6 +5,10 @@
 //  Copyright © 2015年 midoks. All rights reserved.
 //
 
+
+// 横向图标显示delegate
+
+
 import Foundation
 import UIKit
 

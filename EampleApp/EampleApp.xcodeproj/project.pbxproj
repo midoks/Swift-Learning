@@ -36,6 +36,10 @@
 		82C3AC771B85FC97002B1527 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82C3AC761B85FC97002B1527 /* LocalAuthentication.framework */; };
 		82C3AC791B860643002B1527 /* UserSudokuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C3AC781B860643002B1527 /* UserSudokuViewController.swift */; };
 		82C3AC7C1B86080B002B1527 /* SudokuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C3AC7B1B86080B002B1527 /* SudokuView.swift */; };
+		82CFA45F1BF7347800FE49C0 /* MDQrcodeReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CFA45E1BF7347800FE49C0 /* MDQrcodeReader.swift */; };
+		82CFA4611BF7349700FE49C0 /* MDQrcodeReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CFA4601BF7349700FE49C0 /* MDQrcodeReaderViewController.swift */; };
+		82CFA4631BF734B400FE49C0 /* MDQrcodeMake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CFA4621BF734B400FE49C0 /* MDQrcodeMake.swift */; };
+		82CFA4651BF734CB00FE49C0 /* MDQrcodeMakeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CFA4641BF734CB00FE49C0 /* MDQrcodeMakeViewController.swift */; };
 		82E16BD91B67C47F00807A39 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E16BD81B67C47F00807A39 /* SearchViewController.swift */; };
 		82E16BDE1B690DB300807A39 /* UserLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E16BDB1B690DB300807A39 /* UserLoginViewController.swift */; };
 		82E16BDF1B690DB300807A39 /* UserRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E16BDC1B690DB300807A39 /* UserRegisterViewController.swift */; };
@@ -101,6 +105,10 @@
 		82C3AC761B85FC97002B1527 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		82C3AC781B860643002B1527 /* UserSudokuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSudokuViewController.swift; sourceTree = "<group>"; };
 		82C3AC7B1B86080B002B1527 /* SudokuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SudokuView.swift; sourceTree = "<group>"; };
+		82CFA45E1BF7347800FE49C0 /* MDQrcodeReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDQrcodeReader.swift; sourceTree = "<group>"; };
+		82CFA4601BF7349700FE49C0 /* MDQrcodeReaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDQrcodeReaderViewController.swift; sourceTree = "<group>"; };
+		82CFA4621BF734B400FE49C0 /* MDQrcodeMake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDQrcodeMake.swift; sourceTree = "<group>"; };
+		82CFA4641BF734CB00FE49C0 /* MDQrcodeMakeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDQrcodeMakeViewController.swift; sourceTree = "<group>"; };
 		82E16BD81B67C47F00807A39 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		82E16BDB1B690DB300807A39 /* UserLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLoginViewController.swift; sourceTree = "<group>"; };
 		82E16BDC1B690DB300807A39 /* UserRegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRegisterViewController.swift; sourceTree = "<group>"; };
@@ -145,6 +153,17 @@
 				821F15A41B7E54C70062DE99 /* PictureSwitching.swift */,
 			);
 			path = PictureSwitching;
+			sourceTree = "<group>";
+		};
+		82377FFF1BF223BF00A217A1 /* MDQrcode */ = {
+			isa = PBXGroup;
+			children = (
+				82CFA45E1BF7347800FE49C0 /* MDQrcodeReader.swift */,
+				82CFA4601BF7349700FE49C0 /* MDQrcodeReaderViewController.swift */,
+				82CFA4621BF734B400FE49C0 /* MDQrcodeMake.swift */,
+				82CFA4641BF734CB00FE49C0 /* MDQrcodeMakeViewController.swift */,
+			);
+			path = MDQrcode;
 			sourceTree = "<group>";
 		};
 		825C58401B95E53E00F731CD /* Rank */ = {
@@ -245,6 +264,7 @@
 		82B6D8101B67B5C000F8DF64 /* Framework */ = {
 			isa = PBXGroup;
 			children = (
+				82377FFF1BF223BF00A217A1 /* MDQrcode */,
 				825C58431B97F15400F731CD /* MDTopTapView */,
 				82BBCFB11B89A713003DC144 /* MDCrossRangeIcon */,
 				82BBCFAF1B89A322003DC144 /* MDChart */,
@@ -495,15 +515,19 @@
 				82E16BDE1B690DB300807A39 /* UserLoginViewController.swift in Sources */,
 				82B6D8211B67B5C000F8DF64 /* RootViewController.swift in Sources */,
 				82E16BD91B67C47F00807A39 /* SearchViewController.swift in Sources */,
+				82CFA4631BF734B400FE49C0 /* MDQrcodeMake.swift in Sources */,
 				82F5970D1B8B426D00FA0730 /* DetailedViewController.swift in Sources */,
 				825C58421B95E53E00F731CD /* RankViewController.swift in Sources */,
 				829E066A1B76EFCE002EB866 /* mThreadTool.swift in Sources */,
 				82C3AC791B860643002B1527 /* UserSudokuViewController.swift in Sources */,
+				82CFA4651BF734CB00FE49C0 /* MDQrcodeMakeViewController.swift in Sources */,
 				82B6D81E1B67B5C000F8DF64 /* ChangesViewController.swift in Sources */,
 				82F5970F1B8B47B400FA0730 /* UserQrcodeViewController.swift in Sources */,
 				82F065141B916F320007B1C9 /* MainTableShowView.swift in Sources */,
 				82B6D81D1B67B5C000F8DF64 /* BaseViewController.swift in Sources */,
+				82CFA4611BF7349700FE49C0 /* MDQrcodeReaderViewController.swift in Sources */,
 				821F15A51B7E54C70062DE99 /* PictureSwitching.swift in Sources */,
+				82CFA45F1BF7347800FE49C0 /* MDQrcodeReader.swift in Sources */,
 				82E16BDF1B690DB300807A39 /* UserRegisterViewController.swift in Sources */,
 				821C046E1B705E9D00A27FD7 /* mJSON.swift in Sources */,
 			);
