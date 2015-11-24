@@ -17,36 +17,36 @@ class ViewController: UIViewController {
 
     @IBAction func RequestNetWork(sender: UIButton) {
         
-        println(NSHomeDirectory())
+        print(NSHomeDirectory())
         //无参数GET获取
         NetWork.get("http://m.cn/swift.php", callback: { (data, response, error) -> Void in
             let string = NSString(data: data, encoding: NSUTF8StringEncoding)
-            println(string)
+            print(string)
         })
         
         //有参数GET获取
         NetWork.getWithParams("http://m.cn/swift.php?a=true", params: ["h":"true"]) { (data, response, error) -> Void in
             let string = NSString(data: data, encoding: NSUTF8StringEncoding)
-            println(string)
+            print(string)
             
             //使用这个json解析,非常方便
             //https://github.com/lingoer/SwiftyJSON
             let json = JSON(data: data, options: NSJSONReadingOptions.MutableContainers, error: nil)
-            println(json[0]["a"].string)
+            print(json[0]["a"].string)
             
         }
         
         //POST传输数据
         NetWork.postWithParams("http://m.cn/swift.php?a=true", params: ["h":"true"]) { (data, response, error) -> Void in
             let string = NSString(data: data, encoding: NSUTF8StringEncoding)
-            println(string)
+            print(string)
         }
         
         //文件上传
-        let file = File(name: "file", url: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("Info", ofType: "plist")!)!)
+        let file = File(name: "file", url: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("Info", ofType: "plist")!))
         NetWork.upload("http://m.cn/swift.php", files: [file]) { (data, response, error) -> Void in
             let string = NSString(data: data, encoding: NSUTF8StringEncoding)
-            println(string)
+            print(string)
         }
         
     }

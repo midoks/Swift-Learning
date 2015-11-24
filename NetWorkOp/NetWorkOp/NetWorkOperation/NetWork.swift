@@ -67,11 +67,11 @@ class NetWork {
     //组装请求串
     func buildParams(parameters: [String: AnyObject]) -> String {
         var components: [(String, String)] = []
-        for key in sorted(Array(parameters.keys), <) {
+        for key in Array(parameters.keys).sort(<) {
             let value: AnyObject! = parameters[key]
             components += self.queryComponents(key, value)
         }
-        return join("&", components.map{"\($0)=\($1)"} as [String])
+        return (components.map{"\($0)=\($1)"} as [String]).joinWithSeparator("&")
     }
     
     //过滤特殊字符
@@ -86,7 +86,7 @@ class NetWork {
                 components += queryComponents("\(key)", value)
             }
         } else {
-            components.extend([(escape(key), escape("\(value)"))])
+            components.appendContentsOf([(escape(key), escape("\(value)"))])
         }
         
         return components

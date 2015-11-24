@@ -92,7 +92,7 @@ class Upload{
             for file in self.files {
                 
                 data.appendData(strToData("--\(self.boundary)\r\n"))
-                data.appendData(strToData("Content-Disposition: form-data; name=\"\(file.name)\"; filename=\"\(file.url.description.lastPathComponent)\"\r\n\r\n"))
+                data.appendData(strToData("Content-Disposition: form-data; name=\"\(file.name)\"; filename=\"\((file.url.description as NSString).lastPathComponent)\"\r\n\r\n"))
                 
                 if let a = NSData(contentsOfURL: file.url) {
                     data.appendData(a)
@@ -124,11 +124,11 @@ class Upload{
     //组装请求串
     func buildParams(parameters: [String: AnyObject]) -> String {
         var components: [(String, String)] = []
-        for key in sorted(Array(parameters.keys), <) {
+        for key in Array(parameters.keys).sort(<) {
             let value: AnyObject! = parameters[key]
             components += self.queryComponents(key, value)
         }
-        return join("&", components.map{"\($0)=\($1)"} as [String])
+        return (components.map{"\($0)=\($1)"} as [String]).joinWithSeparator("&")
     }
     
     //过滤特殊字符
@@ -143,7 +143,7 @@ class Upload{
                 components += queryComponents("\(key)", value)
             }
         } else {
-            components.extend([(escape(key), escape("\(value)"))])
+            components.appendContentsOf([(escape(key), escape("\(value)"))])
         }
         
         return components
