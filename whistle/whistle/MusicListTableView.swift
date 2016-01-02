@@ -20,21 +20,21 @@ class MusicListTableView:UIView {
     /* 布局开发 添加view */
     func start(){
 
-        var width = self.frame.size.width / CGFloat(num)
+        let width = self.frame.size.width / CGFloat(num)
         self.frame.size.height = 120.0
         
         for(var hn = 0; hn<1; hn++)
         {
-            var hnpos = CGFloat(hn) * CGFloat(60.0)
+            let hnpos = CGFloat(hn) * CGFloat(60.0)
             for(var i:NSInteger=0; i<self.num; i++)
             {
-                var Music:UIButton = UIButton.buttonWithType(UIButtonType.System) as! UIButton;
-                var pos = CGFloat(i) * CGFloat(width);
+                let Music:UIButton = UIButton(type: UIButtonType.System);
+                let pos = CGFloat(i) * CGFloat(width);
                 Music.frame = CGRectMake(pos, hnpos, width, 60)
                 Music.backgroundColor = UIColor.greenColor()
                 Music.tag = i;
 
-                var istring = String(i+hn);
+                let istring = String(i+hn);
                 Music.setTitle(istring, forState: UIControlState.Normal)
                 self.addSubview(Music)
                 

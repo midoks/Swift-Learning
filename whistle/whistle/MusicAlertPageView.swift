@@ -18,11 +18,11 @@ class MusicAlertPageView:UIView {
     
     func start(){
         
-        var view = UIView(frame: CGRectMake(0, 0, self.frame.width, self.frame.height))
+        let view = UIView(frame: CGRectMake(0, 0, self.frame.width, self.frame.height))
         view.backgroundColor = UIColor.grayColor()
         view.alpha = 0.8
         
-        var showview = UIView(frame: CGRectMake(0, 0, self.frame.width, 150))
+        let showview = UIView(frame: CGRectMake(0, 0, self.frame.width, 150))
         showview.backgroundColor = UIColor.whiteColor()
         showview.center = CGPoint(x: self.frame.width/2, y: self.frame.height/2)
         showview.alpha = 1.0
@@ -31,13 +31,13 @@ class MusicAlertPageView:UIView {
         self.addSubview(showview)
         
         //标题
-        var titleName = UILabel(frame: CGRectMake(0.0, 0.0, showview.frame.width, 40))
+        let titleName = UILabel(frame: CGRectMake(0.0, 0.0, showview.frame.width, 40))
         titleName.backgroundColor = UIColor.clearColor()
         titleName.textAlignment = NSTextAlignment.Center
         titleName.text = "点击按钮开始录口哨音"
         
         //录制按钮
-        var button_record = UIButton(frame: CGRectMake(0, 0, 60, 60))
+        let button_record = UIButton(frame: CGRectMake(0, 0, 60, 60))
         button_record.backgroundColor = UIColor.redColor()
         button_record.center =  CGPoint(x:showview.frame.width/2 - 32,y:showview.frame.height/2)
         button_record.layer.cornerRadius = 30
@@ -47,7 +47,7 @@ class MusicAlertPageView:UIView {
         button_record.addTarget(self, action: Selector("record_sound_end:"), forControlEvents: UIControlEvents.TouchUpInside)
         
         //关闭按钮
-        var button_close =  UIButton(frame: CGRectMake(0, 0, 60, 60))
+        let button_close =  UIButton(frame: CGRectMake(0, 0, 60, 60))
         button_close.backgroundColor = UIColor.brownColor()
         button_close.center =  CGPoint(x:showview.frame.width/2 + 32,y:showview.frame.height/2)
         button_close.layer.cornerRadius = 30
