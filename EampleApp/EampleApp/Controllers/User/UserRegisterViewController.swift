@@ -26,8 +26,8 @@ class UserRegisterViewController: UIViewController, UITextFieldDelegate {
     }
     
     func initNav(){
-        let leftButton  = UIBarButtonItem(title: "取消", style: UIBarButtonItemStyle.Plain, target: self, action: Selector("close:"))
-        let rightButton = UIBarButtonItem(title: "登录", style: UIBarButtonItemStyle.Plain, target: self, action: Selector("login"))
+        let leftButton  = UIBarButtonItem(title: "取消", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(UserRegisterViewController.close(_:)))
+        let rightButton = UIBarButtonItem(title: "登录", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(UserRegisterViewController.login))
         
         self.navigationItem.leftBarButtonItem   = leftButton
         self.navigationItem.rightBarButtonItem  = rightButton
@@ -122,7 +122,7 @@ class UserRegisterViewController: UIViewController, UITextFieldDelegate {
         regButton!.setTitleColor(UIColor.brownColor(), forState: UIControlState.Highlighted)
     
         regButton!.setTitle("注册", forState: UIControlState.Normal)
-        regButton!.addTarget(self, action: Selector("doRegUser:"), forControlEvents: UIControlEvents.TouchUpInside)
+        regButton!.addTarget(self, action: #selector(UserRegisterViewController.doRegUser(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(regButton!)
     }
     

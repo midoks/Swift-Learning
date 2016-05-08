@@ -54,7 +54,7 @@ class MDCrossRangeIcon: UIView {
     func addFillIcon(number: Int){
         let num = number - self.iconList.count
         if(num > 0){
-            for(var i = 0; i < num; i++){
+            for _ in 0 ..< num {
                 self.addImage(UIImage(), title: "")
             }
         }
@@ -71,8 +71,8 @@ class MDCrossRangeIcon: UIView {
         let viewIconHeight = self.rowHeight
     
         var num = 0
-        for(var i = 0; i < row; i++){
-            for(var j = 0; j < column; j++){
+        for i in 0 ..< row {
+            for j in 0 ..< column {
                 if(self.iconList.count > num){
                     //print(num)
                     let value = self.iconList[num]
@@ -82,7 +82,7 @@ class MDCrossRangeIcon: UIView {
 //                else{
 //                    self.addImage(UIImage(named: "img_menu_water.png")!, title: "11")
 //                }
-                num++
+                num += 1
             }
         }
     }
@@ -99,7 +99,7 @@ class MDCrossRangeIcon: UIView {
             size: CGSize(width: 58, height: 58))
         menuIconItem.setBackgroundImage(bgImage, forState: UIControlState.Highlighted)
         menuIconItem.tag = num
-        menuIconItem.addTarget(self, action: Selector("itemClick:"), forControlEvents: UIControlEvents.TouchUpInside)
+        menuIconItem.addTarget(self, action: #selector(MDCrossRangeIcon.itemClick(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         
         
         //图片

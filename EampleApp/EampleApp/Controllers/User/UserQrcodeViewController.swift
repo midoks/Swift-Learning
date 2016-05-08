@@ -16,7 +16,7 @@ class UserQrcodeViewController: UIViewController{
         
         
         self.view.backgroundColor = UIColor(red: 35/255.0, green: 39/255.0, blue: 54/255.0, alpha: 1)
-        let leftButton = UIBarButtonItem(title: "取消", style: UIBarButtonItemStyle.Plain, target: self, action: Selector("close:"))
+        let leftButton = UIBarButtonItem(title: "取消", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(UserQrcodeViewController.close(_:)))
         self.navigationItem.leftBarButtonItem   = leftButton
         
         

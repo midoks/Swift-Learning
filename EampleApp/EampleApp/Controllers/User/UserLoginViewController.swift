@@ -20,8 +20,8 @@ class UserLoginViewController: UIViewController, UITextFieldDelegate {
     
     //初始化导航
     func initNav(){
-        let leftButton = UIBarButtonItem(title: "取消", style: UIBarButtonItemStyle.Plain, target: self, action: Selector("close:"))
-        let rightButton = UIBarButtonItem(title: "注册", style: UIBarButtonItemStyle.Plain, target: self, action: Selector("register"))
+        let leftButton = UIBarButtonItem(title: "取消", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(UserLoginViewController.close(_:)))
+        let rightButton = UIBarButtonItem(title: "注册", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(UserLoginViewController.register))
         
         self.navigationItem.leftBarButtonItem   = leftButton
         self.navigationItem.rightBarButtonItem  = rightButton
@@ -98,7 +98,7 @@ class UserLoginViewController: UIViewController, UITextFieldDelegate {
         loginButton.setTitle("登录", forState: UIControlState.Normal)
         loginButton.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
         loginButton.setTitleColor(UIColor.brownColor(), forState: UIControlState.Highlighted)
-        loginButton.addTarget(self, action: Selector("close:"), forControlEvents: UIControlEvents.TouchUpInside)
+        loginButton.addTarget(self, action: #selector(UserLoginViewController.close(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(loginButton)
     }
     

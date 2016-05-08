@@ -69,7 +69,7 @@ class PictureSwitching: UIView, UIScrollViewDelegate {
             contentScrollView.scrollEnabled = !(imageArray.count == 1)
             self.addSubview(contentScrollView)
             
-            for(var i=0; i < self.imageArray.count; i++){
+            for i in 0 ..< self.imageArray.count {
                 let imgView = UIImageView()
                 imgView.frame = CGRectMake(self.frame.size.width * CGFloat(i), 0, self.frame.size.width, 200)
                 imgView.userInteractionEnabled = true
@@ -79,7 +79,7 @@ class PictureSwitching: UIView, UIScrollViewDelegate {
                 imgView.image = self.imageArray[i]
                 
                 //添加点击事件
-                let imageTap = UITapGestureRecognizer(target: self, action: Selector("imageTapAction:"))
+                let imageTap = UITapGestureRecognizer(target: self, action: #selector(PictureSwitching.imageTapAction(_:)))
                 imgView.addGestureRecognizer(imageTap)
             }
         }
@@ -108,7 +108,7 @@ class PictureSwitching: UIView, UIScrollViewDelegate {
     func timeStart(){
         if(self.timer == nil){
             self.timer = NSTimer.scheduledTimerWithTimeInterval(2, target: self,
-                    selector: "timerAction", userInfo: nil, repeats: true)
+                    selector: #selector(PictureSwitching.timerAction), userInfo: nil, repeats: true)
         }
     }
     

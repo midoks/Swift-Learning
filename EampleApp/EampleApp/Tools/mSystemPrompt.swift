@@ -51,7 +51,7 @@ class mSystemPrompt: NSObject {
         windows.append(window)
         
         if autoClear {
-            let selector = Selector("hideNotice:")
+            let selector = #selector(mSystemPrompt.hideNotice(_:))
             self.performSelector(selector, withObject: view, afterDelay: 1)
         }
     }
@@ -110,7 +110,7 @@ class mSystemPrompt: NSObject {
         windows.append(window)
         
         if autoClear {
-            let selector = Selector("hideNotice:")
+            let selector = #selector(mSystemPrompt.hideNotice(_:))
             self.performSelector(selector, withObject: mainView, afterDelay: time)
         }
     }
@@ -153,7 +153,7 @@ class mSystemPrompt: NSObject {
         windows.append(window)
         
         if autoClear {
-            let selector = Selector("hideNotice:")
+            let selector = #selector(mSystemPrompt.hideNotice(_:))
             self.performSelector(selector, withObject: mainView, afterDelay: 3)
         }
     }

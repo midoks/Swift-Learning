@@ -82,7 +82,7 @@ class NetWork {
             }else{
                 buildUrl += "\(arg)&"
             }
-            i++
+            i += 1
         }
         
         return buildUrl

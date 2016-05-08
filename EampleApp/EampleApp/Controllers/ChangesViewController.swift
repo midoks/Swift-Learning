@@ -58,7 +58,7 @@ class ChangesViewController: UIViewController, UITableViewDelegate, UITableViewD
         self._tableData = NSMutableArray()
         
         
-        for(var i=0; i<20; i++){
+        for _ in 0 ..< 20 {
             
             let date = NSDate()
             let dateFormatter = NSDateFormatter()
@@ -78,7 +78,7 @@ class ChangesViewController: UIViewController, UITableViewDelegate, UITableViewD
     //下拉刷新
     func setupUpRefresh(){
         _pullRefresh = UIRefreshControl(frame: CGRect(x: 0, y: 30, width: self.view.frame.size.width, height: 20))
-        _pullRefresh!.addTarget(self, action: Selector("refreshData:"), forControlEvents: UIControlEvents.ValueChanged)
+        _pullRefresh!.addTarget(self, action: #selector(ChangesViewController.refreshData(_:)), forControlEvents: UIControlEvents.ValueChanged)
         _pullRefresh!.attributedTitle = NSAttributedString(string: "下拉刷新")
         _pullRefresh?.backgroundColor = UIColor(red: 239/255, green: 239/255, blue: 244/255, alpha: 1)
         
@@ -107,7 +107,7 @@ class ChangesViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         _footerButton = UIButton(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 40))
         _footerButton!.setTitle("加载更多", forState: UIControlState.Normal)
-        _footerButton!.addTarget(self, action: Selector("addList:"), forControlEvents: UIControlEvents.TouchUpInside)
+        _footerButton!.addTarget(self, action: #selector(ChangesViewController.addList(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         _footerButton!.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
         _footerButton!.backgroundColor = UIColor(red: 239/255, green: 239/255, blue: 244/255, alpha: 1)
         

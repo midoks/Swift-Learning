@@ -69,7 +69,7 @@ extension UIViewController {
         self.presentViewController(alert, animated: true) { () -> Void in
             
         }
-        (NSTimer.scheduledTimerWithTimeInterval(time, target: self, selector: "timerFireMethod:", userInfo: nil, repeats: false)).fire()
+        (NSTimer.scheduledTimerWithTimeInterval(time, target: self, selector: #selector(UIViewController.timerFireMethod(_:)), userInfo: nil, repeats: false)).fire()
     }
     
     func timerFireMethod(timer:NSTimer){

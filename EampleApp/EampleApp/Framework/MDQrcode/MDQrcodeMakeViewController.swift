@@ -15,7 +15,7 @@ class MDQrcodeMakeViewController: UIViewController {
         super.viewDidLoad()
         
         self.view.backgroundColor = UIColor.whiteColor()
-        let leftButton = UIBarButtonItem(title: "取消", style: UIBarButtonItemStyle.Plain, target: self, action: Selector("close:"))
+        let leftButton = UIBarButtonItem(title: "取消", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(MDQrcodeMakeViewController.close(_:)))
         self.navigationItem.leftBarButtonItem   = leftButton
         
         let sQrcode = CGSize(width: 260, height: 260)

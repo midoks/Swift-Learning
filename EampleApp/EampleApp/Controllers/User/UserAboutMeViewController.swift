@@ -20,7 +20,7 @@ class UserAboutMeViewController: UIViewController, UIWebViewDelegate {
         
         self.title = "关于我"
         
-        self.loadTimer = NSTimer.scheduledTimerWithTimeInterval(0.01667, target: self, selector: Selector("loadProgressViewCallback"), userInfo: nil, repeats: true)
+        self.loadTimer = NSTimer.scheduledTimerWithTimeInterval(0.01667, target: self, selector: #selector(UserAboutMeViewController.loadProgressViewCallback), userInfo: nil, repeats: true)
     
         
         //请求页面
@@ -33,7 +33,7 @@ class UserAboutMeViewController: UIViewController, UIWebViewDelegate {
         //print(self.navigationController?.navigationBar.frame.height)    //导航高度
         //print(UIApplication.sharedApplication().statusBarFrame.height)  //状态高度
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("NSNotificationCenterUser"), name: UIDeviceOrientationDidChangeNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(UserAboutMeViewController.NSNotificationCenterUser), name: UIDeviceOrientationDidChangeNotification, object: nil)
         
     }
     
@@ -75,7 +75,7 @@ class UserAboutMeViewController: UIViewController, UIWebViewDelegate {
         
         if(mProgressView!.progress == 1){
             self.loadTimer!.invalidate()
-            self.loadTimer = NSTimer.scheduledTimerWithTimeInterval(0.01667, target: self, selector: Selector("loadProgressViewCallback"), userInfo: nil, repeats: true)
+            self.loadTimer = NSTimer.scheduledTimerWithTimeInterval(0.01667, target: self, selector: #selector(UserAboutMeViewController.loadProgressViewCallback), userInfo: nil, repeats: true)
         }
         
         
