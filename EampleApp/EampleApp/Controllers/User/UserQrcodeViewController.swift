@@ -16,7 +16,7 @@ class UserQrcodeViewController: UIViewController{
         
         
         self.view.backgroundColor = UIColor(red: 35/255.0, green: 39/255.0, blue: 54/255.0, alpha: 1)
-        let leftButton = UIBarButtonItem(title: "取消", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(UserQrcodeViewController.close(_:)))
+        let leftButton = UIBarButtonItem(title: "取消", style: UIBarButtonItemStyle.plain, target: self, action: #selector(UserQrcodeViewController.close(_:)))
         self.navigationItem.leftBarButtonItem   = leftButton
         
         
@@ -33,8 +33,8 @@ class UserQrcodeViewController: UIViewController{
     }
     
     //关闭
-    func close(button: UIButton){
-        self.dismissViewControllerAnimated(true) { () -> Void in
+    func close(_ button: UIButton){
+        self.dismiss(animated: true) { () -> Void in
             print("close")
         }
     }

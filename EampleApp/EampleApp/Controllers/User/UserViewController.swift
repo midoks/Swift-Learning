@@ -25,7 +25,7 @@ class UserViewController: UIViewController , UITableViewDataSource, UITableViewD
         
         self.title = "我"
         
-        _tableView              = UITableView(frame: self.view.frame, style: UITableViewStyle.Grouped)
+        _tableView              = UITableView(frame: self.view.frame, style: UITableViewStyle.grouped)
         _tableView!.dataSource  = self
         _tableView!.delegate    = self
         
@@ -38,7 +38,7 @@ class UserViewController: UIViewController , UITableViewDataSource, UITableViewD
     
     
     //视图重新显示时
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         _isLogin = mUserTools.isLogin()
         if(_isLogin == true){
             _tableView!.reloadData()
@@ -68,7 +68,7 @@ class UserViewController: UIViewController , UITableViewDataSource, UITableViewD
     }
     
     //tabview多少组
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         if _isLogin == true {
             return 4
         }
@@ -76,7 +76,7 @@ class UserViewController: UIViewController , UITableViewDataSource, UITableViewD
     }
     
     //每组多少行
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if _isLogin == true {
             
@@ -94,7 +94,7 @@ class UserViewController: UIViewController , UITableViewDataSource, UITableViewD
     }
     
     //每行的数据
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = UITableViewCell()
         
@@ -106,49 +106,49 @@ class UserViewController: UIViewController , UITableViewDataSource, UITableViewD
                 if( 0 == indexPath.row){
                     cell.textLabel!.text = "我的"
                     cell.imageView!.image = UIImage(named: "tabbar_me")
-                    cell.imageView?.backgroundColor = UIColor.clearColor()
-                    cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+                    cell.imageView?.backgroundColor = UIColor.clear
+                    cell.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
                 }
             }else if(1 == indexPath.section){
                 if( 0 == indexPath.row){
                     cell.textLabel!.text = "浏览记录"
                     cell.imageView!.image = UIImage(named: "tabbar_me")
-                    cell.imageView?.backgroundColor = UIColor.clearColor()
-                    cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+                    cell.imageView?.backgroundColor = UIColor.clear
+                    cell.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
                 }else if(1 == indexPath.row){
                     cell.textLabel!.text = "分享"
                     cell.imageView!.image = UIImage(named: "tabbar_me")
-                    cell.imageView?.backgroundColor = UIColor.clearColor()
-                    cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+                    cell.imageView?.backgroundColor = UIColor.clear
+                    cell.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
                 }else if(2 == indexPath.row){
                     cell.textLabel!.text = "意见反馈"
                     cell.imageView!.image = UIImage(named: "tabbar_me")
-                    cell.imageView?.backgroundColor = UIColor.clearColor()
-                    cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+                    cell.imageView?.backgroundColor = UIColor.clear
+                    cell.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
                 }else if(3 == indexPath.row){
                     cell.textLabel!.text = "关于我"
                     cell.imageView!.image = UIImage(named: "tabbar_me")
-                    cell.imageView?.backgroundColor = UIColor.clearColor()
-                    cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+                    cell.imageView?.backgroundColor = UIColor.clear
+                    cell.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
                 }
                 
             }else if (indexPath.section == 2){
                 
                 if(0 == indexPath.row){
-                    cell.textLabel?.textAlignment = NSTextAlignment.Center
+                    cell.textLabel?.textAlignment = NSTextAlignment.center
                     cell.textLabel?.text = "TouchID验证"
                 }else if(1 == indexPath.row){
-                    cell.textLabel?.textAlignment = NSTextAlignment.Center
+                    cell.textLabel?.textAlignment = NSTextAlignment.center
                     cell.textLabel?.text = "九宫格验证"
                 }else if(2 == indexPath.row){
-                    cell.textLabel?.textAlignment = NSTextAlignment.Center
+                    cell.textLabel?.textAlignment = NSTextAlignment.center
                     cell.textLabel?.text = "二维码识别"
                 }
                 
             }else if(indexPath.section == 3){
                 if(0 == indexPath.row){
-                    cell.textLabel?.textAlignment = NSTextAlignment.Center
-                    cell.textLabel?.textColor = UIColor.redColor()
+                    cell.textLabel?.textAlignment = NSTextAlignment.center
+                    cell.textLabel?.textColor = UIColor.red
                     cell.textLabel?.text = "退出登录"
                 }
             }
@@ -157,14 +157,14 @@ class UserViewController: UIViewController , UITableViewDataSource, UITableViewD
     }
     
     //table 点击事件
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         
         if( _isLogin != true ){
             //登录
             let u = UserLoginViewController()
             let uNav = UINavigationController(rootViewController: u)
-            self.presentViewController(uNav, animated: true, completion: nil)
+            self.present(uNav, animated: true, completion: nil)
         }else{
             
             if(0 == indexPath.section ){
@@ -178,7 +178,7 @@ class UserViewController: UIViewController , UITableViewDataSource, UITableViewD
                 if(3 == indexPath.row){
                     let aboutMe = UserAboutMeViewController();
                     //self.tabBarController?.hidesBottomBarWhenPushed = true
-                    self.tabBarController?.tabBar.hidden = true
+                    self.tabBarController?.tabBar.isHidden = true
                     self.navigationController?.pushViewController(aboutMe, animated: true)
                     
                     
@@ -194,7 +194,7 @@ class UserViewController: UIViewController , UITableViewDataSource, UITableViewD
                     //失败次数
                     //laContext.maxBiometryFailures = 3
                     
-                    laContext.evaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, localizedReason: "通过Home键验证已有手机指纹", reply: { (success, error) -> Void in
+                    laContext.evaluatePolicy(LAPolicy.deviceOwnerAuthenticationWithBiometrics, localizedReason: "通过Home键验证已有手机指纹", reply: { (success, error) -> Void in
                         
                         if(success){
                             self.noticeText("验证", text: "成功", time: 2.0)
@@ -206,12 +206,12 @@ class UserViewController: UIViewController , UITableViewDataSource, UITableViewD
                 }else if(1 == indexPath.row){
                     let u = UserSudokuViewController()
                     let uNav = UINavigationController(rootViewController: u)
-                    self.presentViewController(uNav, animated: true, completion: nil)
+                    self.present(uNav, animated: true, completion: nil)
                     
                 }else if(2 == indexPath.row){
                     let u = UserQrcodeViewController()
                     let uNav = UINavigationController(rootViewController: u)
-                    self.presentViewController(uNav, animated: true, completion: nil)
+                    self.present(uNav, animated: true, completion: nil)
                 }
                 
                 
@@ -219,9 +219,9 @@ class UserViewController: UIViewController , UITableViewDataSource, UITableViewD
                 
                 if( 0 == indexPath.row ){
                     
-                    let alert = UIAlertController(title: "", message: "你真的要退出账号？", preferredStyle: UIAlertControllerStyle.Alert)
-                    let cancelAction = UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel, handler: nil)
-                    let yesAction = UIAlertAction(title: "是的", style: UIAlertActionStyle.Default, handler: { (UIAlertAction) -> Void in
+                    let alert = UIAlertController(title: "", message: "你真的要退出账号？", preferredStyle: UIAlertControllerStyle.alert)
+                    let cancelAction = UIAlertAction(title: "取消", style: UIAlertActionStyle.cancel, handler: nil)
+                    let yesAction = UIAlertAction(title: "是的", style: UIAlertActionStyle.default, handler: { (UIAlertAction) -> Void in
                         
                         mUserTools.loginOut()
                         self._isLogin = mUserTools.isLogin()
@@ -230,7 +230,7 @@ class UserViewController: UIViewController , UITableViewDataSource, UITableViewD
                     alert.addAction(cancelAction)
                     alert.addAction(yesAction)
                     
-                    self.presentViewController(alert, animated: true, completion: nil)
+                    self.present(alert, animated: true, completion: nil)
                 }
                 
             }

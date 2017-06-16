@@ -11,9 +11,9 @@ import Foundation
 
 struct File{
     let name: String!
-    let url: NSURL!
+    let url: URL!
     
-    init(name:String, url: NSURL){
+    init(name:String, url: URL){
         self.name   = name
         self.url    = url
     }
@@ -26,15 +26,15 @@ class Upload{
     let url: String!
     let method: String!
     let params: Dictionary<String, AnyObject>
-    let callback: (data: NSData!, response: NSURLResponse!, error: NSError!)->Void
+    let callback: (_ data: Data?, _ response: URLResponse?, _ error: NSError?)->Void
     
-    let session: NSURLSession!
+    let session: URLSession!
     var request: NSMutableURLRequest!
-    var task: NSURLSessionTask!
+    var task: URLSessionTask!
     
     var files: Array<File>
     
-    init(url: String, method: String, params: Dictionary<String, AnyObject> = Dictionary<String, AnyObject>(), files: Array<File> =  Array<File>(), callback:(data: NSData!, response: NSURLResponse!, error: NSError!)->Void){
+    init(url: String, method: String, params: Dictionary<String, AnyObject> = Dictionary<String, AnyObject>(), files: Array<File> =  Array<File>(), callback:@escaping (_ data: Data?, _ response: URLResponse?, _ error: NSError?)->Void){
         
         self.url        = url
         self.method     = method
@@ -42,8 +42,8 @@ class Upload{
         self.files      = files
         self.callback   = callback
         
-        self.session = NSURLSession.sharedSession()
-        self.request    = NSMutableURLRequest(URL: NSURL(string: url)!)
+        self.session = URLSession.shared
+        self.request    = NSMutableURLRequest(url: URL(string: url)!)
         
         //add files
         self.files      = files
@@ -62,10 +62,10 @@ class Upload{
     //建立请求
     func buildRequest(){
         if self.method == "GET" && self.params.count > 0 {
-            self.request = NSMutableURLRequest(URL: NSURL(string: url + "?" + NetWork.buildParams(self.params))!)
+            self.request = NSMutableURLRequest(url: URL(string: url + "?" + NetWork.buildParams(self.params))!)
         }
         
-        request.HTTPMethod = self.method
+        request.httpMethod = self.method
         
         if self.files.count > 0 {
             request.addValue("multipart/form-data; boundary=" + self.boundary, forHTTPHeaderField: "Content-Type")
@@ -84,41 +84,41 @@ class Upload{
             }
             
             for (key, value) in self.params {
-                data.appendData(strToData("--\(self.boundary)\r\n"))
-                data.appendData(strToData("Content-Disposition: form-data; name=\"\(key)\"\r\n\r\n"))
-                data.appendData(strToData("\(value.description)\r\n"))
+                data.append(strToData("--\(self.boundary)\r\n"))
+                data.append(strToData("Content-Disposition: form-data; name=\"\(key)\"\r\n\r\n"))
+                data.append(strToData("\(value.description)\r\n"))
             }
             
             for file in self.files {
                 
-                data.appendData(strToData("--\(self.boundary)\r\n"))
-                data.appendData(strToData("Content-Disposition: form-data; name=\"\(file.name)\"; filename=\"\(file.url.lastPathComponent)\"\r\n\r\n"))
+                data.append(strToData("--\(self.boundary)\r\n"))
+                data.append(strToData("Content-Disposition: form-data; name=\"\(file.name)\"; filename=\"\(file.url.lastPathComponent)\"\r\n\r\n"))
                 
-                if let a = NSData(contentsOfURL: file.url) {
-                    data.appendData(a)
-                    data.appendData(strToData("\r\n"))
+                if let a = try? Data(contentsOf: file.url) {
+                    data.append(a)
+                    data.append(strToData("\r\n"))
                 }
             }
             
-            data.appendData(strToData("--\(self.boundary)--\r\n"))
+            data.append(strToData("--\(self.boundary)--\r\n"))
         
         } else if self.params.count > 0 && self.method != "GET" {
-            data.appendData(strToData(NetWork.buildParams(self.params)))
+            data.append(strToData(NetWork.buildParams(self.params)))
         }
-        request.HTTPBody = data
+        request.httpBody = data as Data
     }
     
     //进程运行
     func fireTask(){
-        task = session.dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
-            self.callback(data: data, response: response, error: error)
-        })
+//        task = session.dataTask(with: request, completionHandler: { (data, response, error) -> Void in
+//            self.callback(data, response, error)
+//        })
         task.resume()
     }
     
     //字符串转化为NSData
-    func strToData(string:String)->NSData{
-        return string.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)!
+    func strToData(_ string:String)->Data{
+        return string.data(using: String.Encoding.utf8, allowLossyConversion: true)!
     }
 
 }

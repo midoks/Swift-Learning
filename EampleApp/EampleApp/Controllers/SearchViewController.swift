@@ -17,7 +17,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITextFieldDe
         let search = UISearchBar(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width * 0.95, height: 40))
         search.showsCancelButton = true
         
-        search.backgroundColor = UIColor.clearColor()
+        search.backgroundColor = UIColor.clear
         search.placeholder  = "搜索"
         search.delegate     = self
 
@@ -28,15 +28,15 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITextFieldDe
         self.navigationItem.leftBarButtonItem = leftNavButtom
     }
     
-    func searchBarShouldBeginEditing(searchBar: UISearchBar) -> Bool {
+    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
         
         let top = searchBar.subviews[0]
         
         for l:UIView in top.subviews {
-            if(l.isKindOfClass(UIButton)){
+            if(l.isKind(of: UIButton.self)){
                 let b = l as! UIButton
-                b.setTitle("取消", forState: UIControlState.Normal)
-                b.setTitle("取消", forState: UIControlState.Reserved)
+                b.setTitle("取消", for: UIControlState())
+                b.setTitle("取消", for: UIControlState.reserved)
             }
         
         }
@@ -44,31 +44,31 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITextFieldDe
     }
 
     
-    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         print("搜索")
         
         searchBar.resignFirstResponder()
         
     }
     
-    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         
         print("取消")
         searchBar.resignFirstResponder()
         
-        self.navigationController?.popToRootViewControllerAnimated(true)
+        self.navigationController?.popToRootViewController(animated: true)
         close()
     }
     
     //TextField按返回键的反应
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
     
     //关闭
     func close(){
-        self.dismissViewControllerAnimated(false) { () -> Void in
+        self.dismiss(animated: false) { () -> Void in
             //print("close")
         }
     }

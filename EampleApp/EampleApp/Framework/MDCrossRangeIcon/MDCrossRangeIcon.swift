@@ -37,21 +37,21 @@ class MDCrossRangeIcon: UIView {
     }
     
     //MARK: - 添加图标和标题 -
-    func addImage(image:UIImage, title: NSString){
+    func addImage(_ image:UIImage, title: NSString){
         let item = MDCrossRangList(image: image, title: title)
         self.iconList.append(item)
     }
     
     //设置横向固定列
-    func setFixedColumn(number:Int){
+    func setFixedColumn(_ number:Int){
         self.column = number
     }
     
-    func setIconHeight(height:CGFloat){
+    func setIconHeight(_ height:CGFloat){
         self.rowHeight = height
     }
     
-    func addFillIcon(number: Int){
+    func addFillIcon(_ number: Int){
         let num = number - self.iconList.count
         if(num > 0){
             for _ in 0 ..< num {
@@ -88,18 +88,18 @@ class MDCrossRangeIcon: UIView {
     }
     
     //MARK: - 添加 -
-    private func addIconItem(value: MDCrossRangList, viewIconWidth: CGFloat, viewIconHeight: CGFloat,
+    fileprivate func addIconItem(_ value: MDCrossRangList, viewIconWidth: CGFloat, viewIconHeight: CGFloat,
             j:CGFloat, i:CGFloat, num:Int){
     
         let menuIconItem = UIButton(frame: CGRect(x: viewIconWidth * j, y: 0.5 + i*self.rowHeight,
             width: viewIconWidth - 0.5, height: CGFloat(viewIconHeight) - 0.5))
-        menuIconItem.backgroundColor =  UIColor.whiteColor()
+        menuIconItem.backgroundColor =  UIColor.white
         
         let bgImage = self.imageWithColor(UIColor(red: 239/255, green: 239/255, blue: 244/255, alpha: 1),
             size: CGSize(width: 58, height: 58))
-        menuIconItem.setBackgroundImage(bgImage, forState: UIControlState.Highlighted)
+        menuIconItem.setBackgroundImage(bgImage, for: UIControlState.highlighted)
         menuIconItem.tag = num
-        menuIconItem.addTarget(self, action: #selector(MDCrossRangeIcon.itemClick(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        menuIconItem.addTarget(self, action: #selector(MDCrossRangeIcon.itemClick(_:)), for: UIControlEvents.touchUpInside)
         
         
         //图片
@@ -110,10 +110,10 @@ class MDCrossRangeIcon: UIView {
         menuIconItem.addSubview(menuIconImgView)
         
         //文字
-        let title = UILabel(frame: CGRectMake(0, 0, viewIconWidth, 30))
-        title.textAlignment = NSTextAlignment.Center
+        let title = UILabel(frame: CGRect(x: 0, y: 0, width: viewIconWidth, height: 30))
+        title.textAlignment = NSTextAlignment.center
         title.frame.origin.y = CGFloat(viewIconHeight/2)+5
-        title.textColor = UIColor.grayColor()
+        title.textColor = UIColor.gray
         title.font = UIFont(name: "Arial-BoldItalicMT", size: 12)
         title.text = value.title as? String
         menuIconItem.addSubview(title)
@@ -122,31 +122,31 @@ class MDCrossRangeIcon: UIView {
     }
     
     
-    func itemClick(sender:UIButton){
+    func itemClick(_ sender:UIButton){
         let pos = sender.tag
         self.delegate?.MDCrossRangeIconTouch!(pos)
     }
     
     //MARK: - Private Methods -
     //生成纯色背景
-    func imageWithColor(color:UIColor, size: CGSize) -> UIImage {
-        let rect = CGRectMake(0, 0, size.height, size.height)
+    func imageWithColor(_ color:UIColor, size: CGSize) -> UIImage {
+        let rect = CGRect(x: 0, y: 0, width: size.height, height: size.height)
         
         UIGraphicsBeginImageContext(rect.size)
         
         let context = UIGraphicsGetCurrentContext()
-        CGContextSetFillColorWithColor(context, color.CGColor)
-        CGContextFillRect(context, rect)
+        context?.setFillColor(color.cgColor)
+        context?.fill(rect)
         
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
-        return image
+        return image!
     }
     
 }
 
 @objc protocol MDCrossRangeIconDelegate {
     
-    optional func MDCrossRangeIconTouch(index:Int)
+    @objc optional func MDCrossRangeIconTouch(_ index:Int)
 }

@@ -24,10 +24,10 @@ class UserSudokuViewController: UIViewController, SudokuViewDelegate {
         UINavigationBar.appearance().barTintColor = UIColor(red: 35/255.0, green: 39/255.0, blue: 54/255.0, alpha: 1)
         
         
-        let leftButton = UIBarButtonItem(title: "取消", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(UserSudokuViewController.close(_:)))
+        let leftButton = UIBarButtonItem(title: "取消", style: UIBarButtonItemStyle.plain, target: self, action: #selector(UserSudokuViewController.close(_:)))
         self.navigationItem.leftBarButtonItem   = leftButton
         
-        let sudoku = SudokuView(frame: CGRectMake(0, 0, self.view.frame.width, self.view.frame.height))
+        let sudoku = SudokuView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
         sudoku.delegate = self
         
         //设置正确的密码
@@ -37,27 +37,27 @@ class UserSudokuViewController: UIViewController, SudokuViewDelegate {
     }
     
     
-    func SudokuViewFail(pwd: NSString, status: NSString) {
+    func SudokuViewFail(_ pwd: NSString, status: NSString) {
         NSLog("pwd:%@, status:%@", pwd, status)
     }
     
-    func SudokuViewOk(pwd: NSString, status: NSString) {
+    func SudokuViewOk(_ pwd: NSString, status: NSString) {
         NSLog("pwd:%@, status:%@", pwd, status)
         
         if("end" == status){
-            noticeText("您的结果", text: pwd as String, time: 2.0)
+            noticeText("您的结果", text: pwd as NSString, time: 2.0)
         }
     }
     
     
     //离开本页面
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         UINavigationBar.appearance().barTintColor = tmpBarColor
     }
     
     //关闭
-    func close(button: UIButton){
-        self.dismissViewControllerAnimated(true) { () -> Void in
+    func close(_ button: UIButton){
+        self.dismiss(animated: true) { () -> Void in
             //print("close")
         }
     }

@@ -16,7 +16,7 @@ class DetailedViewController: UIViewController {
         self.title = "详情页面"
         //NSLog("详细界面")
         
-        let rightButton = UIBarButtonItem(image: UIImage(named: "repo_share"), style: UIBarButtonItemStyle.Plain, target:self, action: #selector(self.initShareDNav))
+        let rightButton = UIBarButtonItem(image: UIImage(named: "repo_share"), style: UIBarButtonItemStyle.plain, target:self, action: #selector(self.initShareDNav))
         self.navigationItem.rightBarButtonItem  = rightButton
     }
     

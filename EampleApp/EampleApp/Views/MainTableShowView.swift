@@ -22,7 +22,7 @@ class MainTableShowView: UIView{
 
 
     //添加内容
-    func addContent(image: UIImage, title: NSString, detail:NSString, time:NSString){
+    func addContent(_ image: UIImage, title: NSString, detail:NSString, time:NSString){
     
         //图片显示
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
@@ -42,7 +42,7 @@ class MainTableShowView: UIView{
         let detailLabel = UILabel(frame: CGRect(x: imageView.frame.width, y: 30, width: self.frame.width - imageView.frame.width - 20, height: 28))
         detailLabel.text = detail as String
         detailLabel.font = UIFont(name: "Arial", size: 12)
-        detailLabel.lineBreakMode = NSLineBreakMode.ByTruncatingTail
+        detailLabel.lineBreakMode = NSLineBreakMode.byTruncatingTail
         detailLabel.numberOfLines = 0
         self.addSubview(detailLabel)
         
@@ -53,7 +53,7 @@ class MainTableShowView: UIView{
             height: 30))
         
         timeLabel.text = time as String
-        timeLabel.textAlignment = NSTextAlignment.Right
+        timeLabel.textAlignment = NSTextAlignment.right
         self.addSubview(timeLabel)
         
     }

@@ -26,8 +26,8 @@ class UserRegisterViewController: UIViewController, UITextFieldDelegate {
     }
     
     func initNav(){
-        let leftButton  = UIBarButtonItem(title: "取消", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(UserRegisterViewController.close(_:)))
-        let rightButton = UIBarButtonItem(title: "登录", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(UserRegisterViewController.login))
+        let leftButton  = UIBarButtonItem(title: "取消", style: UIBarButtonItemStyle.plain, target: self, action: #selector(UserRegisterViewController.close(_:)))
+        let rightButton = UIBarButtonItem(title: "登录", style: UIBarButtonItemStyle.plain, target: self, action: #selector(UserRegisterViewController.login))
         
         self.navigationItem.leftBarButtonItem   = leftButton
         self.navigationItem.rightBarButtonItem  = rightButton
@@ -44,31 +44,31 @@ class UserRegisterViewController: UIViewController, UITextFieldDelegate {
         
         //用户左边的提示
         let userNameLeft    = UILabel(frame: CGRect(x: 0, y: 0, width: 60, height: 40))
-        userNameLeft.textAlignment = NSTextAlignment.Center
+        userNameLeft.textAlignment = NSTextAlignment.center
         //userNameLeft.backgroundColor = UIColor.redColor()
         userNameLeft.text   = "账户"
         
         //用户名输入
         userName = UITextField(frame: CGRect(x: 0, y: 100, width: fWidth, height: 40))
         userName!.center             = CGPoint(x: xCenter, y: 100)
-        userName!.keyboardType       = UIKeyboardType.Twitter
-        userName!.borderStyle        = UITextBorderStyle.None
-        userName!.textAlignment      = NSTextAlignment.Left
-        userName!.clearButtonMode    = UITextFieldViewMode.WhileEditing
-        userName!.returnKeyType      = UIReturnKeyType.Done
+        userName!.keyboardType       = UIKeyboardType.twitter
+        userName!.borderStyle        = UITextBorderStyle.none
+        userName!.textAlignment      = NSTextAlignment.left
+        userName!.clearButtonMode    = UITextFieldViewMode.whileEditing
+        userName!.returnKeyType      = UIReturnKeyType.done
         userName!.placeholder        = "注册账户"
         userName!.leftView           = userNameLeft
-        userName!.leftViewMode       = UITextFieldViewMode.Always
+        userName!.leftViewMode       = UITextFieldViewMode.always
         
         userName!.delegate           = self
-        userName!.backgroundColor    = UIColor.whiteColor()
+        userName!.backgroundColor    = UIColor.white
         self.view.addSubview(userName!)
         
         
         
         //密码左边的提示
         let userPwdLeft = UILabel(frame: CGRect(x: 0, y: 0, width: 60, height: 40))
-        userPwdLeft.textAlignment  = NSTextAlignment.Center
+        userPwdLeft.textAlignment  = NSTextAlignment.center
         userPwdLeft.text           = "密码"
         
         
@@ -76,64 +76,64 @@ class UserRegisterViewController: UIViewController, UITextFieldDelegate {
         //用户密码输入
         userPwd = UITextField(frame: CGRect(x: 0, y: 141, width: fWidth, height: 40))
         userPwd!.center             = CGPoint(x: xCenter, y: 141)
-        userPwd!.keyboardType       = UIKeyboardType.NamePhonePad
-        userPwd!.borderStyle        = UITextBorderStyle.None
-        userPwd!.textAlignment      = NSTextAlignment.Left
-        userPwd!.clearButtonMode    = UITextFieldViewMode.WhileEditing
-        userPwd!.returnKeyType      = UIReturnKeyType.Done
+        userPwd!.keyboardType       = UIKeyboardType.namePhonePad
+        userPwd!.borderStyle        = UITextBorderStyle.none
+        userPwd!.textAlignment      = NSTextAlignment.left
+        userPwd!.clearButtonMode    = UITextFieldViewMode.whileEditing
+        userPwd!.returnKeyType      = UIReturnKeyType.done
         userPwd!.placeholder        = "注册密码"
-        userPwd!.secureTextEntry    = true
+        userPwd!.isSecureTextEntry    = true
         
         userPwd!.leftView           = userPwdLeft
-        userPwd!.leftViewMode       = UITextFieldViewMode.Always
+        userPwd!.leftViewMode       = UITextFieldViewMode.always
         
         //自定义工具栏
         userPwd!.inputAccessoryView = tool
         
         userPwd!.delegate = self
-        userPwd!.backgroundColor = UIColor.whiteColor()
+        userPwd!.backgroundColor = UIColor.white
         self.view.addSubview(userPwd!)
         
         
         let userNickLeft = UILabel(frame: CGRect(x: 0, y: 0, width: 60, height: 40))
-        userNickLeft.textAlignment  = NSTextAlignment.Center
+        userNickLeft.textAlignment  = NSTextAlignment.center
         userNickLeft.text           = "昵称"
         
         //账户昵称
         userNick = UITextField(frame: CGRect(x: 0, y: 141, width: fWidth, height: 40))
         userNick!.center             = CGPoint(x: xCenter, y: 182)
-        userNick!.keyboardType       = UIKeyboardType.NamePhonePad
-        userNick!.borderStyle        = UITextBorderStyle.None
-        userNick!.textAlignment      = NSTextAlignment.Left
-        userNick!.clearButtonMode    = UITextFieldViewMode.WhileEditing
-        userNick!.returnKeyType      = UIReturnKeyType.Done
+        userNick!.keyboardType       = UIKeyboardType.namePhonePad
+        userNick!.borderStyle        = UITextBorderStyle.none
+        userNick!.textAlignment      = NSTextAlignment.left
+        userNick!.clearButtonMode    = UITextFieldViewMode.whileEditing
+        userNick!.returnKeyType      = UIReturnKeyType.done
         userNick!.placeholder        = "用户名字"
-        userNick!.leftViewMode       = UITextFieldViewMode.Always
+        userNick!.leftViewMode       = UITextFieldViewMode.always
         userNick!.leftView           = userNickLeft
         
         
-        userNick!.backgroundColor = UIColor.whiteColor()
+        userNick!.backgroundColor = UIColor.white
         self.view.addSubview(userNick!)
         
         //注册按钮
         regButton = UIButton(frame: CGRect(x: 0, y: 182, width: self.view.bounds.size.width * 0.7, height: 40))
         regButton!.center = CGPoint(x: xCenter, y: 223)
-        regButton!.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
-        regButton!.setTitleColor(UIColor.brownColor(), forState: UIControlState.Highlighted)
+        regButton!.setTitleColor(UIColor.blue, for: UIControlState())
+        regButton!.setTitleColor(UIColor.brown, for: UIControlState.highlighted)
     
-        regButton!.setTitle("注册", forState: UIControlState.Normal)
-        regButton!.addTarget(self, action: #selector(UserRegisterViewController.doRegUser(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        regButton!.setTitle("注册", for: UIControlState())
+        regButton!.addTarget(self, action: #selector(UserRegisterViewController.doRegUser(_:)), for: UIControlEvents.touchUpInside)
         self.view.addSubview(regButton!)
     }
     
     //TextFieldDelegate
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
     
     //执行用户注册
-    func doRegUser(button: UIButton){
+    func doRegUser(_ button: UIButton){
         
         let _userName = userName?.text
         let _userPwd  = userPwd?.text
@@ -170,15 +170,15 @@ class UserRegisterViewController: UIViewController, UITextFieldDelegate {
         
         
         let loginIn = UIButton(frame: CGRect(x: 0, y: 0, width: 60, height: 40))
-        loginIn.setTitle("注册", forState: UIControlState.Normal)
-        loginIn.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
-        loginIn.setTitleColor(UIColor.brownColor(), forState: UIControlState.Highlighted)
+        loginIn.setTitle("注册", for: UIControlState())
+        loginIn.setTitleColor(UIColor.blue, for: UIControlState())
+        loginIn.setTitleColor(UIColor.brown, for: UIControlState.highlighted)
         tool.addSubview(loginIn)
         
         let ok  = UIButton(frame: CGRect(x: self.view.frame.size.width - 60 , y: 0, width: 60, height: 40))
-        ok.setTitle("Done", forState: UIControlState.Normal)
-        ok.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
-        ok.setTitleColor(UIColor.brownColor(), forState: UIControlState.Highlighted)
+        ok.setTitle("Done", for: UIControlState())
+        ok.setTitleColor(UIColor.blue, for: UIControlState())
+        ok.setTitleColor(UIColor.brown, for: UIControlState.highlighted)
         tool.addSubview(ok)
         //frame: CGRect(x: self.view.frame.size.width - 60 , y: 0, width: 60, height: 40)
         return tool
@@ -187,12 +187,12 @@ class UserRegisterViewController: UIViewController, UITextFieldDelegate {
     
     //跳到注册页
     func login(){
-        self.navigationController?.popToRootViewControllerAnimated(true)
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
     //关闭
-    func close(button: UIButton){
-        self.dismissViewControllerAnimated(true) { () -> Void in
+    func close(_ button: UIButton){
+        self.dismiss(animated: true) { () -> Void in
             //print("close")
         }
     }

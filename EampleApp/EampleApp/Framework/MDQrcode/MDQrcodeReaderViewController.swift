@@ -19,49 +19,49 @@ class MDQrcodeReaderViewViewController: UIViewController,AVCaptureMetadataOutput
     deinit {
     }
     
-    override func viewDidDisappear(animated: Bool) {
+    override func viewDidDisappear(_ animated: Bool) {
         rdQrcode.stopScanning()
     }
     
     override func viewDidLoad() {
         
-        self.view.backgroundColor = UIColor.whiteColor()
-        let leftButton = UIBarButtonItem(title: "取消", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(MDQrcodeReaderViewViewController.close(_:)))
+        self.view.backgroundColor = UIColor.white
+        let leftButton = UIBarButtonItem(title: "取消", style: UIBarButtonItemStyle.plain, target: self, action: #selector(MDQrcodeReaderViewViewController.close(_:)))
         self.navigationItem.leftBarButtonItem   = leftButton
         
         if MDQrcodeReader.isCanRun() {
-            self.modalPresentationStyle = .FormSheet
+            self.modalPresentationStyle = .formSheet
         
             /// print(view.frame.size)
             /// print(self.view.bounds)
-            rdQrcode.previewLayer.frame = CGRectMake(0, 0, view.frame.size.width, view.frame.size.height)
+            rdQrcode.previewLayer.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height)
             rdQrcode.startScanning()
             
-            self.view.layer.insertSublayer(rdQrcode.previewLayer, atIndex: 0)
+            self.view.layer.insertSublayer(rdQrcode.previewLayer, at: 0)
             
             
             rdQrcode.completionBlock = { (result: String?) in
 
-                let alert = UIAlertController(title: "识别成功", message: result, preferredStyle: .Alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: { (UIAlertAction) -> Void in
-                    self.dismissViewControllerAnimated(true, completion: nil)
+                let alert = UIAlertController(title: "识别成功", message: result, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { (UIAlertAction) -> Void in
+                    self.dismiss(animated: true, completion: nil)
                 }))
             
-                self.presentViewController(alert, animated: true, completion: nil)
+                self.present(alert, animated: true, completion: nil)
             }
             
         } else {
-            let alert = UIAlertController(title: "Error", message: "Reader not supported by the current device", preferredStyle: .Alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
-            presentViewController(alert, animated: true, completion: nil)
+            let alert = UIAlertController(title: "Error", message: "Reader not supported by the current device", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            present(alert, animated: true, completion: nil)
         }
     }
     
     
 
     //关闭
-    func close(button: UIButton){
-        self.dismissViewControllerAnimated(true) { () -> Void in
+    func close(_ button: UIButton){
+        self.dismiss(animated: true) { () -> Void in
             print("close")
         }
     }

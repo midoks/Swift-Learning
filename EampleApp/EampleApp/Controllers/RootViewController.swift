@@ -17,18 +17,18 @@ class RootViewController: UITabBarController {
         //电影
         let Movie       = MainViewController()
         let MovieNav    = UINavigationController(rootViewController: Movie)
-        let MovieTabBarItem = UITabBarItem(tabBarSystemItem: UITabBarSystemItem.Featured, tag: 1)
+        let MovieTabBarItem = UITabBarItem(tabBarSystemItem: UITabBarSystemItem.featured, tag: 1)
         MovieNav.tabBarItem = MovieTabBarItem
         
         //改变
         let Change      = ChangesViewController()
         let ChangeNav   = UINavigationController(rootViewController: Change)
-        let ChangeTabBarItem = UITabBarItem(tabBarSystemItem: UITabBarSystemItem.MostViewed, tag: 2)
+        let ChangeTabBarItem = UITabBarItem(tabBarSystemItem: UITabBarSystemItem.mostViewed, tag: 2)
         ChangeNav.tabBarItem = ChangeTabBarItem
         
         let Rank        = RankViewController()
         let RankNav     = UINavigationController(rootViewController: Rank)
-        let RankTabBarItem  = UITabBarItem(tabBarSystemItem: UITabBarSystemItem.More, tag: 4)
+        let RankTabBarItem  = UITabBarItem(tabBarSystemItem: UITabBarSystemItem.more, tag: 4)
         RankNav.tabBarItem  = RankTabBarItem
         
         

@@ -15,11 +15,11 @@ class PictureSwitching: UIView, UIScrollViewDelegate {
     var contentScrollView:  UIScrollView!
     
     var pageIndicator:      UIPageControl!         //页数指示器
-    var timer:              NSTimer?               //计时器
+    var timer:              Timer?               //计时器
     
     
     //图片列表
-    var imageArray: [UIImage!]!
+    var imageArray: [UIImage?]!
     
     //当前的现实第几张图片
     var indexOfCurrentImage: Int!
@@ -34,7 +34,7 @@ class PictureSwitching: UIView, UIScrollViewDelegate {
         super.init(frame: frame)
     }
 
-    convenience init(frame: CGRect, imageArray: [UIImage!]? ) {
+    convenience init(frame: CGRect, imageArray: [UIImage?]? ) {
         self.init(frame: frame)
         
         //图片存放数组
@@ -53,27 +53,27 @@ class PictureSwitching: UIView, UIScrollViewDelegate {
     }
     
     //MARK: - Private -
-    private func setUp(){
+    fileprivate func setUp(){
         //print(imageArray.count)
         
         //循环
         if(self.imageArray.count > 0){
             
-            self.contentScrollView = UIScrollView(frame: CGRectMake(0, 0, self.frame.size.width, self.frame.size.height))
-            contentScrollView.contentSize = CGSizeMake(self.frame.size.width * CGFloat(self.imageArray.count), 0)
+            self.contentScrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: self.frame.size.width, height: self.frame.size.height))
+            contentScrollView.contentSize = CGSize(width: self.frame.size.width * CGFloat(self.imageArray.count), height: 0)
             contentScrollView.delegate = self
             contentScrollView.bounces = false
-            contentScrollView.pagingEnabled = true
-            contentScrollView.backgroundColor = UIColor.greenColor()
+            contentScrollView.isPagingEnabled = true
+            contentScrollView.backgroundColor = UIColor.green
             contentScrollView.showsHorizontalScrollIndicator = false
-            contentScrollView.scrollEnabled = !(imageArray.count == 1)
+            contentScrollView.isScrollEnabled = !(imageArray.count == 1)
             self.addSubview(contentScrollView)
             
             for i in 0 ..< self.imageArray.count {
                 let imgView = UIImageView()
-                imgView.frame = CGRectMake(self.frame.size.width * CGFloat(i), 0, self.frame.size.width, 200)
-                imgView.userInteractionEnabled = true
-                imgView.contentMode = UIViewContentMode.ScaleAspectFill
+                imgView.frame = CGRect(x: self.frame.size.width * CGFloat(i), y: 0, width: self.frame.size.width, height: 200)
+                imgView.isUserInteractionEnabled = true
+                imgView.contentMode = UIViewContentMode.scaleAspectFill
                 imgView.clipsToBounds = true
                 contentScrollView.addSubview(imgView)
                 imgView.image = self.imageArray[i]
@@ -93,11 +93,11 @@ class PictureSwitching: UIView, UIScrollViewDelegate {
 //            20 * CGFloat(imageArray.count),
 //            20))
         
-        self.pageIndicator = UIPageControl(frame: CGRectMake(0, self.frame.size.height - 20, self.frame.size.width, 20))
+        self.pageIndicator = UIPageControl(frame: CGRect(x: 0, y: self.frame.size.height - 20, width: self.frame.size.width, height: 20))
         
         pageIndicator.hidesForSinglePage = true
         pageIndicator.numberOfPages = imageArray.count
-        pageIndicator.backgroundColor = UIColor.clearColor()
+        pageIndicator.backgroundColor = UIColor.clear
         self.addSubview(pageIndicator)
         
         //设置计时器
@@ -107,7 +107,7 @@ class PictureSwitching: UIView, UIScrollViewDelegate {
     //定时开始
     func timeStart(){
         if(self.timer == nil){
-            self.timer = NSTimer.scheduledTimerWithTimeInterval(2, target: self,
+            self.timer = Timer.scheduledTimer(timeInterval: 2, target: self,
                     selector: #selector(PictureSwitching.timerAction), userInfo: nil, repeats: true)
         }
     }
@@ -141,26 +141,26 @@ class PictureSwitching: UIView, UIScrollViewDelegate {
         self.jumpImageIndex(CGFloat(self.indexOfCurrentImage))
     }
     
-    func jumpImageIndex(currentIndex:CGFloat){
+    func jumpImageIndex(_ currentIndex:CGFloat){
         pageIndicator.currentPage = self.indexOfCurrentImage
-        contentScrollView.setContentOffset(CGPointMake(self.frame.size.width * currentIndex, 0), animated: true)
+        contentScrollView.setContentOffset(CGPoint(x: self.frame.size.width * currentIndex, y: 0), animated: true)
     }
     
     //图片点击
-    func imageTapAction(tap:UIButton){
+    func imageTapAction(_ tap:UIButton){
         self.delegate!.PictureSwitchingTap!(indexOfCurrentImage)
     }
     
     
     //MARK: - UIScrollViewDelegate Methods -
     //拖拽开始
-    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         //print("Dragging Start")
         self.timeStop()
     }
     
     //拖拽结束
-    func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         //print("Dragging End")
         //print(scrollView.contentOffset.x)
         //print(self.frame.width)
@@ -169,7 +169,7 @@ class PictureSwitching: UIView, UIScrollViewDelegate {
     }
     
     //滚动加速结束
-    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         //print("EndDecelerating")
         
         let index = scrollView.contentOffset.x / self.frame.width
@@ -179,7 +179,7 @@ class PictureSwitching: UIView, UIScrollViewDelegate {
     }
     
     //动画执行结束
-    func scrollViewDidEndScrollingAnimation(scrollView: UIScrollView) {
+    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
         self.delegate?.PictureSwitchingEndScrolling!(self.indexOfCurrentImage)
     }
     
@@ -190,10 +190,10 @@ class PictureSwitching: UIView, UIScrollViewDelegate {
 @objc protocol PictureSwitchingDelegate{
 
     //点击图片代理
-    optional func PictureSwitchingTap(tapIndex: Int)
+    @objc optional func PictureSwitchingTap(_ tapIndex: Int)
     
     //滚动动画结束代理
-    optional func PictureSwitchingEndScrolling(currentIndex: Int)
+    @objc optional func PictureSwitchingEndScrolling(_ currentIndex: Int)
     
     
 }

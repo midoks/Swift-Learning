@@ -9,49 +9,49 @@ import UIKit
 
 extension UIViewController {
     
-    func noticeTop(text: String) {
+    func noticeTop(_ text: String) {
         mSystemPrompt.noticeOnSatusBar(text, autoClear: true)
     }
     
-    func noticeTop(text: String, autoClear: Bool) {
+    func noticeTop(_ text: String, autoClear: Bool) {
         mSystemPrompt.noticeOnSatusBar(text, autoClear: autoClear)
     }
     
     //简单的消息提示
-    func Toast(text:String){
+    func Toast(_ text:String){
         mSystemPrompt.showText(text, autoClear: true, time: 0.8)
     }
     
     //简单的消息提示
-    func Toast(text:String, time: Float64){
+    func Toast(_ text:String, time: Float64){
         mSystemPrompt.showText(text, autoClear: true, time:time)
     }
     
-    func successNotice(text: String) {
+    func successNotice(_ text: String) {
         mSystemPrompt.showNoticeWithText(NoticeType.success, text: text, autoClear: true)
     }
     
-    func successNotice(text: String, autoClear: Bool) {
+    func successNotice(_ text: String, autoClear: Bool) {
         mSystemPrompt.showNoticeWithText(NoticeType.success, text: text, autoClear: autoClear)
     }
     
-    func errorNotice(text: String) {
+    func errorNotice(_ text: String) {
         mSystemPrompt.showNoticeWithText(NoticeType.error, text: text, autoClear: true)
     }
     
-    func errorNotice(text: String, autoClear: Bool) {
+    func errorNotice(_ text: String, autoClear: Bool) {
         mSystemPrompt.showNoticeWithText(NoticeType.error, text: text, autoClear: autoClear)
     }
     
-    func infoNotice(text: String) {
+    func infoNotice(_ text: String) {
         mSystemPrompt.showNoticeWithText(NoticeType.info, text: text, autoClear: true)
     }
     
-    func infoNotice(text: String, autoClear: Bool) {
+    func infoNotice(_ text: String, autoClear: Bool) {
         mSystemPrompt.showNoticeWithText(NoticeType.info, text: text, autoClear: autoClear)
     }
     
-    func notice(text: String, type: NoticeType, autoClear: Bool) {
+    func notice(_ text: String, type: NoticeType, autoClear: Bool) {
         mSystemPrompt.showNoticeWithText(type, text: text, autoClear: autoClear)
     }
     
@@ -64,16 +64,16 @@ extension UIViewController {
     }
     
     //文本提示
-    func noticeText(title:NSString, text:NSString, time:Double){
-        let alert = UIAlertController(title: title as String, message: text as String, preferredStyle: UIAlertControllerStyle.Alert)
-        self.presentViewController(alert, animated: true) { () -> Void in
+    func noticeText(_ title:NSString, text:NSString, time:Double){
+        let alert = UIAlertController(title: title as String, message: text as String, preferredStyle: UIAlertControllerStyle.alert)
+        self.present(alert, animated: true) { () -> Void in
             
         }
-        (NSTimer.scheduledTimerWithTimeInterval(time, target: self, selector: #selector(UIViewController.timerFireMethod(_:)), userInfo: nil, repeats: false)).fire()
+        (Timer.scheduledTimer(timeInterval: time, target: self, selector: #selector(UIViewController.timerFireMethod(_:)), userInfo: nil, repeats: false)).fire()
     }
     
-    func timerFireMethod(timer:NSTimer){
-        self.dismissViewControllerAnimated(true) { () -> Void in
+    func timerFireMethod(_ timer:Timer){
+        self.dismiss(animated: true) { () -> Void in
             
         }
     }

@@ -23,11 +23,11 @@ class RankViewController: UIViewController, UITableViewDelegate {
     func initWithView(){
     
         let YPoint = (self.navigationController?.navigationBar.frame.height)!      //导航高度
-            + UIApplication.sharedApplication().statusBarFrame.height       //状态高度
+            + UIApplication.shared.statusBarFrame.height       //状态高度
         let TopTapHeight = self.view.frame.height
             - (self.tabBarController?.tabBar.frame.height)!                 //tabbar高度
             - (self.navigationController?.navigationBar.frame.height)!      //导航高度
-            - UIApplication.sharedApplication().statusBarFrame.height       //状态高度
+            - UIApplication.shared.statusBarFrame.height       //状态高度
         
         print(self.view.frame)
         print((self.tabBarController?.tabBar.frame.height)!)

@@ -64,7 +64,7 @@ class SudokuView: UIView {
     }
     
     //MARK: - 初始化画图 -
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
         //print("1")
         let context = UIGraphicsGetCurrentContext()
         self.DrawLines()
@@ -74,42 +74,47 @@ class SudokuView: UIView {
         self.DrawTriangleWhenPswIsError(context!)
     }
     
-    func drawCicle(centerPoint:CGPoint,index:Int,context:CGContext){
+    func drawCicle(_ centerPoint:CGPoint,index:Int,context:CGContext){
         
-        CGContextSetLineWidth(context, 2.0)
-        CGContextAddArc(context, centerPoint.x, centerPoint.y, self.circleRadius, 0.0, CGFloat(M_PI * 2.0), 1)
+        context.setLineWidth(2.0)
+        
+        //context.addArc(tangent1End: CGPoint(CGFloat(centerPoint.x),CGFloat(centerPoint.y)), tangent2End: CGPoint(CGFloat(M_PI * 2.0), 1), radius: self.circleRadius)
+    
+        
         let currentIsSelected:Bool = self.selectPointIndexCollection.contains(index)
         
         if(currentIsSelected){
             if(pswIsRight){
                 //选中的圆圈的边框颜色不一样
-                CGContextSetStrokeColorWithColor(context, UIColor(red: 96/255.0, green: 169/255.0, blue: 252/255.0, alpha: 1).CGColor)
+                context.setStrokeColor(UIColor(red: 96/255.0, green: 169/255.0, blue: 252/255.0, alpha: 1).cgColor)
             }else{
-                CGContextSetStrokeColorWithColor(context, UIColor.redColor().CGColor)
+                context.setStrokeColor(UIColor.red.cgColor)
             }
             
         }else{
-            CGContextSetStrokeColorWithColor(context,  UIColor(red: 144/255.0, green: 149/255.0, blue: 173/255.0, alpha: 1).CGColor)
+            context.setStrokeColor(UIColor(red: 144/255.0, green: 149/255.0, blue: 173/255.0, alpha: 1).cgColor)
         }
         
-        CGContextStrokePath(context)
+        context.strokePath()
         //为了遮住圈内的线
-        CGContextAddArc(context, centerPoint.x, centerPoint.y, self.circleRadius, 0.0, CGFloat(M_PI * 2.0), 1)
-        CGContextSetFillColorWithColor(context,  UIColor(red: 35/255.0, green: 39/255.0, blue: 54/255.0, alpha: 1).CGColor)
-        CGContextFillPath(context)
+        //CGContextAddArc(context, centerPoint.x, centerPoint.y, self.circleRadius, 0.0, CGFloat(M_PI * 2.0), 1)
+        context.setFillColor(UIColor(red: 35/255.0, green: 39/255.0, blue: 54/255.0, alpha: 1).cgColor)
+        context.fillPath()
         
+        
+        //CGContext.addArc(CGContext)
         if(currentIsSelected){
-            CGContextAddArc(context, centerPoint.x, centerPoint.y, self.littleCircleRadius, 0.0, CGFloat(M_PI * 2.0), 1)
+            //CGContext.addArc(context, centerPoint.x, centerPoint.y, self.littleCircleRadius, 0.0, CGFloat(M_PI * 2.0), 1)
             if(pswIsRight){
-                CGContextSetFillColorWithColor(context, UIColor(red: 96/255.0, green: 169/255.0, blue: 252/255.0, alpha: 1).CGColor)
+                context.setFillColor(UIColor(red: 96/255.0, green: 169/255.0, blue: 252/255.0, alpha: 1).cgColor)
             }else{
-                CGContextSetFillColorWithColor(context, UIColor.redColor().CGColor)
+                context.setFillColor(UIColor.red.cgColor)
             }
-            CGContextFillPath(context)
+            context.fillPath()
         }
     }
     
-    func drawNineCircle(context:CGContext){
+    func drawNineCircle(_ context:CGContext){
         for p in 0...self.ninePointCollection.count - 1 {
             self.drawCicle(self.ninePointCollection[p],index:p,context:context)
         }
@@ -120,25 +125,25 @@ class SudokuView: UIView {
         if(self.selectPointIndexCollection.count > 0) {
             let bp = UIBezierPath()
             bp.lineWidth  = 5
-            bp.lineCapStyle = CGLineCap.Round
+            bp.lineCapStyle = CGLineCap.round
             
             if(pswIsRight) {
                 UIColor(red: 96/255.0, green: 169/255.0, blue: 252/255.0, alpha: 1).setStroke()
             } else {
-                UIColor.redColor().setStroke()
+                UIColor.red.setStroke()
             }
             
             for index in 0...self.selectPointIndexCollection.count-1 {
                 let PointIndex = self.selectPointIndexCollection[index]
                 
                 if(index == 0) {
-                    bp.moveToPoint(self.ninePointCollection[PointIndex])
+                    bp.move(to: self.ninePointCollection[PointIndex])
                 } else {
-                    bp.addLineToPoint(self.ninePointCollection[PointIndex])
+                    bp.addLine(to: self.ninePointCollection[PointIndex])
                 }
             }
             if self.fingerPoint.x != -100 {
-                bp.addLineToPoint(self.fingerPoint)
+                bp.addLine(to: self.fingerPoint)
             }
             bp.stroke()
         }
@@ -146,10 +151,10 @@ class SudokuView: UIView {
     
     
     
-    func GetAngle(p1:CGPoint,p2:CGPoint)->CGFloat {
+    func GetAngle(_ p1:CGPoint,p2:CGPoint)->CGFloat {
         let Re:CGFloat  = ((atan(CGFloat((p2.y - p1.y) / (p2.x - p1.x)))))
         if p2.x < p1.x {
-            return  Re - CGFloat(M_PI)
+            return  Re - CGFloat(Double.pi)
         }
         return Re
     }
@@ -158,7 +163,7 @@ class SudokuView: UIView {
     var TriangleTopPointDistanceToCircleCenterPoint:CGFloat = 20
     
     //如果密码密码错误则在选中的圆圈内绘制三角形的路线指示标志
-    func DrawTriangleWhenPswIsError(context:CGContext)
+    func DrawTriangleWhenPswIsError(_ context:CGContext)
     {
         if(pswIsRight)
         {
@@ -180,33 +185,33 @@ class SudokuView: UIView {
                 let currentPoint :CGPoint  = self.ninePointCollection[currentPointIndex]
                 let prePoint:CGPoint  = self.ninePointCollection[prePointIndex]
                 
-                CGContextSaveGState(context)
+                context.saveGState()
                 
-                CGContextTranslateCTM( context, prePoint.x,prePoint.y )
-                CGContextRotateCTM(context, GetAngle(prePoint,p2:currentPoint))
+                context.translateBy(x: prePoint.x,y: prePoint.y )
+                context.rotate(by: GetAngle(prePoint,p2:currentPoint))
                 
-                CGContextTranslateCTM( context,0 - prePoint.x,0 - prePoint.y)
-                CGContextBeginPath(context)
-                CGContextSetFillColorWithColor(context, UIColor.redColor().CGColor)
+                context.translateBy(x: 0 - prePoint.x,y: 0 - prePoint.y)
+                context.beginPath()
+                context.setFillColor(UIColor.red.cgColor)
                 //都是绘制在x坐标的右边 上面几行代码是旋转的逻辑
-                CGContextMoveToPoint(context,prePoint.x + self.TriangleTopPointDistanceToCircleCenterPoint - 6, prePoint.y - 6)
-                CGContextAddLineToPoint(context, prePoint.x + self.TriangleTopPointDistanceToCircleCenterPoint, prePoint.y)
-                CGContextAddLineToPoint(context,prePoint.x + self.TriangleTopPointDistanceToCircleCenterPoint - 6, prePoint.y + 6)
-                CGContextClosePath(context)
-                CGContextFillPath(context)
+                context.move(to: CGPoint(x: prePoint.x + self.TriangleTopPointDistanceToCircleCenterPoint - 6, y: prePoint.y - 6))
+                context.addLine(to: CGPoint(x: prePoint.x + self.TriangleTopPointDistanceToCircleCenterPoint, y: prePoint.y))
+                context.addLine(to: CGPoint(x: prePoint.x + self.TriangleTopPointDistanceToCircleCenterPoint - 6, y: prePoint.y + 6))
+                context.closePath()
+                context.fillPath()
                 
-                CGContextRestoreGState(context)
+                context.restoreGState()
             }
         }
     }
     
-    func distanceBetweenTwoPoint(p1:CGPoint,p2:CGPoint)->CGFloat{
+    func distanceBetweenTwoPoint(_ p1:CGPoint,p2:CGPoint)->CGFloat{
         return pow(pow((p1.x-p2.x), 2)+pow((p1.y-p2.y), 2), 0.5)
     }
     
     
     //加入触摸的点
-    func CircleIsTouchThenPushInSelectPointIndexCollection(fingerPoint:CGPoint){
+    func CircleIsTouchThenPushInSelectPointIndexCollection(_ fingerPoint:CGPoint){
         for index in 0...self.ninePointCollection.count-1 {
             if(!self.selectPointIndexCollection.contains(index)) {
                 if(self.distanceBetweenTwoPoint(fingerPoint,p2:self.ninePointCollection[index]) <= circleRadius) {
@@ -217,7 +222,7 @@ class SudokuView: UIView {
     }
     
     //设置密文
-    internal func setPwd(ciphertext: NSString){
+    internal func setPwd(_ ciphertext: NSString){
         self.ciphertext = ciphertext
     }
     
@@ -228,8 +233,8 @@ class SudokuView: UIView {
         let ReStrLen = ReStrVal.length
         
         if(self.ciphertext != nil){
-            let subRetValStr = self.ciphertext!.substringWithRange(NSMakeRange(0, ReStrLen))
-            if(subRetValStr != ReStrVal){
+            let subRetValStr = self.ciphertext!.substring(with: NSMakeRange(0, ReStrLen))
+            if(subRetValStr != ReStrVal as String){
                 return false
             }
         }
@@ -252,7 +257,7 @@ class SudokuView: UIView {
         return ""
     }
     
-    func touchesCommon(status: NSString){
+    func touchesCommon(_ status: NSString){
         let pwd = self.getCurrentPwd()
         if(self.isRightPwd()){
             pswIsRight = true
@@ -264,25 +269,25 @@ class SudokuView: UIView {
     }
     
     //MARK: - touch事件 -
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let t = touches.first
-        self.selectPointIndexCollection.removeAll(keepCapacity: false)
+        self.selectPointIndexCollection.removeAll(keepingCapacity: false)
         //获取触摸的坐标
-        self.fingerPoint = t!.locationInView(self)
+        self.fingerPoint = t!.location(in: self)
         self.CircleIsTouchThenPushInSelectPointIndexCollection(fingerPoint)
         self.touchesCommon("began")
         self.setNeedsDisplay()
     }
     
-    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         let t = touches.first
-        self.fingerPoint = t!.locationInView(self)
+        self.fingerPoint = t!.location(in: self)
         self.CircleIsTouchThenPushInSelectPointIndexCollection(self.fingerPoint)
         self.touchesCommon("moved")
         self.setNeedsDisplay()
     }
     
-    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.touchesCommon("end")
         self.selectPointIndexCollection = []
         self.setNeedsDisplay()
@@ -292,7 +297,7 @@ class SudokuView: UIView {
 
 @objc protocol SudokuViewDelegate {
     
-    optional func SudokuViewFail(pwd:NSString, status: NSString)
-    optional func SudokuViewOk(pwd: NSString, status: NSString)
+    @objc optional func SudokuViewFail(_ pwd:NSString, status: NSString)
+    @objc optional func SudokuViewOk(_ pwd: NSString, status: NSString)
     
 }

@@ -8,6 +8,30 @@
 
 import Foundation
 import UIKit
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l > r
+  default:
+    return rhs < lhs
+  }
+}
+
 
 
 class MDTopTapView :UIView, UITableViewDataSource,UITableViewDelegate {
@@ -48,10 +72,10 @@ class MDTopTapView :UIView, UITableViewDataSource,UITableViewDelegate {
             let height:CGFloat = 2
             
             indicatorView = UIView(frame: CGRect(x:0 , y: 0, width: height, height: width))
-            indicatorView?.backgroundColor = UIColor.blueColor()
+            indicatorView?.backgroundColor = UIColor.blue
             
             topMenuTableView?.addSubview(indicatorView!)
-            topMenuTableView?.bringSubviewToFront(indicatorView!)
+            topMenuTableView?.bringSubview(toFront: indicatorView!)
         }
         return indicatorView!
     }
@@ -63,7 +87,7 @@ class MDTopTapView :UIView, UITableViewDataSource,UITableViewDelegate {
             //print(self.frame)
             
             let topMenuHeight:CGFloat = self.getMenuHeight()
-            let topMenuWidth:CGFloat = CGRectGetWidth(self.frame) + 64 + 49
+            let topMenuWidth:CGFloat = self.frame.width + 64 + 49
             
             //before rotate bounds = (0, 0, width, height)
             //rototate -90 bounds = (0, 0, height, width)
@@ -77,7 +101,7 @@ class MDTopTapView :UIView, UITableViewDataSource,UITableViewDelegate {
             
             topMenuTableView     = UITableView(frame: CGRect(x: x, y: y,
                 width: topMenuHeight, height: topMenuWidth),
-                style: UITableViewStyle.Plain)
+                style: UITableViewStyle.plain)
             topMenuTableView!.dataSource  = self
             topMenuTableView!.delegate    = self
             self.addSubview(topMenuTableView!)
@@ -86,9 +110,9 @@ class MDTopTapView :UIView, UITableViewDataSource,UITableViewDelegate {
             //不显示滚动条
             topMenuTableView?.showsVerticalScrollIndicator = false
             //不显示分割线
-            topMenuTableView?.separatorStyle = UITableViewCellSeparatorStyle.None
+            topMenuTableView?.separatorStyle = UITableViewCellSeparatorStyle.none
             _angle = (CGFloat)(-M_PI/2)
-            topMenuTableView?.transform = CGAffineTransformMakeRotation(_angle!)
+            topMenuTableView?.transform = CGAffineTransform(rotationAngle: _angle!)
         
             
             //NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: Selector("timeRotationTest"), userInfo: nil, repeats: true)
@@ -99,24 +123,24 @@ class MDTopTapView :UIView, UITableViewDataSource,UITableViewDelegate {
     func initContentTableView() -> UITableView {
         if( nil == contentTableView){
         
-            let cHeight = CGRectGetWidth(self.frame)
-            let cWidth = CGRectGetHeight(self.frame) - self.getMenuHeight()
+            let cHeight = self.frame.width
+            let cWidth = self.frame.height - self.getMenuHeight()
             
-            let x = CGRectGetWidth(self.frame)/2 - cWidth/2
+            let x = self.frame.width/2 - cWidth/2
             let y_abs = (Float)(cHeight/2.0 - cWidth/2.0)
             let y = (CGFloat)(fabsf(y_abs)) + self.getMenuHeight()
             
-            contentTableView = UITableView(frame: CGRect(x: x, y: y, width: cWidth, height: cHeight), style: UITableViewStyle.Plain)
+            contentTableView = UITableView(frame: CGRect(x: x, y: y, width: cWidth, height: cHeight), style: UITableViewStyle.plain)
             self.addSubview(contentTableView!)
             
             contentTableView?.delegate = self
             contentTableView?.dataSource = self
             contentTableView?.showsVerticalScrollIndicator = false
-            contentTableView?.pagingEnabled = true
-            contentTableView?.separatorStyle = UITableViewCellSeparatorStyle.None
+            contentTableView?.isPagingEnabled = true
+            contentTableView?.separatorStyle = UITableViewCellSeparatorStyle.none
             
             let _angle = (CGFloat)(-M_PI/2.0)
-            contentTableView?.transform = CGAffineTransformMakeRotation(_angle)
+            contentTableView?.transform = CGAffineTransform(rotationAngle: _angle)
         }
         return contentTableView!
     }
@@ -127,32 +151,32 @@ class MDTopTapView :UIView, UITableViewDataSource,UITableViewDelegate {
             _angle = 0;
         }
         
-        let transform=CGAffineTransformMakeRotation(_angle!)
+        let transform=CGAffineTransform(rotationAngle: _angle!)
         topMenuTableView!.transform = transform
     }
     
     
     //MARK: - UITableViewDataSource -
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 8
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if(tableView == self.topMenuTableView){
             return self.getMenuWidth()
         }else if(tableView == self.contentTableView){
-            return CGRectGetWidth(self.frame)
+            return self.frame.width
         }
         return 0
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if(tableView == self.topMenuTableView){
             //var cell = tableView.dequeueReusableCellWithIdentifier("TopMenuCell")
             
-            let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "TopMenuCell")
-            cell.frame = CGRectMake(0, 0, self.getMenuWidth(), self.getMenuHeight())
+            let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "TopMenuCell")
+            cell.frame = CGRect(x: 0, y: 0, width: self.getMenuWidth(), height: self.getMenuHeight())
             
             
             cell.contentView.removeFromSuperview()
@@ -161,50 +185,50 @@ class MDTopTapView :UIView, UITableViewDataSource,UITableViewDelegate {
             let textView = UIView(frame: CGRect(x: 0, y: 0, width: self.getMenuWidth(), height: self.getMenuHeight()))
             let text = UILabel(frame: textView.frame)
             text.text = "测试" + String(indexPath.row)
-            text.textAlignment = NSTextAlignment.Center
+            text.textAlignment = NSTextAlignment.center
             textView.addSubview(text)
             cell.addSubview(textView)
             
             let _angleView = (CGFloat)(M_PI/2)
             
-            let x = self.getMenuWidth() / 2.0 - CGRectGetWidth(textView.frame) / 2.0
-            let y = self.getMenuHeight() / 2.0  - CGRectGetHeight(textView.frame) / 2.0
+            let x = self.getMenuWidth() / 2.0 - textView.frame.width / 2.0
+            let y = self.getMenuHeight() / 2.0  - textView.frame.height / 2.0
             
-            textView.transform = CGAffineTransformMakeRotation(_angleView)
-            textView.frame = CGRectMake(x, y, CGRectGetWidth(textView.frame), CGRectGetHeight(textView.frame))
-            textView.backgroundColor = UIColor.yellowColor()
+            textView.transform = CGAffineTransform(rotationAngle: _angleView)
+            textView.frame = CGRect(x: x, y: y, width: textView.frame.width, height: textView.frame.height)
+            textView.backgroundColor = UIColor.yellow
             
             
             return cell
         }else if(tableView == contentTableView){
             //var cell = tableView.dequeueReusableCellWithIdentifier("ContentPageCell")
-            let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "ContentPageCell")
-            cell.frame = CGRectMake(0, 0, CGRectGetHeight(self.frame)-self.getMenuHeight(), CGRectGetWidth(self.frame))
+            let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "ContentPageCell")
+            cell.frame = CGRect(x: 0, y: 0, width: self.frame.height-self.getMenuHeight(), height: self.frame.width)
             cell.contentView.removeFromSuperview()
-            cell.backgroundColor = UIColor.clearColor()
+            cell.backgroundColor = UIColor.clear
             
-            let textView = UIView(frame: CGRect(x: 0, y: 0, width: CGRectGetHeight(self.frame)-self.getMenuHeight(), height: CGRectGetWidth(self.frame)))
+            let textView = UIView(frame: CGRect(x: 0, y: 0, width: self.frame.height-self.getMenuHeight(), height: self.frame.width))
             //textView.backgroundColor = self.randomColor()
             let text = UILabel(frame: textView.frame)
             text.text = "测试" + String(indexPath.row)
-            text.textAlignment = NSTextAlignment.Center
+            text.textAlignment = NSTextAlignment.center
             textView.addSubview(text)
             let _angleView = (CGFloat)(M_PI/2.0)
-            textView.transform = CGAffineTransformMakeRotation(_angleView)
+            textView.transform = CGAffineTransform(rotationAngle: _angleView)
             cell.addSubview(textView)
             
             return cell
         }else{
             
-            let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "TopMenuCell")
+            let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "TopMenuCell")
             cell.textLabel!.text = "测试"
             return cell
         }
     }
     
     //点击事件
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         
         if(tableView == self.topMenuTableView){
             self.pageIndex = indexPath.row
@@ -213,10 +237,10 @@ class MDTopTapView :UIView, UITableViewDataSource,UITableViewDelegate {
     }
     
     //MARK: - scrollView -
-    func scrollViewDidScroll(scrollView: UIScrollView) {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
         if(scrollView == self.contentTableView ){
-            let tmpPage = ((self.contentTableView?.contentOffset.y)! + 0.5 * CGRectGetWidth(self.frame))/CGRectGetWidth(self.frame)
+            let tmpPage = ((self.contentTableView?.contentOffset.y)! + 0.5 * self.frame.width)/self.frame.width
             if(tmpPage != (CGFloat)(self.pageIndex!)){
                 self.pageIndex = (Int)(tmpPage)
             }
@@ -224,13 +248,13 @@ class MDTopTapView :UIView, UITableViewDataSource,UITableViewDelegate {
         }
     }
     
-    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         if(scrollView == self.contentTableView ){
             self.handleEndScroll()
         }
     }
     
-    func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         if(scrollView == self.contentTableView)
         {
             if(!decelerate)
@@ -252,22 +276,22 @@ class MDTopTapView :UIView, UITableViewDataSource,UITableViewDelegate {
     func updateIndicatorPosition() {
         let y = (self.contentTableView?.contentOffset.y)! / (self.contentTableView?.contentSize.height)!
         
-        self.indicatorView!.frame = CGRectMake(self.indicatorView!.frame.origin.x,
-            (y * self.topMenuTableView!.contentSize.height),
-            self.indicatorView!.frame.size.width,
-            self.indicatorView!.frame.size.height)
+        self.indicatorView!.frame = CGRect(x: self.indicatorView!.frame.origin.x,
+            y: (y * self.topMenuTableView!.contentSize.height),
+            width: self.indicatorView!.frame.size.width,
+            height: self.indicatorView!.frame.size.height)
     }
     
-    func contentTablesScrollToIndexPath(indexPath: NSIndexPath){
-        self.contentTableView?.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Middle, animated: true)
+    func contentTablesScrollToIndexPath(_ indexPath: IndexPath){
+        self.contentTableView?.scrollToRow(at: indexPath, at: UITableViewScrollPosition.middle, animated: true)
         self.handleEndScroll()
     }
     
     //MARK: - Private Methods -
     
     func handleEndScroll(){
-        let indexPath = NSIndexPath(forRow: self.pageIndex!, inSection: 0)
-        self.topMenuTableView?.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Middle, animated: true)
+        let indexPath = IndexPath(row: self.pageIndex!, section: 0)
+        self.topMenuTableView?.scrollToRow(at: indexPath, at: UITableViewScrollPosition.middle, animated: true)
     }
     
     func randomColor()->UIColor{

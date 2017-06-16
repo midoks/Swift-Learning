@@ -10,24 +10,24 @@ import UIKit
 
 class mUserTools: NSObject {
     
-    static var defaults    = NSUserDefaults(suiteName: "loginToken")
+    static var defaults    = UserDefaults(suiteName: "loginToken")
     
     //判断值
-    static func setValue(key:String, name:String){
-        defaults!.setObject(name, forKey: key)
+    static func setValue(_ key:String, name:String){
+        defaults!.set(name, forKey: key)
     }
     
     //判断是否登录
     static func isLogin()->Bool{
-        let userToken = defaults!.objectForKey("username")
-        if( userToken != nil && !userToken!.isEqual("")){
+        let userToken = defaults!.object(forKey: "username")
+        if( userToken != nil && !(userToken! as AnyObject).isEqual("")){
             return true
         }
         return false
     }
     
     static func loginOut()->Bool{
-        defaults!.removeObjectForKey("username")
+        defaults!.removeObject(forKey: "username")
         return true
     }
     

@@ -11,11 +11,11 @@ import AVFoundation
 
 public final class MDQrcodeReader: NSObject, AVCaptureMetadataOutputObjectsDelegate {
     
-    var defaultDevice: AVCaptureDevice = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
+    var defaultDevice: AVCaptureDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
     
     var frontDevice: AVCaptureDevice? = {
-        for device in AVCaptureDevice.devicesWithMediaType(AVMediaTypeVideo) {
-            if let _device = device as? AVCaptureDevice where _device.position == AVCaptureDevicePosition.Front {
+        for device in AVCaptureDevice.devices(withMediaType: AVMediaTypeVideo) {
+            if let _device = device as? AVCaptureDevice, _device.position == AVCaptureDevicePosition.front {
                 return _device
             }
         }
@@ -50,14 +50,14 @@ public final class MDQrcodeReader: NSObject, AVCaptureMetadataOutputObjectsDeleg
     }
     
     /// 初始化组件
-    private func configureDefaultComponents() {
+    fileprivate func configureDefaultComponents() {
         session.addOutput(metadataOutput)
         
         if let _defaultDeviceInput = defaultDeviceInput {
             session.addInput(_defaultDeviceInput)
         }
         
-        metadataOutput.setMetadataObjectsDelegate(self, queue: dispatch_get_main_queue())
+        metadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
         metadataOutput.metadataObjectTypes = metadataObjectTypes
         previewLayer.videoGravity          = AVLayerVideoGravityResizeAspectFill
         
@@ -65,26 +65,26 @@ public final class MDQrcodeReader: NSObject, AVCaptureMetadataOutputObjectsDeleg
     
     /// 开始扫描
     public func startScanning() {
-        if !session.running {
+        if !session.isRunning {
             session.startRunning()
         }
     }
     
     /// 停止扫描
     public func stopScanning() {
-        if session.running {
+        if session.isRunning {
             session.stopRunning()
         }
     }
     
     //检测是二维码读取是否有效
     public class func isAvailable()->Bool{
-        if AVCaptureDevice.devicesWithMediaType(AVMediaTypeAudio).count == 0 {
+        if AVCaptureDevice.devices(withMediaType: AVMediaTypeAudio).count == 0 {
             return false
         }
         
         do {
-            let captureDevice = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
+            let captureDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
             let _ = try AVCaptureDeviceInput(device: captureDevice)
             
             return true
@@ -94,14 +94,14 @@ public final class MDQrcodeReader: NSObject, AVCaptureMetadataOutputObjectsDeleg
     }
     
     //安装
-    public class func isCanRun(metadataTypes: [String]? = nil) -> Bool {
+    public class func isCanRun(_ metadataTypes: [String]? = nil) -> Bool {
         
         if !isAvailable() {
             return false
         }
         
         //初始化组件
-        let captureDevice = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
+        let captureDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
         let deviceInput   = try! AVCaptureDeviceInput(device: captureDevice)
         let output        = AVCaptureMetadataOutput()
         let session       = AVCaptureSession()
@@ -117,7 +117,7 @@ public final class MDQrcodeReader: NSObject, AVCaptureMetadataOutputObjectsDeleg
         }
         
         for metadataObjectType in metadataObjectTypes! {
-            if !output.availableMetadataObjectTypes.contains({ $0 as! String == metadataObjectType }) {
+            if !output.availableMetadataObjectTypes.contains(where: { $0 as! String == metadataObjectType }) {
                 return false
             }
         }
@@ -127,7 +127,7 @@ public final class MDQrcodeReader: NSObject, AVCaptureMetadataOutputObjectsDeleg
     
     
     //MARK: - AVCaptureMetadataOutputObjectsDelegate -
-    public func captureOutput(captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [AnyObject]!, fromConnection connection: AVCaptureConnection!) {
+    public func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
         for current in metadataObjects {
             if let _readableCodeObject = current as? AVMetadataMachineReadableCodeObject {
                 if metadataObjectTypes.contains(_readableCodeObject.type) {

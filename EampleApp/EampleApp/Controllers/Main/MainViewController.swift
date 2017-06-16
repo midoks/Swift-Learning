@@ -23,7 +23,7 @@ UIScrollViewDelegate, UISearchBarDelegate, UITableViewDelegate, UITableViewDataS
         //self.title = "电影"
         
         //self.view.backgroundColor = UIColor(red: 239/255, green: 239/255, blue: 244/255, alpha: 1)
-        self.view.backgroundColor = UIColor.whiteColor()
+        self.view.backgroundColor = UIColor.white
         
         let search = UISearchBar(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width * 0.3, height: 40))
         search.placeholder = "搜索"
@@ -56,12 +56,12 @@ UIScrollViewDelegate, UISearchBarDelegate, UITableViewDelegate, UITableViewDataS
         self.mainHeight = 0
         self.mainHeight = self.getMainHeight()
         
-        main = UIScrollView(frame: CGRectMake(0, 0, self.view.frame.width, self.view.frame.height))
-        main!.contentSize = CGSizeMake(self.view.frame.width, self.mainHeight!)
+        main = UIScrollView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
+        main!.contentSize = CGSize(width: self.view.frame.width, height: self.mainHeight!)
         main!.backgroundColor = UIColor(red: 239/255, green: 239/255, blue: 244/255, alpha: 1)
         main!.showsVerticalScrollIndicator = false
         main!.showsHorizontalScrollIndicator = false
-        main!.scrollEnabled = true
+        main!.isScrollEnabled = true
         main!.delegate = self
         
         
@@ -74,20 +74,20 @@ UIScrollViewDelegate, UISearchBarDelegate, UITableViewDelegate, UITableViewDataS
             self.mainHeight = self.view.frame.height
                 - (self.tabBarController?.tabBar.frame.height)!                 //tabbar高度
                 - (self.navigationController?.navigationBar.frame.height)!      //导航高度
-                - UIApplication.sharedApplication().statusBarFrame.height       //状态高度
+                - UIApplication.shared.statusBarFrame.height       //状态高度
         }
         return self.mainHeight!
     }
     
     //设置滚动时图的高
-    func setMainHeight(height: CGFloat){
+    func setMainHeight(_ height: CGFloat){
         if(self.main!.contentSize.height < height){
             self.main!.contentSize.height = height
         }
     }
     
     //增加滚动视图高度
-    func addMainHeight(height: CGFloat){
+    func addMainHeight(_ height: CGFloat){
         self.main!.contentSize.height =  self.main!.contentSize.height + height
     }
     
@@ -97,12 +97,12 @@ UIScrollViewDelegate, UISearchBarDelegate, UITableViewDelegate, UITableViewDataS
         self.mainSubviewCurrentHeight = 200
         self.setMainHeight(self.mainSubviewCurrentHeight!)
         
-        let imageArray: [UIImage!] = [
+        let imageArray: [UIImage?] = [
             UIImage(named: "img_switching_first.jpg"),
             UIImage(named: "img_switching_second.jpg"),
             UIImage(named: "img_switching_third.jpg")]
-        let imageSwitching = PictureSwitching(frame: CGRectMake(0, 0, self.view.frame.size.width, 200), imageArray:imageArray)
-        imageSwitching.backgroundColor = UIColor.orangeColor()
+        let imageSwitching = PictureSwitching(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 200), imageArray:imageArray)
+        imageSwitching.backgroundColor = UIColor.orange
         imageSwitching.delegate = self
         
         //self.automaticallyAdjustsScrollViewInsets = false
@@ -110,12 +110,12 @@ UIScrollViewDelegate, UISearchBarDelegate, UITableViewDelegate, UITableViewDataS
     }
     
     //MARK: - 图片切换代理事件 -
-    func PictureSwitchingEndScrolling(currentIndex: Int) {
+    func PictureSwitchingEndScrolling(_ currentIndex: Int) {
         //print("EndScrolling")
         //print(currentIndex)
     }
     
-    func PictureSwitchingTap(tapIndex: Int) {
+    func PictureSwitchingTap(_ tapIndex: Int) {
         //print("tap")
         //print(tapIndex)
     }
@@ -129,7 +129,7 @@ UIScrollViewDelegate, UISearchBarDelegate, UITableViewDelegate, UITableViewDataS
         //print(pos)
         //print(self.mainSubviewCurrentHeight)
         
-        let menu = MDCrossRangeIcon(frame: CGRectMake(0, pos + 5, self.view.frame.width, 240))
+        let menu = MDCrossRangeIcon(frame: CGRect(x: 0, y: pos + 5, width: self.view.frame.width, height: 240))
         menu.delegate = self
         
         
@@ -155,11 +155,11 @@ UIScrollViewDelegate, UISearchBarDelegate, UITableViewDelegate, UITableViewDataS
     }
     
     //MARK: - 分类列表代理 -
-    func MDCrossRangeIconTouch(index: Int) {
+    func MDCrossRangeIconTouch(_ index: Int) {
         //print(index)
         let s = String(index)
         
-        noticeText("你的结果", text: s, time: 2.0)
+        noticeText("你的结果", text:s as NSString, time: 2.0)
     }
     
     //MARK: - TableView Init -
@@ -170,10 +170,10 @@ UIScrollViewDelegate, UISearchBarDelegate, UITableViewDelegate, UITableViewDataS
         
         
         let initTv = UITableView(frame: CGRect(x: 0, y: pos + 5, width: self.view.frame.width, height: 320),
-            style: UITableViewStyle.Plain)
+            style: UITableViewStyle.plain)
 
         initTv.showsVerticalScrollIndicator = false
-        initTv.pagingEnabled = true
+        initTv.isPagingEnabled = true
         
         initTv.delegate = self
         initTv.dataSource = self
@@ -182,45 +182,45 @@ UIScrollViewDelegate, UISearchBarDelegate, UITableViewDelegate, UITableViewDataS
     }
     
     //MARK: - UITableViewDelegate -
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     //每组多少行
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 11
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
     }
     
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "sign")
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "sign")
         
-        cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+        cell.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
     
         let viewContent = MainTableShowView(frame: CGRect(x: 0, y: 0, width: cell.frame.width, height: 60))
         let image = UIImage( named: "img_menu_water.png")!
         
-        let date = NSDate()
-        let timeFormatter = NSDateFormatter()
+        let date = Date()
+        let timeFormatter = DateFormatter()
         timeFormatter.dateFormat = "HH:mm:ss.S"
         
-        let s = timeFormatter.stringFromDate(date)
+        let s = timeFormatter.string(from: date)
         
         
         //NSLog("%@", image)
         
-        viewContent.addContent(image, title: "标题",detail: "详情",time: s)
+        viewContent.addContent(image, title: "标题",detail: "详情",time: s as NSString)
         cell.addSubview(viewContent)
         return cell
     }
     
     //点击事件
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         
         //跳到详情页
         let detailed = DetailedViewController()
@@ -229,10 +229,10 @@ UIScrollViewDelegate, UISearchBarDelegate, UITableViewDelegate, UITableViewDataS
     
     
     //MARK: - 当点击搜索时 -
-    func searchBarShouldBeginEditing(searchBar: UISearchBar) -> Bool {
+    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
         let u = SearchViewController()
         let uNav = UINavigationController(rootViewController: u)
-        self.presentViewController(uNav, animated: false) { () -> Void in
+        self.present(uNav, animated: false) { () -> Void in
             print("Search Page")
         }
         return true

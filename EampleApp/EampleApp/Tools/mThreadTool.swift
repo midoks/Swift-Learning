@@ -10,26 +10,26 @@ import UIKit
 class mThreadTool: NSObject {
     
     //GCD 多线程异步方式
-    static func mdispatch(callback: ()->() ){
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) { () -> Void in
+    static func mdispatch(_ callback: @escaping ()->() ){
+        DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.default).async { () -> Void in
             //调用主线程,更新UI
             callback()
         }
     }
 
-    static func mdispatch(time: UInt64 ,callback: ()->() ){
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (Int64)(time * NSEC_PER_SEC)), dispatch_get_main_queue()) { () -> Void in
+    static func mdispatch(_ time: UInt64 ,callback: @escaping ()->() ){
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double((Int64)(time * NSEC_PER_SEC)) / Double(NSEC_PER_SEC)) { () -> Void in
             callback()
         }
     }
     
     //NSOperationQueue
-    static func mOperation(callback: ()->() ){
-        let mOp = NSBlockOperation { () -> Void in
+    static func mOperation(_ callback: @escaping ()->() ){
+        let mOp = BlockOperation { () -> Void in
             callback()
         }
 
-        NSOperationQueue().addOperation(mOp)
+        OperationQueue().addOperation(mOp)
     }
     
     //NSThread

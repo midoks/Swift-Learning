@@ -14,19 +14,19 @@ class MDQrcodeMakeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = UIColor.whiteColor()
-        let leftButton = UIBarButtonItem(title: "取消", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(MDQrcodeMakeViewController.close(_:)))
+        self.view.backgroundColor = UIColor.white
+        let leftButton = UIBarButtonItem(title: "取消", style: UIBarButtonItemStyle.plain, target: self, action: #selector(MDQrcodeMakeViewController.close(_:)))
         self.navigationItem.leftBarButtonItem   = leftButton
         
         let sQrcode = CGSize(width: 260, height: 260)
-        let imageQrcode = UIImageView(frame: CGRectMake(view.center.x - sQrcode.width/2, view.center.y - sQrcode.width/2, sQrcode.width, sQrcode.height))
+        let imageQrcode = UIImageView(frame: CGRect(x: view.center.x - sQrcode.width/2, y: view.center.y - sQrcode.width/2, width: sQrcode.width, height: sQrcode.height))
         imageQrcode.image = MDQrcodeMake.createQrcode("dd", qrImageName: "tabbar_me")
         self.view.addSubview(imageQrcode)
     }
     
     //关闭
-    func close(button: UIButton){
-        self.dismissViewControllerAnimated(true) { () -> Void in
+    func close(_ button: UIButton){
+        self.dismiss(animated: true) { () -> Void in
         }
     }
 }
