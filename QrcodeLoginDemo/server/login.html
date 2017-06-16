@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>二维码登录模拟</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<script type="text/javascript" src="js/jquery.min.js"></script> 
+	<script type="text/javascript" src="js/jquery.qrcode.min.js"></script> 
+	
+	<script type="text/javascript" src="js/aq_common.js"></script> 
+	
+</head>
+<body>
+
+<div id="login"></div>
+
+
+<br/>
+<div id="progress"></div>
+
+
+<script type="text/javascript">
+
+
+$.post('api.php', {method: 'login'}, function(data, textStatus, xhr) {
+
+	if (data.ret_code == 1024){
+		alogs('生成QRCODE OK:'+ data.ret_data.code);
+		$('#login').qrcode("http://i.yoka.com/"+data.ret_data.code); //任意字符串
+
+		scan_login(data.ret_data.code);
+
+
+	} else {
+		alogs('生成QRCODE FAIL');
+	}
+}, 'json');
+
+
+
+
+function scan_login(code){
+
+	$.post('api.php', {method:'scan', code:code }, function(data, textStatus, xhr) {
+
+
+		if (data.ret_code == 0){
+			
+			alogs('登录成功');
+		} else {
+			alogs('继续等待');
+			scan_login(code);
+		}
+	}, 'json');
+
+}
+
+
+
+function alogs(t){
+	var v = $('#progress').html();
+	$('#progress').html( v +"<br />" + t);
+}
+
+
+</script>
+
+
+</body>
+</html>
