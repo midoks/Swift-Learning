@@ -1,0 +1,43 @@
+
+/* Class = "UILabel"; text = "GitHubStar"; ObjectID = "GJd-Yh-RWb"; */
+"GJd-Yh-RWb.text" = "GitHubStar";
+
+/* Class = "UILabel"; text = "  Copyright © 2016年 midoks. All rights reserved."; ObjectID = "obG-Y5-kRd"; */
+"obG-Y5-kRd.text" = "  Copyright © 2016年 midoks. All rights reserved.";
+
+"Recommend"="推荐";
+"Discover"="发现";
+"Me"="我";
+/* TabBar */
+
+
+"Notifications"="通知";
+"News"="新鲜事";
+"My QR Code"="我的二维码";
+"QR Code"="二维码";
+"Organizations"="组织";
+"Settings"="设置";
+"Repositories"="项目";
+"Gists"="片段";
+"Public activtiy"="动态";
+"Starred"="关注";
+"Users List"="用户列表";
+"Login"="登录";
+"Scan"="扫一扫";
+/* Me */
+
+"Touch ID"="指纹解锁";
+"Language"="多语言";
+"Cancel"="取消";
+"Save"="保存";
+"About"="关于客服端";
+"Login Out"="退出本帐号";
+"Clear Storage"="清理空间";
+/* Settings */
+
+
+"Help & Feedback"="帮助或反馈";
+"Rate GitHubStar"="去评分";
+"Version"="版本";
+"Welcome Page"="欢迎页";
+/* About */
