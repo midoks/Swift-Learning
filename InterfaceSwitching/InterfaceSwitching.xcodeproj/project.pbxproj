@@ -1,0 +1,597 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		827F42E820B7D6F7003157A1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 827F42E720B7D6F7003157A1 /* AppDelegate.m */; };
+		827F42ED20B7D6FB003157A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 827F42EC20B7D6FB003157A1 /* Assets.xcassets */; };
+		827F42F020B7D6FB003157A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 827F42EE20B7D6FB003157A1 /* Main.storyboard */; };
+		827F42F320B7D6FB003157A1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 827F42F220B7D6FB003157A1 /* main.m */; };
+		827F42FE20B7D6FB003157A1 /* InterfaceSwitchingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 827F42FD20B7D6FB003157A1 /* InterfaceSwitchingTests.m */; };
+		827F430920B7D6FB003157A1 /* InterfaceSwitchingUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 827F430820B7D6FB003157A1 /* InterfaceSwitchingUITests.m */; };
+		827F431F20B7DB7C003157A1 /* StatusIcon.ico in Resources */ = {isa = PBXBuildFile; fileRef = 827F431E20B7DB7C003157A1 /* StatusIcon.ico */; };
+		827F432B20B7DBE3003157A1 /* JRKeyboardShortcutUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 827F432820B7DBE3003157A1 /* JRKeyboardShortcutUtil.m */; };
+		827F432C20B7DBE3003157A1 /* JRLoginItemUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 827F432920B7DBE3003157A1 /* JRLoginItemUtil.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		827F42FA20B7D6FB003157A1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 827F42DB20B7D6F6003157A1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 827F42E220B7D6F7003157A1;
+			remoteInfo = InterfaceSwitching;
+		};
+		827F430520B7D6FB003157A1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 827F42DB20B7D6F6003157A1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 827F42E220B7D6F7003157A1;
+			remoteInfo = InterfaceSwitching;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		827F42E320B7D6F7003157A1 /* InterfaceSwitching.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InterfaceSwitching.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		827F42E620B7D6F7003157A1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		827F42E720B7D6F7003157A1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		827F42EC20B7D6FB003157A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		827F42EF20B7D6FB003157A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		827F42F120B7D6FB003157A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		827F42F220B7D6FB003157A1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		827F42F420B7D6FB003157A1 /* InterfaceSwitching.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = InterfaceSwitching.entitlements; sourceTree = "<group>"; };
+		827F42F920B7D6FB003157A1 /* InterfaceSwitchingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InterfaceSwitchingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		827F42FD20B7D6FB003157A1 /* InterfaceSwitchingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterfaceSwitchingTests.m; sourceTree = "<group>"; };
+		827F42FF20B7D6FB003157A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		827F430420B7D6FB003157A1 /* InterfaceSwitchingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InterfaceSwitchingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		827F430820B7D6FB003157A1 /* InterfaceSwitchingUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterfaceSwitchingUITests.m; sourceTree = "<group>"; };
+		827F430A20B7D6FB003157A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		827F431E20B7DB7C003157A1 /* StatusIcon.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = StatusIcon.ico; sourceTree = "<group>"; };
+		827F432720B7DBE3003157A1 /* JRKeyboardShortcutUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRKeyboardShortcutUtil.h; sourceTree = "<group>"; };
+		827F432820B7DBE3003157A1 /* JRKeyboardShortcutUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRKeyboardShortcutUtil.m; sourceTree = "<group>"; };
+		827F432920B7DBE3003157A1 /* JRLoginItemUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRLoginItemUtil.m; sourceTree = "<group>"; };
+		827F432A20B7DBE3003157A1 /* JRLoginItemUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRLoginItemUtil.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		827F42E020B7D6F7003157A1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		827F42F620B7D6FB003157A1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		827F430120B7D6FB003157A1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		827F42DA20B7D6F6003157A1 = {
+			isa = PBXGroup;
+			children = (
+				827F42E520B7D6F7003157A1 /* InterfaceSwitching */,
+				827F42FC20B7D6FB003157A1 /* InterfaceSwitchingTests */,
+				827F430720B7D6FB003157A1 /* InterfaceSwitchingUITests */,
+				827F42E420B7D6F7003157A1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		827F42E420B7D6F7003157A1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				827F42E320B7D6F7003157A1 /* InterfaceSwitching.app */,
+				827F42F920B7D6FB003157A1 /* InterfaceSwitchingTests.xctest */,
+				827F430420B7D6FB003157A1 /* InterfaceSwitchingUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		827F42E520B7D6F7003157A1 /* InterfaceSwitching */ = {
+			isa = PBXGroup;
+			children = (
+				827F431A20B7DA05003157A1 /* tools */,
+				827F431E20B7DB7C003157A1 /* StatusIcon.ico */,
+				827F42E620B7D6F7003157A1 /* AppDelegate.h */,
+				827F42E720B7D6F7003157A1 /* AppDelegate.m */,
+				827F42EC20B7D6FB003157A1 /* Assets.xcassets */,
+				827F42EE20B7D6FB003157A1 /* Main.storyboard */,
+				827F42F120B7D6FB003157A1 /* Info.plist */,
+				827F42F220B7D6FB003157A1 /* main.m */,
+				827F42F420B7D6FB003157A1 /* InterfaceSwitching.entitlements */,
+			);
+			path = InterfaceSwitching;
+			sourceTree = "<group>";
+		};
+		827F42FC20B7D6FB003157A1 /* InterfaceSwitchingTests */ = {
+			isa = PBXGroup;
+			children = (
+				827F42FD20B7D6FB003157A1 /* InterfaceSwitchingTests.m */,
+				827F42FF20B7D6FB003157A1 /* Info.plist */,
+			);
+			path = InterfaceSwitchingTests;
+			sourceTree = "<group>";
+		};
+		827F430720B7D6FB003157A1 /* InterfaceSwitchingUITests */ = {
+			isa = PBXGroup;
+			children = (
+				827F430820B7D6FB003157A1 /* InterfaceSwitchingUITests.m */,
+				827F430A20B7D6FB003157A1 /* Info.plist */,
+			);
+			path = InterfaceSwitchingUITests;
+			sourceTree = "<group>";
+		};
+		827F431A20B7DA05003157A1 /* tools */ = {
+			isa = PBXGroup;
+			children = (
+				827F432720B7DBE3003157A1 /* JRKeyboardShortcutUtil.h */,
+				827F432820B7DBE3003157A1 /* JRKeyboardShortcutUtil.m */,
+				827F432A20B7DBE3003157A1 /* JRLoginItemUtil.h */,
+				827F432920B7DBE3003157A1 /* JRLoginItemUtil.m */,
+			);
+			path = tools;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		827F42E220B7D6F7003157A1 /* InterfaceSwitching */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 827F430D20B7D6FB003157A1 /* Build configuration list for PBXNativeTarget "InterfaceSwitching" */;
+			buildPhases = (
+				827F42DF20B7D6F7003157A1 /* Sources */,
+				827F42E020B7D6F7003157A1 /* Frameworks */,
+				827F42E120B7D6F7003157A1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = InterfaceSwitching;
+			productName = InterfaceSwitching;
+			productReference = 827F42E320B7D6F7003157A1 /* InterfaceSwitching.app */;
+			productType = "com.apple.product-type.application";
+		};
+		827F42F820B7D6FB003157A1 /* InterfaceSwitchingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 827F431020B7D6FB003157A1 /* Build configuration list for PBXNativeTarget "InterfaceSwitchingTests" */;
+			buildPhases = (
+				827F42F520B7D6FB003157A1 /* Sources */,
+				827F42F620B7D6FB003157A1 /* Frameworks */,
+				827F42F720B7D6FB003157A1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				827F42FB20B7D6FB003157A1 /* PBXTargetDependency */,
+			);
+			name = InterfaceSwitchingTests;
+			productName = InterfaceSwitchingTests;
+			productReference = 827F42F920B7D6FB003157A1 /* InterfaceSwitchingTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		827F430320B7D6FB003157A1 /* InterfaceSwitchingUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 827F431320B7D6FB003157A1 /* Build configuration list for PBXNativeTarget "InterfaceSwitchingUITests" */;
+			buildPhases = (
+				827F430020B7D6FB003157A1 /* Sources */,
+				827F430120B7D6FB003157A1 /* Frameworks */,
+				827F430220B7D6FB003157A1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				827F430620B7D6FB003157A1 /* PBXTargetDependency */,
+			);
+			name = InterfaceSwitchingUITests;
+			productName = InterfaceSwitchingUITests;
+			productReference = 827F430420B7D6FB003157A1 /* InterfaceSwitchingUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		827F42DB20B7D6F6003157A1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = midoks;
+				TargetAttributes = {
+					827F42E220B7D6F7003157A1 = {
+						CreatedOnToolsVersion = 9.3.1;
+					};
+					827F42F820B7D6FB003157A1 = {
+						CreatedOnToolsVersion = 9.3.1;
+						TestTargetID = 827F42E220B7D6F7003157A1;
+					};
+					827F430320B7D6FB003157A1 = {
+						CreatedOnToolsVersion = 9.3.1;
+						TestTargetID = 827F42E220B7D6F7003157A1;
+					};
+				};
+			};
+			buildConfigurationList = 827F42DE20B7D6F6003157A1 /* Build configuration list for PBXProject "InterfaceSwitching" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 827F42DA20B7D6F6003157A1;
+			productRefGroup = 827F42E420B7D6F7003157A1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				827F42E220B7D6F7003157A1 /* InterfaceSwitching */,
+				827F42F820B7D6FB003157A1 /* InterfaceSwitchingTests */,
+				827F430320B7D6FB003157A1 /* InterfaceSwitchingUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		827F42E120B7D6F7003157A1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				827F42ED20B7D6FB003157A1 /* Assets.xcassets in Resources */,
+				827F431F20B7DB7C003157A1 /* StatusIcon.ico in Resources */,
+				827F42F020B7D6FB003157A1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		827F42F720B7D6FB003157A1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		827F430220B7D6FB003157A1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		827F42DF20B7D6F7003157A1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				827F42F320B7D6FB003157A1 /* main.m in Sources */,
+				827F432C20B7DBE3003157A1 /* JRLoginItemUtil.m in Sources */,
+				827F432B20B7DBE3003157A1 /* JRKeyboardShortcutUtil.m in Sources */,
+				827F42E820B7D6F7003157A1 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		827F42F520B7D6FB003157A1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				827F42FE20B7D6FB003157A1 /* InterfaceSwitchingTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		827F430020B7D6FB003157A1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				827F430920B7D6FB003157A1 /* InterfaceSwitchingUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		827F42FB20B7D6FB003157A1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 827F42E220B7D6F7003157A1 /* InterfaceSwitching */;
+			targetProxy = 827F42FA20B7D6FB003157A1 /* PBXContainerItemProxy */;
+		};
+		827F430620B7D6FB003157A1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 827F42E220B7D6F7003157A1 /* InterfaceSwitching */;
+			targetProxy = 827F430520B7D6FB003157A1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		827F42EE20B7D6FB003157A1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				827F42EF20B7D6FB003157A1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		827F430B20B7D6FB003157A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		827F430C20B7D6FB003157A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		827F430E20B7D6FB003157A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = InterfaceSwitching/InterfaceSwitching.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 462EP6445M;
+				INFOPLIST_FILE = InterfaceSwitching/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = com.midoks.InterfaceSwitching;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+			};
+			name = Debug;
+		};
+		827F430F20B7D6FB003157A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = InterfaceSwitching/InterfaceSwitching.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 462EP6445M;
+				INFOPLIST_FILE = InterfaceSwitching/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = com.midoks.InterfaceSwitching;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+			};
+			name = Release;
+		};
+		827F431120B7D6FB003157A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 462EP6445M;
+				INFOPLIST_FILE = InterfaceSwitchingTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.midoks.InterfaceSwitchingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InterfaceSwitching.app/Contents/MacOS/InterfaceSwitching";
+			};
+			name = Debug;
+		};
+		827F431220B7D6FB003157A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 462EP6445M;
+				INFOPLIST_FILE = InterfaceSwitchingTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.midoks.InterfaceSwitchingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InterfaceSwitching.app/Contents/MacOS/InterfaceSwitching";
+			};
+			name = Release;
+		};
+		827F431420B7D6FB003157A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 462EP6445M;
+				INFOPLIST_FILE = InterfaceSwitchingUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.midoks.InterfaceSwitchingUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = InterfaceSwitching;
+			};
+			name = Debug;
+		};
+		827F431520B7D6FB003157A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 462EP6445M;
+				INFOPLIST_FILE = InterfaceSwitchingUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.midoks.InterfaceSwitchingUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = InterfaceSwitching;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		827F42DE20B7D6F6003157A1 /* Build configuration list for PBXProject "InterfaceSwitching" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				827F430B20B7D6FB003157A1 /* Debug */,
+				827F430C20B7D6FB003157A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		827F430D20B7D6FB003157A1 /* Build configuration list for PBXNativeTarget "InterfaceSwitching" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				827F430E20B7D6FB003157A1 /* Debug */,
+				827F430F20B7D6FB003157A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		827F431020B7D6FB003157A1 /* Build configuration list for PBXNativeTarget "InterfaceSwitchingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				827F431120B7D6FB003157A1 /* Debug */,
+				827F431220B7D6FB003157A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		827F431320B7D6FB003157A1 /* Build configuration list for PBXNativeTarget "InterfaceSwitchingUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				827F431420B7D6FB003157A1 /* Debug */,
+				827F431520B7D6FB003157A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 827F42DB20B7D6F6003157A1 /* Project object */;
+}
