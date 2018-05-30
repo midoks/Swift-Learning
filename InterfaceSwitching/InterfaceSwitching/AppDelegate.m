@@ -15,9 +15,10 @@
 @implementation AppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-//    NSLog(@"applicationDidFinishLaunching");
     [self setUpStatusItem];
-    [JRLoginItemUtil addCurrentApplicatonToLoginItems];
+    
+    //开启启动先关闭
+    //[JRLoginItemUtil addCurrentApplicatonToLoginItems];
     
     [self listenCode];
 }
